@@ -1,0 +1,131 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}代理商申请修改表{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <select class="form-control" name="status" style="height:31px;width:200px ">
+                <option {if condition="input('param.status','') eq '1'"} selected='selected'{/if} value="1">待审核</option>
+                <option {if condition="input('param.status','') eq '2'"} selected='selected'{/if} value="2">审核通过</option>
+                <option {if condition="input('param.status','') eq '3'"} selected='selected'{/if} value="3">审核不通过</option>
+            </select>
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="80">代理商</th>
+            <th width="100">手机号</th>
+            <th width="100">更改类型</th>
+            <th width="100">更改金额</th>
+            <th width="60">修改前余额</th>
+            <th width="100">修改后金额</th>
+            <th width="100">申请人</th>
+            <th width="100">申请时间</th>
+            <th width="100">处理人</th>
+            <th width="100">处理结果</th>
+            <th width="100">处理时间</th>
+            <th width="100">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="11">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.user_login|default=''}</td>
+            <td>{$vo.phone|default=''}</td>
+            <td>
+                {switch name='vo.type'}
+                {case value='1'}<span class="label label-success radius">增加</span>{/case}
+                {case value='2'}<span class="label label-info radius">减少</span>{/case}
+                {/switch}
+            </td>
+            <td>{$vo.value|default='0'}</td>
+            <td>
+                {if condition="$vo.status eq '2'"}
+                {$vo.pre_money|default='0'}
+                {else/}
+                {$vo.money|default='0'}
+                {/if}
+            </td>
+            <td>
+                {if condition="$vo.status eq '2'"}
+                    {$vo.after_money|default='0'}
+                {else/}
+                    {if condition="$vo.type eq '1'"}
+                        {$vo.money+$vo.value}
+                    {else/}
+                        {$vo.money-$vo.value}
+                    {/if}
+                {/if}
+            </td>
+            <td>{$vo.apply_admin|default='0'}</td>
+            <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+            <td>{$vo.check_admin|default=''}</td>
+            <td>
+                {switch name='vo.status'}
+                {case value='1'}<span class="label label-success radius">待审核</span>{/case}
+                {case value='2'}<span class="label label-info radius">审核通过</span>{/case}
+                {case value='3'}<span class="label label-info radius">审核失败</span>{/case}
+                {/switch}
+            </td>
+            <td>
+                {empty name='vo.check_time'}
+                    未审核
+                {else/}
+                    {$vo.check_time|date='Y-m-d H:i:s',###}
+                {/empty}
+            </td>
+
+            <td class="td-manage">
+                {if condition="$vo.status eq '1'"}
+                <input class="btn btn-primary radius check_change_agent" data-url="{:url('check_apply',['id'=>$vo['id'],'status'=>'2'])}" data-msg="审核通过" type="button" value="审核通过">
+                <input class="btn btn-danger radius check_change_agent" data-url="{:url('check_apply',['id'=>$vo['id'],'status'=>'3'])}" data-msg="审核不通过" type="button" value="审核不通过">
+                {else/}
+                已审核
+                {/if}
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}
+{block name='js'}
+<script>
+    //按照id审核
+    $(document).on("click", ".check_change_agent", function () {
+        var obj = $(this);
+        var msg = obj.data("msg");
+        layer.confirm('确认'+msg+'吗?', {
+            btn: ["确定", "返回"],
+            title: false,
+            closeBtn: false
+        }, function () {
+            pub.check_by_id(obj, function () {
+                layer.msg('操作成功', {icon: 1});
+                location.reload()
+            }, null, 1);
+        });
+
+    });
+</script>
+{/block}

@@ -1,0 +1,103 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}渠道统计{/block}
+{block name="site_nav_2"}渠道分析{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" name="start" value="{:input('param.start','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+            <input type="text" name="end" value="{:input('param.end','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+            <button type="submit" class="btn btn-success "><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>分类</th>
+            {empty name='origins'}
+                <th>暂无分类</th>
+                {else /}
+                {volist name='origins' id='vo'}
+                <th>{$vo|default=''}</th>
+                {/volist}
+            {/empty}
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='origins'}
+        <tr>
+            <td class="text-c" colspan="12">暂无数据..</td>
+        </tr>
+        {else /}
+        <tr  class="text-c" >
+            <td>注册量</td>
+            {volist name='reg_num' id='vo'}
+            <th>{$vo.all_reg_num|default='0'}</th>
+            {/volist}
+        </tr>
+        <tr  class="text-c" >
+            <td>付费用户</td>
+            {volist name='user_data' id='vo'}
+            <th>{$vo.all_pay_num|default='0'}</th>
+            {/volist}
+        </tr>
+        <tr  class="text-c" >
+            <td>充值金额</td>
+            {volist name='all_pay_money.all_money' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        <tr  class="text-c" >
+            <td>支付宝</td>
+            {volist name='all_pay_money.alipay' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        <tr  class="text-c" >
+            <td>微信</td>
+            {volist name='all_pay_money.wechat' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        <tr  class="text-c" >
+            <td>卡密</td>
+            {volist name='all_pay_money.card' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        <tr  class="text-c" >
+            <td>线下</td>
+            {volist name='all_pay_money.offline' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        <tr  class="text-c" >
+            <td>其他</td>
+            {volist name='all_pay_money.other' id='vo'}
+            <th>{$vo|default='0'}</th>
+            {/volist}
+        </tr>
+
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+{block name="js"}
+
+{/block}
+

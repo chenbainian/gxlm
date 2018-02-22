@@ -1,0 +1,147 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}分类{/block}
+{block name="site_nav_2"}分类列表{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+    <a class="btn btn-primary radius open_form" data-title="分类管理->添加分类" data-url="{:url('add')}" href="javascript:;">
+        <i class="Hui-iconfont">&#xe600;</i> 添加分类</a>
+    </span>
+
+    <form id="form_condition" class="form-search" method="get">
+
+        <div class="text-c"> 名称搜索：
+
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入分类名" id="" name="name" value="{:input('param.name','')}">
+            <select class="form-control " name="status" style="height:31px;width:100px ">
+                <option value="">状态</option>
+                <option {if condition="input('param.status','') eq '1'"} selected='selected'{/if} value="1">正常</option>
+                <option {if condition="input('param.status','') eq '2'"} selected='selected'{/if} value="2">禁用</option>
+            </select>
+            <select class="form-control " name="type" style="height:31px;width:100px ">
+                <option value="">类型</option>
+                <option {if condition="input('param.type','') eq '1'"} selected='selected'{/if} value="1">顶级分类</option>
+                <option {if condition="input('param.type','') eq '2'"} selected='selected'{/if} value="2">子级分类</option>
+            </select>
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="30">ID</th>
+            <th width="50">名称</th>
+            <th width="50">状态</th>
+            <th width="20">类型</th>
+            <th width="60">缩略图</th>
+            <th width="80">排序</th>
+            <th width="20">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="7">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.id|default=''}</td>
+            <td>{$vo.name|default=''}</td>
+            <td>
+                {notempty name='vo.status'}
+                {switch name='vo.status'}
+                {case value='1'}<span class="label label-success radius">正常</span>{/case}
+                {case value='2'}<span class="label label-info radius">禁用</span>{/case}
+                {default /}状态异常
+                {/switch}
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='vo.type'}
+                {switch name='vo.type'}
+                {case value='1'}<span class="label label-success radius">顶级分类</span>{/case}
+                {case value='2'}<span class="label label-info radius">子级分类</span>{/case}
+                {default /}状态异常
+                {/switch}
+                {/notempty}
+            </td>
+            <td>
+                <img src="{$vo.img_src}" width="70px" height="70px">
+            </td>
+            <td>{$vo.order|default=''}</td>
+            <td>
+                <input class="btn btn-secondary radius open_form"  data-url="{:url('update',['id'=>$vo.id,'type'=>'edit'])}" type="button" value="编辑">
+                <input class="btn btn-danger radius del_cate" data-type="{$vo.type|default=1}" data-id="{$vo.id|default=0}" type="button" value="删除">
+                {if condition="$vo.type EQ 1"}
+                <input class="btn btn-danger radius see_sons" data-id="{$vo.id|default=0}" type="button" value="查看子分类">
+                {/if}
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+<input type="hidden" id="forbid_admin" value="{:url('admin/account/forbid')}">
+<input type="hidden" id="unforbid_admin" value="{:url('admin/account/unforbid')}">
+<input type="hidden" id="del_cate" value="{:url('admin/cate/del_cate')}">
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}
+
+{block name='js'}
+<script>
+    $(".forbid").click(function(){
+        var url = $("#forbid_admin").val();
+        var id = $(this).data('id');
+        $.common_ajax(url,{id:id},function(rt){
+            layer.msg(rt.msg);
+            if(rt.code == 1){
+                location.reload();
+            }
+        })
+    });
+
+    $(".unforbid").click(function(){
+        var url = $("#unforbid_admin").val();
+        var id = $(this).data('id');
+        $.common_ajax(url,{id:id},function(rt){
+            layer.msg(rt.msg);
+            if(rt.code == 1){
+                location.reload();
+            }
+        })
+    });
+    $(".del_cate").click(function(){
+        var url = $("#del_admin").val();
+        var id = $(this).data('id');
+        var type = $(this).data('type');
+        var msg;
+        if(type == 1){
+            msg = "您确定要删除该分类及下面子分类?";
+        }else{
+            msg = "您确定要删除该分类?";
+        }
+        layer.confirm(msg,{
+            btn:["确定","取消"]
+        },function(){
+            $.common_ajax(url,{id:id},function(rt){
+                layer.msg(rt.msg);
+                if(rt.code == 1){
+                    location.reload();
+                }
+            })
+        });
+
+
+    })
+</script>
+{/block}

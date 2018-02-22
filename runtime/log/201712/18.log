@@ -1,0 +1,2505 @@
+[ 2017-12-18T10:26:29+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.049163s][吞吐率：20.34req/s] [内存消耗：937.69kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:40+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.281866s][吞吐率：3.55req/s] [内存消耗：937.69kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016809s][吞吐率：59.49req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015983s][吞吐率：62.57req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015886s][吞吐率：62.95req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:41+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.017781s][吞吐率：56.24req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015715s][吞吐率：63.63req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.017511s][吞吐率：57.11req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015740s][吞吐率：63.53req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.017191s][吞吐率：58.17req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015320s][吞吐率：65.27req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016740s][吞吐率：59.74req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016030s][吞吐率：62.38req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015893s][吞吐率：62.92req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016918s][吞吐率：59.11req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015561s][吞吐率：64.26req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015661s][吞吐率：63.85req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015530s][吞吐率：64.39req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015979s][吞吐率：62.58req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016112s][吞吐率：62.07req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015727s][吞吐率：63.58req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016053s][吞吐率：62.29req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015174s][吞吐率：65.90req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015935s][吞吐率：62.76req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015712s][吞吐率：63.65req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:43+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015917s][吞吐率：62.83req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:44+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.033173s][吞吐率：30.15req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:45+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.018156s][吞吐率：55.08req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:45+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.018471s][吞吐率：54.14req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:45+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015349s][吞吐率：65.15req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:46+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015909s][吞吐率：62.86req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:46+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016059s][吞吐率：62.27req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:46+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015667s][吞吐率：63.83req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:48+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.gxlm.com/ [运行时间：0.115996s][吞吐率：8.62req/s] [内存消耗：1,164.59kb] [文件加载：33]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] Method [ <user> public method index ] {
+  @@ E:\www\htdocs\app\api\controller\Account.php 14 - 19
+}
+
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ VIEW ] ./tpl/api/account\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:50+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015928s][吞吐率：62.78req/s] [内存消耗：937.41kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:51+08:00 ] 127.0.0.1 127.0.0.1 POST /api/account/login_do.html
+[ log ] www.gxlm.com/api/account/login_do.html [运行时间：0.207714s][吞吐率：4.81req/s] [内存消耗：1,671.20kb] [文件加载：40]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'account',
+    2 => 'login_do',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.gxlm.com/',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.gxlm.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '35',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'chenbonian',
+  'password' => '123456',
+)
+[ info ] [ RUN ] Method [ <user> public method login_do ] {
+  @@ E:\www\htdocs\app\api\controller\Account.php 21 - 36
+}
+
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.088604s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.018706s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `username` = 'chenbonian'  AND `status` = 1 LIMIT 1     [ RunTime:0.018590s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011181s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `users`  SET `username`='chenbonian',`password`='14e1b600b1fd579f47433b88e8d85291',`nick_name`='陈柏年',`status`=1,`total_buy_order`='0',`total_buy_money`=0,`type`=1,`phone`='18652216784',`last_login_ip`='127.0.0.1',`last_login_time`=1513593831,`update_time`=1511350344,`create_time`=1511350344,`remark`='大好人',`province`='江苏',`city`='徐州',`area`='沛县',`addr`='香颂雅苑'  WHERE  `id` = 1                     [ RunTime:0.011271s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:51+08:00 ] 127.0.0.1 127.0.0.1 GET /api/index/index.html
+[ log ] www.gxlm.com/api/index/index.html [运行时间：0.353726s][吞吐率：2.83req/s] [内存消耗：1,838.13kb] [文件加载：40]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method index ] {
+  @@ E:\www\htdocs\app\api\controller\Index.php 14 - 27
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/index\index.html [ array (
+  0 => 'broad_list',
+  1 => 'big_cates',
+  2 => 'small_cates',
+  3 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024566s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.013391s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.014522s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029048s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `broad_img` [ RunTime:0.018338s ]
+[ sql ] [ SQL ] SELECT * FROM `broad_img` ORDER BY `order`  [ RunTime:0.018444s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011904s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.007765s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.007950s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.007612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.007442s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `status` = 1 ORDER BY `order` asc   [ RunTime:0.011403s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:53+08:00 ] 127.0.0.1 127.0.0.1 GET /public/static/api/basic/js/jquery.min.js
+[ log ] www.gxlm.com/public/static/api/basic/js/jquery.min.js [运行时间：0.017179s][吞吐率：58.21req/s] [内存消耗：938.63kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'static',
+    2 => 'api',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/index/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+  '/static/api/basic/js/jquery_min_js' => '',
+  'basic' => 'js',
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:55+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016983s][吞吐率：58.88req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015654s][吞吐率：63.88req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015784s][吞吐率：63.36req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015662s][吞吐率：63.85req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015186s][吞吐率：65.85req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015749s][吞吐率：63.50req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016222s][吞吐率：61.64req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:57+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016313s][吞吐率：61.30req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:58+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015493s][吞吐率：64.54req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:58+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015694s][吞吐率：63.72req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:58+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015513s][吞吐率：64.46req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:58+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016273s][吞吐率：61.45req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:58+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015840s][吞吐率：63.13req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016580s][吞吐率：60.31req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016185s][吞吐率：61.79req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016299s][吞吐率：61.35req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015968s][吞吐率：62.62req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016015s][吞吐率：62.44req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015593s][吞吐率：64.13req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015969s][吞吐率：62.62req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015935s][吞吐率：62.76req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015753s][吞吐率：63.48req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:43:59+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015701s][吞吐率：63.69req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015930s][吞吐率：62.77req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015391s][吞吐率：64.97req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015830s][吞吐率：63.17req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015626s][吞吐率：64.00req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016663s][吞吐率：60.01req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016234s][吞吐率：61.60req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016078s][吞吐率：62.20req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:00+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016151s][吞吐率：61.92req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016097s][吞吐率：62.12req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015795s][吞吐率：63.31req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015983s][吞吐率：62.57req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.016094s][吞吐率：62.14req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015579s][吞吐率：64.19req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:01+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015559s][吞吐率：64.27req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:02+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.017925s][吞吐率：55.79req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:02+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.gxlm.com/favicon.ico [运行时间：0.015398s][吞吐率：64.94req/s] [内存消耗：937.30kb] [文件加载：26]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:04+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/goods_detail?goods_id=1
+[ log ] www.gxlm.com/api/goods/goods_detail?goods_id=1 [运行时间：0.221335s][吞吐率：4.52req/s] [内存消耗：1,740.47kb] [文件加载：40]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'goods_detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+  'goods_id' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method goods_detail ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 14 - 34
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\detail.html [ array (
+  0 => 'big_cate_name',
+  1 => 'small_cate_name',
+  2 => 'goods_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018877s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.007675s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.007772s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022917s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.013496s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`show_price`,`true_price`,`desc`,`img_src`,`num`,`unit`,`cate_id`,`big_cate_id` FROM `goods` WHERE  `status` = 1 LIMIT 1    [ RunTime:0.012879s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.012607s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `id` = 1 LIMIT 1    [ RunTime:0.012570s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `id` = 5 LIMIT 1    [ RunTime:0.013034s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:04+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/%7B%7D
+[ log ] www.gxlm.com/api/goods/%7B%7D [运行时间：0.084641s][吞吐率：11.81req/s] [内存消耗：1,742.94kb] [文件加载：44]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => '{}',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023216s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.013584s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.013201s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:04+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/%7B%7D
+[ log ] www.gxlm.com/api/goods/%7B%7D [运行时间：0.094939s][吞吐率：10.53req/s] [内存消耗：1,742.94kb] [文件加载：44]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => '{}',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] E:\www\htdocs\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027031s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.018643s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.018365s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:44:08+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.244111s][吞吐率：4.10req/s] [内存消耗：2,092.02kb] [文件加载：44]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 74
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\search.html [ array (
+  0 => 'hot_goods',
+  1 => 'goods_list',
+  2 => 'goods_name',
+  3 => 'big_cate_list',
+  4 => 'small_cate_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011858s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.008378s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.008278s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017766s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.007396s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.007657s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017825s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.008519s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018739s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.015883s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 1     [ RunTime:0.007763s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 0,12     [ RunTime:0.008594s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018051s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `status` = 1 ORDER BY show_sales_num LIMIT 0,5    [ RunTime:0.007584s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:45:18+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.227060s][吞吐率：4.40req/s] [内存消耗：2,146.06kb] [文件加载：46]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 71
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\search.html [ array (
+  0 => 'goods_list',
+  1 => 'goods_name',
+  2 => 'big_cate_list',
+  3 => 'small_cate_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012521s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.008352s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.007293s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023619s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.012779s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.012976s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018727s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.012268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018556s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.007554s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 1     [ RunTime:0.007302s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 0,12     [ RunTime:0.008426s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:46:41+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.245035s][吞吐率：4.08req/s] [内存消耗：2,015.20kb] [文件加载：44]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 71
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\search.html [ array (
+  0 => 'goods_list',
+  1 => 'goods_name',
+  2 => 'big_cate_list',
+  3 => 'small_cate_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018818s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.008488s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.007932s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019227s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.013150s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.012758s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024239s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.012310s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029077s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.019657s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 1     [ RunTime:0.017949s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 0,12     [ RunTime:0.019882s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:47:46+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.176810s][吞吐率：5.66req/s] [内存消耗：2,146.09kb] [文件加载：46]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 71
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\search.html [ array (
+  0 => 'goods_list',
+  1 => 'goods_name',
+  2 => 'big_cate_list',
+  3 => 'small_cate_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018715s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.008648s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.007730s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018630s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.007644s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.007322s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019908s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.014138s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012951s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.007777s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 1     [ RunTime:0.007216s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 0,12     [ RunTime:0.008434s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:50:06+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.235958s][吞吐率：4.24req/s] [内存消耗：2,015.23kb] [文件加载：44]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 71
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./tpl/api/goods\search.html [ array (
+  0 => 'goods_list',
+  1 => 'goods_name',
+  2 => 'big_cate_list',
+  3 => 'small_cate_list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027561s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.014266s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.016991s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023291s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.013431s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.013518s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.018027s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.007278s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019928s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `goods` [ RunTime:0.013320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 1     [ RunTime:0.012988s ]
+[ sql ] [ SQL ] SELECT * FROM `goods` WHERE  `title` LIKE '%%'  AND `status` = 1 LIMIT 0,12     [ RunTime:0.014918s ]
+
+---------------------------------------------------------------
+[ 2017-12-18T18:52:35+08:00 ] 127.0.0.1 127.0.0.1 GET /api/goods/search.html
+[ log ] www.gxlm.com/api/goods/search.html [运行时间：0.201504s][吞吐率：4.96req/s] [内存消耗：1,728.92kb] [文件加载：37]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'goods',
+    2 => 'search',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Huiskin=default; think_var=zh-cn; PHPSESSID=43u2ig8jio27l24mff2r4g9ev7',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://www.gxlm.com/api/goods/goods_detail?goods_id=1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.4355.400 QQBrowser/9.7.12672.400',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.gxlm.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 3600,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] Method [ <user> public method search ] {
+  @@ E:\www\htdocs\app\api\controller\Goods.php 54 - 71
+}
+
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.038321s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `users` [ RunTime:0.013157s ]
+[ sql ] [ SQL ] SELECT * FROM `users` WHERE  `id` = 1  AND `status` = 1 LIMIT 1     [ RunTime:0.023438s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.025594s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cate` [ RunTime:0.013674s ]
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '1'  AND `status` = '1' ORDER BY `order` asc    [ RunTime:0.014082s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.023689s ] mysql:dbname=hdm359939164_db;host=hdm359939164.my3w.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `cate` WHERE  `type` = '2'  AND `status` = '1'  AND `parent_id` = 3 ORDER BY `order` asc     [ RunTime:0.012391s ]
+
+---------------------------------------------------------------

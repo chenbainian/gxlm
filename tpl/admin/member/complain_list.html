@@ -1,0 +1,56 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}线路吐槽列表{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>线路名称</th>
+            <th>吐槽用户</th>
+            <th>手机号</th>
+            <th>吐槽选项</th>
+            <th>吐槽内容</th>
+            <th>IP地址</th>
+            <th>平台</th>
+            <th>吐槽时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="10">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c">
+            <td>{$vo.line_name|default=''}</td>
+            <td>{$vo.username|default='--'}</td>
+            <td>{$vo.phone|default='--'}</td>
+            <td>{$vo.title|default='--'}</td>
+            <td>{$vo.content|default="--"}</td>
+            <td>{$vo.ip_addr|default=''}</td>
+            <td>{$vo.platform|default=''}</td>
+            <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+{block name="js"}
+
+{/block}
+

@@ -1,0 +1,120 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}订单管理{/block}
+{block name="site_nav_2"}代理商充值订单表{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="订单号/代理商ID/代理商用户名" id="" name="search_word" value="{:input('param.search_word','')}">
+            <select class="form-control" name="pay_status" style="height:31px;width:100px ">
+                <option value="">支付状态</option>
+                <option {if condition="input('get.pay_status','') eq '1'"} selected='selected'{/if} value="1">未支付</option>
+                <option {if condition="input('get.pay_status','') eq '2'"} selected='selected'{/if} value="2">已支付(未开通)</option>
+                <option {if condition="input('get.pay_status','') eq '3'"} selected='selected'{/if} value="3">已开通</option>
+            </select>
+            <select class="form-control " name="order_status" style="height:31px;width:100px ">
+                <option value="">订单状态</option>
+                <option {if condition="input('get.order_status','') eq '1'"} selected='selected'{/if} value="1">正常</option>
+                <option {if condition="input('get.order_status','') eq '-1'"} selected='selected'{/if} value="-1">删除</option>
+            </select>
+            <select class="form-control" name="pay_plat" style="height:31px;width:100px ">
+                <option value="">支付方式</option>
+                <option {if condition="input('get.pay_plat','') eq 'alipay'"} selected='selected'{/if} value="alipay">支付宝</option>
+                <option {if condition="input('get.pay_plat','') eq 'wechat'"} selected='selected'{/if} value="wechat">微信</option>
+                <option {if condition="input('get.pay_plat','') eq 'card'"} selected='selected'{/if} value="card">卡密</option>
+                <option {if condition="input('get.pay_plat','') eq 'cash'"} selected='selected'{/if} value="cash">现金</option>
+            </select>
+            <input type="text" name="start" value="{:input('param.start','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+            <input type="text" name="end" value="{:input('param.end','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+            <button type="submit" class="btn btn-success "><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+            <span class="r">共有数据：<strong>{$total|default="0"}</strong> 条</span>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>订单号</th>
+            <th>用户ID</th>
+            <th>用户昵称</th>
+            <th>代理商</th>
+            <th>订单名称</th>
+            <th>订单金额</th>
+            <th>订单状态</th>
+            <th>支付状态</th>
+            <th>支付方式</th>
+            <th>支付时间</th>
+            <th>创建时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="11">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c" >
+            <td>{$vo.order_id|default='--'}</td>
+            <td>{$vo.uid|default=''}</td>
+            <td>{$vo.username|default='--'}</td>
+            <td>{$vo.user_login|default='--'}</td>
+            <td>{$vo.name|default='--'}</td>
+            <td>{$vo.money|default="--"}</td>
+            <td>
+                {switch name="vo.status"}
+                {case value="1"}<span class="label label-success radius">正常</span>{/case}
+                {case value="-1"}<span class="label label-warning radius">异常</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {switch name="vo.pay_status"}
+                {case value="1"}<span class="label label-default radius">未付款</span>{/case}
+                {case value="2"}<span class="label label-success radius">已支付</span>{/case}
+                {case value="3"}<span class="label label-success radius">已开通</span>{/case}
+                {case value="-1"}<span class="label label-default radius">未付款</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {switch name="vo.pay_plat"}
+                {case value="alipay"}支付宝{/case}
+                {case value="wechat"}微信支付{/case}
+                {case value="tickets"}优惠券支付{/case}
+                {case value="under_line"}线下付款{/case}
+                {case value="balance"}余额支付{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {eq name="vo.pay_time" value=""}
+
+                {else/}
+                {$vo.pay_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+            <td>
+                {eq name="vo.create_time" value=""}
+
+                {else/}
+                {$vo.create_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+

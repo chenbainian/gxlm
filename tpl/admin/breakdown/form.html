@@ -1,0 +1,97 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}故障详情{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="status" >
+                    <option value="1" {if condition="!empty($info['status']) AND $info['status'] eq '1'"}selected="selected"{/if}>*正常(未启用)</option>
+                    <option value="-1" {if condition="!empty($info['status']) AND $info['status'] eq '-1'"}selected="selected"{/if}>*删除</option>
+                    <option value="2" {if condition="!empty($info['status']) AND $info['status'] eq '2'"}selected="selected"{/if}>*已启用</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>故障标题：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="title" value="{$info.title|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>故障内容：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="content" value="{$info.content|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>补偿时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" style="width:100px;" name="year" value="{$present_time['year']|default='0'}"> &nbsp年&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="month" value="{$present_time['month']|default='0'}"> &nbsp月&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="day" value="{$present_time['day']|default='0'}"> &nbsp日&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="hour" value="{$present_time['hour']|default='0'}"> &nbsp时&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="sec" value="{$present_time['sec']|default='0'}"> &nbsp分&nbsp
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>充值折扣(0.9为9折)：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="recharge_discount" value="{$info.recharge_discount|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>赠送优惠券(暂不用)：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" readonly name="" value="">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>赠送优惠券数量(暂不用)：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" readonly name="" value="">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>过期时间</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" name="expire_time" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="过期时间" value="{empty name='info.expire_time'}{else/}{$info.expire_time|date='Y-m-d H:i:s',###}{/empty}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;保存
+            </button>
+            {/case}
+            {default /}
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}
+{block name="js"}
+
+{/block}

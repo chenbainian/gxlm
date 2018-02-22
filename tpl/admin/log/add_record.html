@@ -1,0 +1,47 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_1"}日志管理{/block}
+{block name="site_nav_2"}添加日志{/block}
+{block name='content'}
+
+<form class="form form-horizontal" id="form_content" method="post" action="" >
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">标题</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text"  name="title" placeholder="请填写操作用户" class="input-text">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+				<select name="status" class="selected">
+                    <option value="1"selected="selected" >显示</option>
+                    <option value="0"  >隐藏</option>
+                </select>
+				</span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">内容</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <textarea name="content" placeholder="日志内容详情" class="textarea radius"></textarea>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('add_record_to')}">
+                <i class="Hui-iconfont">&#xe632;</i>添加
+            </button>
+            <input type="button" value="&nbsp;&nbsp;重置&nbsp;&nbsp;" onclick='location.reload()' class="btn btn-primary reset_btn radius" style="margin-left: 20px;">
+        </div>
+    </div>
+</form>
+
+{/block}
+{block name="js"}
+{js href="__static__/admin/js/news/news.js"/}
+{/block}

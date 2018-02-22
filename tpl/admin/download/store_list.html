@@ -1,0 +1,51 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}下载管理{/block}
+{block name="site_nav_2"}
+{/block}
+{block name='content'}
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+    <a class="btn btn-primary radius open_form" data-title="下载管理->下载分类管理" data-url="{:url('store_form',['type'=>'add'])}" href="javascript:;">
+        <i class="Hui-iconfont">&#xe600;</i> 添加分类</a>
+    </span>
+
+
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="30">ID</th>
+            <th width="50">平台名字</th>
+            <th width="20">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='cates'}
+        <tr>
+            <td class="text-c" colspan="7">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="cates" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.id|default=''}</td>
+            <td>{$vo.cate_name|default=''}</td>
+
+            <td class="td-manage">
+                <input class="btn btn-secondary radius open_form" data-url="{:url('store_download_list',['id'=>$vo['id']])}"  type="button" value="查看详情">
+                <input class="btn btn-primary radius open_form" data-url="{:url('store_form',['type'=>'edit','id'=>$vo['id']])}"  type="button" value="编辑">
+                <input class="btn btn-danger radius del_by_id" data-url="{:url('del_store')}" data-id="{$vo.id|default=0}" type="button" value="删除">
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}

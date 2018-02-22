@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>商品页面</title>
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/admin.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" /}
+		{css href="/public/static/api/basic/css/demo.css" /}
+		{css href="/public/static/api/css/optstyle.css" /}
+		{css href="/public/static/api/css/style.css" /}
+		{css href="/public/static/api/basic/js/jquery-1.7.min.js" /}
+		{css href="/public/static/api/basic/js/quick_links.js" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/js/amazeui.js" /}
+		{css href="/public/static/api/js/jquery.imagezoom.min.js" /}
+		{css href="/public/static/api/js/jquery.flexslider.js" /}
+		{css href="/public/static/api/js/list.js" /}
+
+	</head>
+
+	<body>
+
+
+		<!--顶部导航条 -->
+		{include file='base/base1'}
+
+			<!--悬浮搜索框-->
+		{include file='base/base2'}
+
+			<div class="clear"></div>
+            <b class="line"></b>
+			<div class="listMain">
+
+				<!--分类-->
+				<div class="nav-table">
+				{include file='base/base3'}
+				</div>
+				<ol class="am-breadcrumb am-breadcrumb-slash">
+					<li><a href="#">{$big_cate_name|default='首页'}</a></li>
+					<li><a href="#">{$small_cate_name|default='分类'}</a></li>
+					<li class="am-active">{$goods_info.title|default=''}</li>
+				</ol>
+				<script type="text/javascript">
+					$(function() {});
+					$(window).load(function() {
+						$('.flexslider').flexslider({
+							animation: "slide",
+							start: function(slider) {
+								$('body').removeClass('loading');
+							}
+						});
+					});
+				</script>
+				<div class="scoll">
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="{}" title="pic" />
+								</li>
+
+							</ul>
+						</div>
+					</section>
+				</div>
+
+				<!--放大镜-->
+
+				<div class="item-inform">
+					<div class="clearfixLeft" id="clearcontent">
+
+						<div class="box">
+							<script type="text/javascript">
+								$(document).ready(function() {
+									$(".jqzoom").imagezoom();
+									$("#thumblist li a").click(function() {
+										$(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
+										$(".jqzoom").attr('src', $(this).find("img").attr("mid"));
+										$(".jqzoom").attr('rel', $(this).find("img").attr("big"));
+									});
+								});
+							</script>
+
+							<div class="tb-booth tb-pic tb-s310">
+								<a href="/public/static/api/images/01.jpg"><img src="/public/static/api/images/01_mid.jpg" alt="细节展示放大镜特效" rel="/public/static/api/images/01.jpg" class="jqzoom" /></a>
+							</div>
+							<ul class="tb-thumb" id="thumblist">
+								<li class="tb-selected">
+									<div class="tb-pic tb-s40">
+										<a href="#"><img src="{$goods_info.img_src|default=''}" mid="/public/static/api/images/01_mid.jpg" big="{$goods_info.img_src|default=''}"></a>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+
+					<div class="clearfixRight">
+
+						<!--规格属性-->
+						<!--名称-->
+						<div class="tb-detail-hd">
+							<h1>【{$goods_info.title|default=''}】-{$goods_info.desc|default=''}</h1>
+						</div>
+						<div class="tb-detail-list">
+							<!--价格-->
+							<div class="tb-detail-price">
+								<li class="price iteminfo_price">
+									<dt>促销价</dt>
+									<dd><em>¥</em><b class="sys_item_price">{$goods_info.true_price|default='0.00'}</b>  </dd>
+								</li>
+								<li class="price iteminfo_mktprice">
+									<dt>原价</dt>
+									<dd><em>¥</em><b class="sys_item_mktprice">{$goods_info.show_price|default='0.00'}</b></dd>
+								</li>
+								<div class="clear"></div>
+							</div>
+
+							<div class="clear"></div>
+
+
+
+							<!--各种规格-->
+							<dl class="iteminfo_parameter sys_item_specpara">
+								<dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
+								<dd>
+									<!--操作页面-->
+
+									<div class="theme-popover-mask"></div>
+
+									<div class="theme-popover">
+										<div class="theme-span"></div>
+										<div class="theme-poptit">
+											<a href="javascript:;" title="关闭" class="close">×</a>
+										</div>
+										<div class="theme-popbod dform">
+											<form class="theme-signin" name="loginform" action="" method="post">
+
+												<div class="theme-signin-left">
+
+													<div class="theme-options">
+														<div class="cart-title">规格</div>
+														<ul>
+															<li class="sku-line selected">{$goods_info.unit|default='个'}<i></i></li>
+														</ul>
+													</div>
+													<div class="theme-options">
+														<div class="cart-title number">数量</div>
+														<dd>
+															<input id="min" class="am-btn am-btn-default" data-type="min" type="button" value="-" />
+															<input id="text_box" type="text" value="1" style="width:30px;" />
+															<input id="add" class="am-btn am-btn-default" data-type="add" type="button" value="+" />
+															<span id="Stock" class="tb-hidden">库存：<span class="stock" id="left_num">{$goods_info.num|default='0'}</span>&nbsp&nbsp{$goods_info.unit|default='个'}</span>
+														</dd>
+
+													</div>
+													<div class="clear"></div>
+
+													<div class="btn-op">
+														<div class="btn am-btn am-btn-warning">确认</div>
+														<div class="btn close am-btn am-btn-warning">取消</div>
+													</div>
+												</div>
+
+
+											</form>
+										</div>
+									</div>
+
+
+							<div class="clear"></div>
+							<!--活动	-->
+
+							<div class="pay">
+								<div class="pay-opt">
+									<a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
+									<a><span class="am-icon-heart am-icon-fw">收藏</span></a>
+
+								</div>
+								<li>
+									<div class="clearfix tb-btn tb-btn-buy theme-login">
+										<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+									</div>
+								</li>
+								<li>
+									<div class="clearfix tb-btn tb-btn-basket theme-login">
+										<a id="LikBasket" title="加入购物车" href="javascript:;"><i></i>加入购物车</a>
+									</div>
+								</li>
+							</div>
+					</div>
+
+					<div class="clear"></div>
+
+				</div>
+
+				<!--优惠套装-->
+
+				<div class="clear"></div>
+
+
+				<!-- introduce-->
+
+				<div class="introduce">
+					<div class="introduceMain">
+						<div class="am-tabs" data-am-tabs>
+							<ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs">
+								<li class="am-active">
+									<a href="#">
+
+										<span class="index-needs-dt-txt">宝贝详情</span></a>
+
+								</li>
+
+
+
+
+							</ul>
+
+							<div class="am-tabs-bd">
+
+								<div class="am-tab-panel am-fade am-in am-active">
+
+									<div class="details">
+										<div class="attr-list-hd after-market-hd">
+											<h4>商品细节</h4>
+										</div>
+										<div class="twlistNews">
+											<img src="/public/static/api/images/tw1.jpg" />
+											<img src="/public/static/api/images/tw2.jpg" />
+											<img src="/public/static/api/images/tw3.jpg" />
+											<img src="/public/static/api/images/tw4.jpg" />
+											<img src="/public/static/api/images/tw5.jpg" />
+											<img src="/public/static/api/images/tw6.jpg" />
+											<img src="/public/static/api/images/tw7.jpg" />
+										</div>
+									</div>
+									<div class="clear"></div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="clear"></div>
+
+						{include file='base/base4'}
+					</div>
+
+				</div>
+			</div>
+	</body>
+
+	<input type="hidden" id="add_shop_car_url" value="{:url('api/shop_car/add_car')}">
+	<input type="hidden" id="goods_id" value="{$goods_info.id|default=''}">
+	{include file="base/common_js"/}
+
+	<script>
+	$(document).on("change",'#text_box',function(){
+		var buy_num = parseInt($("#text_box").val());
+		var left_num = parseInt($("#left_num").html());
+		if(buy_num > left_num){
+			$("#text_box").val(left_num);
+		}
+		if(buy_num < 0){
+			$("#text_box").val(1);
+		}
+	});
+
+	$(document).on("click",'.am-btn-default',function(){
+		var buy_num = parseInt($("#text_box").val());
+		var left_num = parseInt($("#left_num").html());
+
+		if(buy_num >= left_num){
+			$("#text_box").val(left_num);
+		}
+		if(buy_num <= 0){
+			$("#text_box").val(1);
+		}
+	});
+
+	$(document).on("click","#LikBasket",function(){
+		var buy_num = parseInt($("#text_box").val());
+		var goods_id = $("#goods_id").val();
+		var url = $("#add_shop_car_url").val();
+		var data = {
+			goods_id:goods_id,
+			num : buy_num
+		};
+		$.common_ajax(url,data,function(res){
+			layer.msg(res.msg);
+		})
+	});
+
+
+</script>
+
+</html>

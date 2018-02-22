@@ -1,0 +1,67 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}会员session管理{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入用户ID/用户昵称" id="" name="search_word" value="{:input('param.search_word','')}">
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+            <span class="r">共有数据：<strong>{$total|default="0"}</strong> 条</span>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>ID</th>
+            <th>session_id</th>
+            <th>uid</th>
+            <th>用户名</th>
+            <th>昵称</th>
+            <th>服务器ip</th>
+            <th>socket_id</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="10">暂无数据..</td>
+        </tr>
+        {else /}
+            {volist name="list" id="vo"}
+            <tr  class="text-c" >
+                <td>{$vo.id|default=''}</td>
+                <td>{$vo.session_id|default="--"}</td>
+                <td>{$vo.uid|default="--"}</td>
+                <td>{$vo.username|default='--'}</td>
+                <td>{$vo.user_nicename|default='--'}</td>
+                <td>{$vo.srv_ip|default="--"}</td>
+                <td>{$vo.socket_id|default="--"}</td>
+                <td>
+                    <a style="text-decoration:none" class="ml-5 open_form" href="javascript:" data-url="{:url('exec',['type'=>'edit','id'=>$vo['id']])}" title="编辑">
+                        <i class="Hui-iconfont">&#xe6df;</i>
+                    </a>
+                    <a data-url="{:url('del')}" data-id="{$vo.id|default=0}" style="text-decoration:none" class="ml-5 del_by_id" href="javascript:;" title="删除">
+                        <i class="Hui-iconfont">&#xe6e2;</i>
+                    </a>
+                </td>
+            </tr>
+            {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}
+

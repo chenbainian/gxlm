@@ -1,0 +1,41 @@
+{extend name="base:base" /}
+{block name="site_nav_0"}控制台{/block}
+{block name="site_nav_1"}统计{/block}
+{block name="site_nav_2"}实时统计{/block}
+{block name='content'}
+<center><h1>实时统计</h1></center>
+<hr/>
+
+<!--用户注册-->
+<p>总注册用户：{$all_user_num|default='0'}</p>
+<div class="chart_div" style="margin-top: 60px;">
+    <input type="text" name="start" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+    <input type="text" name="end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+    <select class="form-control chart_type" name="type" style="height:31px;width:100px ">
+        <option value="">请选择类型</option>
+        <option value="month">按月生成</option>
+        <option value="day">按日生成</option>
+    </select>
+    <button class="btn btn-success search" data-type="user"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+    <div id="user_data" style="width:70%;height:400px;"></div>
+</div>
+
+<!--充值金额-->
+<div class="chart_div">
+    <input type="text" name="start" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间">&nbsp;-&nbsp;
+    <input type="text" name="end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+    <select class="form-control chart_type" name="type" style="height:31px;width:100px ">
+        <option value="">请选择类型</option>
+        <option value="month">按月生成</option>
+        <option value="day">按日生成</option>
+    </select>
+    <button class="btn btn-success search" data-type="money"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+    <div id="money_data" style="width: 70%;height:400px;"></div>
+</div>
+<input type="hidden" id="get_user_chart" value="{:url('admin/index/get_user_chart')}">
+<input type="hidden" id="get_money_chart" value="{:url('admin/index/get_money_chart')}">
+{/block}
+{block name='js'}
+{js href="__plugin__/echarts/echarts.min.js"/}
+{js href="__static__/admin/js/index/index.js"/}
+{/block}

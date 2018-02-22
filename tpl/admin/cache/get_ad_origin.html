@@ -1,0 +1,22 @@
+<table class="table table-border table-bordered table-bg table-hover table-sort">
+    <thead>
+    <tr class="text-c">
+        <th>来源</th>
+        <th>访问次数</th>
+    </tr>
+    </thead>
+    <tbody>
+    {empty name='all_data'}
+    <tr>
+        <td class="text-c" colspan="10">暂无数据..</td>
+    </tr>
+    {else /}
+    {volist name="all_data" id="vo"}
+    <tr class="text-c">
+        <td>{$vo.origin|default='--'}</td>
+        <td>{$vo.all_num|default='0'}</td>
+    </tr>
+    {/volist}
+    {/empty}
+    </tbody>
+</table>

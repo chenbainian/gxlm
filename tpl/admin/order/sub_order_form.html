@@ -1,0 +1,59 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}订单管理{/block}
+{block name="site_nav_2"}编辑子订单{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>订单ID：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="订单ID" disabled value="{$info.order_id|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="金额" disabled value="{$info.nick_name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="实际付款金额" disabled value="{$info.goods_name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品数量：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="子订单数量" disabled  value="{$info.num|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="用户备注" disabled value="{$info.price|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>真实金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="管理员备注" disabled value="{$info.true_price|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+		<title>个人资料</title>
+
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/admin.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" /}
+		{css href="/public/static/api/css/personal.css" /}
+		{css href="/public/static/api/css/infstyle.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/js/jquery.min.js" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/js/amazeui.js" /}
+			
+	</head>
+
+	<body>
+		<!--头 -->
+		<header>
+			<article>
+				<div class="mt-logo">
+					<!--顶部导航条 -->
+					{include file='base/base1'}
+
+						<!--悬浮搜索框-->
+
+					{include file='base/base2'}
+
+						<div class="clear"></div>
+					</div>
+				</div>
+			</article>
+		</header>
+            <div class="nav-table">
+				{include file='base/base3'}
+			</div>
+			<b class="line"></b>
+		<div class="center">
+			<div class="col-main">
+				<div class="main-wrap">
+
+					<div class="user-info">
+						<!--标题 -->
+						<div class="am-cf am-padding">
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">个人资料</strong> / <small>Personal&nbsp;information</small></div>
+						</div>
+						<hr/>
+
+						<!--头像 -->
+						<div class="user-infoPic">
+
+							<div class="filePic">
+								<img class="am-circle am-img-thumbnail" src="/public/static/api/images/getAvatar.do.jpg" alt="" />
+							</div>
+
+							<p class="am-form-help">头像</p>
+
+							<div class="info-m">
+								<div><b>用户名：<i>{$user_info.username|default=''}</i></b></div>
+								<div class="u-level">
+									<span class="rank r2">
+							             <s class="vip1"></s>
+										{switch name='user_info.type'}
+										{case value='1'}初级会员{/case}
+										{case value='2'}高级会员{/case}
+										{default /}初级会员
+										{/switch}
+
+						            </span>
+								</div>
+
+							</div>
+						</div>
+
+						<!--个人信息 -->
+						<div class="info-main">
+							<form class="am-form am-form-horizontal">
+
+								<div class="am-form-group" id="user-name">
+									<label for="user-name" class="am-form-label">姓名</label>
+									<div class="am-form-content">
+										<input type="text" id="user-name2" placeholder="姓名" value="{$user_info.nick_name|default=''}">
+									</div>
+								</div>
+
+
+								<div class="am-form-group">
+									<label for="user-phone" class="am-form-label">电话</label>
+									<div class="am-form-content">
+										<input id="user-phone" placeholder="电话" type="tel" value="{$user_info.phone|default=''}">
+
+									</div>
+								</div>
+
+								<div class="am-form-group" >
+									<label for="user-name" class="am-form-label">上次登录IP</label>
+									<div class="am-form-content">
+										<input type="text"  placeholder="最后登录IP" value="{$user_info.last_login_ip|default=''}">
+									</div>
+								</div>
+
+								<div class="am-form-group">
+									<label for="user-name" class="am-form-label">上次登录</label>
+									<div class="am-form-content">
+										<input type="text" placeholder="最后登录时间" value="{$user_info.last_login_time|date='Y-m-d H:i:s',###}">
+									</div>
+								</div>
+
+
+
+								<div class="am-form-group">
+									<label for="user-birth" class="am-form-label">地址</label>
+									<div class="am-form-content birth">
+										<div class="birth-select">
+											<select>
+												<option value="a">{$user_info.province|default=''}</option>
+											</select>
+										</div>
+										<div class="birth-select">
+											<select>
+												<option value="a">{$user_info.city|default=''}</option>
+											</select>
+										</div>
+										<div class="birth-select">
+											<select>
+												<option value="a">{$user_info.area|default=''}</option>
+											</select>
+										</div>
+										<div class="birth-select">
+											<select>
+												<option value="a">{$user_info.addr|default=''}</option>
+											</select>
+										</div>
+
+									</div>
+								</div>
+
+
+
+							</form>
+						</div>
+
+					</div>
+
+				</div>
+				<!--底部-->
+				{include file='base/base4'}
+			</div>
+
+			{include file='base/base5'}
+		</div>
+
+	</body>
+
+</html>

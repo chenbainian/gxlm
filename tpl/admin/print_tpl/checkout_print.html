@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {include file="base/common_js"/}
+    {js href='__plugin__/LodopFuncs.js' /}
+</head>
+<body>
+
+<div id="sum_list" style="display: none">
+    <table style="width: 100%;font-size: 12px;">
+        {volist name='sum_list' id='vo'}
+        <tr>
+            <td>
+                {notempty name='vo.type'}
+                {switch name='vo.type'}
+                {case value='drug'}药物{/case}
+                {case value='check'}检查/体检{/case}
+                {case value='operation'}诊断/手术{/case}
+                {case value='other'}其他{/case}
+                {default /}--
+                {/switch}
+                {/notempty}
+            </td>
+            <td>
+                {$vo.sum_price|default='--'}
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+
+<div id="list" style="display:none;">
+    <table class="list" style="width: 100%;font-size: 12px;">
+        <thead>
+        <th width="250px"></th>
+        <th width="80px"></th>
+        <th width="80px"></th>
+        <th width="80px"></th>
+        <th width="80px"></th>
+        <th width="80px"></th>
+        </thead>
+        <tbody>
+        <tr>
+            {volist name='list' id='vo'}
+        <td>{$vo.name|default=''}</td>
+        <td>{$vo.dose_regimen|default=''}</td>
+        <td>{$vo.price|default=''}</td>
+        <td>{$vo.num|default=''}</td>
+        <td>{$vo.sum_price|default=''}</td>
+        <td>
+            {notempty name='vo.type'}
+            {switch name='vo.type'}
+            {case value='drug'}药物{/case}
+            {case value='check'}检查/体检{/case}
+            {case value='operation'}诊断/手术{/case}
+            {case value='other'}其他{/case}
+            {default /}--
+            {/switch}
+            {/notempty}
+        </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+</div>
+
+<a href="javascript:Design1()">如果没有打开窗口点这里</a>
+<script>
+    var LODOP; //声明为全局变量
+    function Design1() {
+        CreateFullBill();
+        LODOP.PRINT_DESIGN();
+    };
+    function CreateFullBill() {
+        LODOP=getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));
+
+        LODOP.PRINT_INITA(1,0,716,378,"{:config('CONFIG_PAY_DESIGN_PRINT_INITA')}");
+        LODOP.ADD_PRINT_SETUP_BKIMG("{:config('CONFIG_PAY_DESIGN_PATH')}");
+        LODOP.SET_SHOW_MODE("BKIMG_LEFT",{:config('CONFIG_PAY_BKIMG_LEFT')});
+        LODOP.SET_SHOW_MODE("BKIMG_TOP",{:config('CONFIG_PAY_BKIMG_TOP')});
+        LODOP.SET_SHOW_MODE("BKIMG_WIDTH","{:config('CONFIG_PAY_DESIGN_BKIMG_WIDTH')}");
+        LODOP.SET_SHOW_MODE("BKIMG_HEIGHT","{:config('CONFIG_PAY_DESIGN_BKIMG_HEIGHT')}");
+        LODOP.ADD_PRINT_TEXTA("PAT_NAME",{:config('CONFIG_PAY_PAT_NAME')},"{$pat_info.name|default=''}");
+        LODOP.ADD_PRINT_TEXTA("DATA_NOW",{:config('CONFIG_PAY_PAT_DATA_NOW')},"{:date('Y-m-d')}");
+        LODOP.ADD_PRINT_TEXTA("SUM_PRICE",{:config('CONFIG_PAY_DESIGN_SUM_PRICE')},"{$sum.sum_price}");
+        LODOP.ADD_PRINT_TEXTA("CASH_MAN",{:config('CONFIG_PAY_DESIGN_CASH_MAN')},"{:get_admin_name()}");
+        LODOP.ADD_PRINT_TEXTA("SN",{:config('CONFIG_PAY_DESIGN_SN')},"{$rec_info.sn_rec|default=''}");
+        LODOP.ADD_PRINT_HTM({:config('CONFIG_PAY_DESIGN_HTML')},$("#list").html());
+        LODOP.SET_PRINT_STYLEA(0,"ItemName","HTML");
+        LODOP.ADD_PRINT_HTM({:config('CONFIG_PAY_DESIGN_HTML_SUM')},$("#sum_list").html());
+    };
+    layer.msg('请稍候,正在准备打印..',{time:false,shade:false});
+    var i = 0;
+    var index = window.setInterval(function(){
+        console.log('当前尝试'+i++ );
+        try{
+            var LODOP=getLodop();
+            if (LODOP.VERSION) {
+                Design1();
+                layer.closeAll();
+                parent.layer.closeAll();
+                window.clearInterval(index);
+            };
+        }catch(err){
+            alert(err);
+        }
+
+    },1000)
+</script>
+</body>
+</html>

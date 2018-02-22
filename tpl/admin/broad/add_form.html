@@ -1,0 +1,59 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}轮播图管理{/block}
+{block name="site_nav_2"}编辑轮播图
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>轮播图片：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+
+            <!--dom结构部分-->
+            <div>
+                <!--用来存放item-->
+                <div id="imgList" class="img-list"><img src="" style="width:200px;height: 200px"></div>
+                <div id="img">选择图片</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>背景颜色：</label>
+        <div class="formControls col-xs-8 col-sm-5">
+            <input type="text" class="input-text" placeholder="背景颜色" name="bg_color" value="">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>排序：</label>
+        <div class="formControls col-xs-8 col-sm-5">
+            <input type="text" class="input-text" placeholder="排序" name="order" value="">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-5 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-warning radius ok_submit" type="button" data-url="{:url('add_do')}">
+                <i class="Hui-iconfont">&#xe632;</i>添加
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" id="img_src" value="{$info.img_src|default=''}" name="img_src">
+
+</form>
+
+<input type="hidden" id="swf_path" value="__static__/plugin/webuploader/0.1.5/uploader.swf"><!--swf-->
+<input type="hidden" id="server_path" value="{:url('admin/goods/up_goods_img')}"><!--上传-->
+{/block}
+
+
+
+{block name='js'}
+{js href="__plugin__/webuploader/0.1.5/webuploader.css"/}
+{js href="__plugin__/webuploader/0.1.5/webuploader.min.js"/}
+{js href="__static__/admin/js/broad/broad.js"/}
+{/block}

@@ -1,0 +1,149 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}大客户{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+    <a class="btn btn-danger radius del_all"  href="javascript:;">
+        <i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+    </span>
+    <span class="l">
+    <a class="btn btn-secondary radius open_form"  data-url="{:url('big_user_form',['type'=>'add'])}" href="javascript:;">
+        <i class="Hui-iconfont">&#xe6e2;</i> 添加大客户</a>
+    </span>
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入名称/手机号" id="" name="words" value="{:input('param.words','')}">
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th><input type="checkbox" class="check_all" id="check_all"></th>
+            <th>ID</th>
+            <th>用户昵称</th>
+            <th>手机号</th>
+            <th>邮箱</th>
+            <th>QQ</th>
+            <th>微信</th>
+            <th>标准套餐</th>
+            <th>高级套餐</th>
+            <th>终端数</th>
+            <th>总金额</th>
+            <th>销售人员</th>
+            <th>销售手机</th>
+            <th>销售邮箱</th>
+            <th>上次通知时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="16">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c" >
+            <th><input type="checkbox" class="check" data-id="{$vo['id']}" value="{$vo['id']}"></th>
+            <td>{$vo.id|default=''}</td>
+            <td>{$vo.username|default='--'}</td>
+            <td>{$vo.phone|default='--'}</td>
+            <td>{$vo.mail|default="--"}</td>
+            <td>{$vo.qq|default=''}</td>
+            <td>{$vo.wechat|default='--'}</td>
+            <td>
+                {notempty name='vo.vip_time'}
+                {$vo.vip_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='vo.s_vip_time'}
+                {$vo.s_vip_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>{$vo.nums|default="--"}</td>
+            <td>{$vo.money|default=''}</td>
+            <td>{$vo.saler_name|default='--'}</td>
+            <td>{$vo.saler_phone|default='--'}</td>
+            <td>{$vo.saler_mail|default="--"}</td>
+            <td>
+                {notempty name='vo.msg_time'}
+                {$vo.msg_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>
+                <input class="btn btn-secondary radius send_mail"  data-id="{$vo.id|default=0}" type="button" value="发送邮件">
+                    <input class="btn btn-primary radius open_form" data-url="{:url('big_user_form',['type'=>'edit','id'=>$vo.id])}"  type="button" value="编辑">
+                <input class="btn btn-danger radius del_by_id" data-url="{:url('del_big_user')}" data-id="{$vo.id|default=0}" type="button" value="删除">
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+<input type="hidden" id="del_all_url" value="{:url('del_all_big')}">
+<input type="hidden" id="send_url" value="{:url('send_expire_mail')}">
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+{block name="js"}
+<script>
+    $(function(){
+        /**
+         * 选择全部/个别
+         */
+        $(document).on("click","#check_all",function(){
+            var check_all = $(this);
+            var check = $(".check:enabled");//所有启用的checkbox
+
+            if(check_all.is(':checked')) {
+                check.prop('checked',true);
+            }else{
+                check.prop('checked',false);
+            }
+        });
+        //批量删除反馈
+        $(document).on("click",".del_all",function(){
+            var check_audit = $('.check:checked');
+            var url = $('#del_all_url').val();
+            if(check_audit.length == 0) {
+                layer.msg('请选择要删除的内容',{icon:2});
+                return false;
+            }
+            var check_str = '';
+            check_audit.each(function () {
+                check_str += $(this).data('id') + ',';
+            });
+            check_str = check_str.substring(0,check_str.length-1);
+            layer.confirm("您确定要批量删除选定内容?",{
+                btn:["确定","取消"]
+            },function(){
+                common.ajax_post(url,{id:check_str},true,function(rt){
+                    common.post_tips(rt);
+                    var obj = common.str2json(rt);
+                    if(obj.code == 1){
+                        location.replace(location);
+                    }
+                })
+            });
+        })
+    });
+    $(document).on("click",".send_mail",function(){
+        var url = $("#send_url").val();
+        var big_user_id = $(this).data("id");
+        $.common_ajax(url,{id:big_user_id},function(res){
+            layer.msg(res.msg);
+        })
+    });
+</script>
+{/block}
+

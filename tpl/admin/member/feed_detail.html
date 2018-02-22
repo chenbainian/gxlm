@@ -1,0 +1,60 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}反馈详情{/block}
+{block name="site_nav_2"}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    {volist name='list' id="vo"}
+    {if condition="$vo.type eq '1'"}
+    <div class="row cl" style="background-color: lightblue">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <textarea rows="7" cols="50">{$vo.content|default=''}</textarea>
+        </div>
+    </div>
+    {else /}
+    <div class="row cl" style="background-color: #aa2222">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>管理员：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <textarea rows="7" cols="50">{$vo.content|default=''}</textarea>
+        </div>
+    </div>
+    {/if}
+    {/volist}
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>管理员：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <textarea rows="7" cols="50" class="feedback">{$vo.content|default=''}</textarea>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button class="btn btn-primary radius add_feedback" type="button" data-url="{:url('add_feedback')}">
+                <i class="Hui-iconfont">&#xe600;</i>&nbsp;回复
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">关闭页面</button>
+        </div>
+    </div>
+    <input type="hidden" id="id" value="{$id|default=''}">
+</form>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    $(function(){
+        $(document).on("click",".add_feedback",function(){
+            var url = $(this).data("url");
+            var data = {
+                content:$(".feedback").val(),
+                id:$("#id").val()
+            };
+            $.common_ajax(url,data,function(res){
+                layer.msg(res.msg);
+                location.reload(true);
+            })
+        });
+    })
+</script>
+{/block}

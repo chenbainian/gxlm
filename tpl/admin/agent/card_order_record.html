@@ -1,0 +1,67 @@
+{extend name="base/base"/}
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}卡密订单使用记录{/block}
+{block name='content'}
+
+
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入代理商/用户名称" id="" name="word" value="{:input('param.word','')}">
+            <select class="form-control " name="time_type" style="height:31px;width:100px " >
+                <option value="l.create_time" {if condition="input('get.time_type','') eq 'l.create_time'"} selected='selected'{/if}>购买时间</option>
+                <option value="l.use_time" {if condition="input('get.time_type','') eq 'l.use_time'"} selected='selected'{/if}>使用时间</option>
+            </select>
+            <input type="text" name="start" value="{:input('param.start','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+            <input type="text" name="end" value="{:input('param.end','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="100">代理商</th>
+            <th width="60">订单号</th>
+            <th width="100">订单名称</th>
+            <th width="60">卡密种类</th>
+            <th width="100">订单金额</th>
+            <th width="100">使用人</th>
+            <th width="100">购买时间</th>
+            <th width="100">使用时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="7">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.user_login|default='后台'}</td>
+            <td>{$vo.order_id|default=''}</td>
+            <td>{$vo.name|default=''}</td>
+            <td>{$vo.title|default=''}</td>
+            <td>{$vo.money|default=''}</td>
+            <td>{$vo.username|default=''}</td>
+            <td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+            <td>{$vo.pay_time|date='Y-m-d H:i:s',###}</td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}

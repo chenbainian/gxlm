@@ -1,0 +1,105 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}抽奖管理{/block}
+{block name="site_nav_2"}充值抽奖配置{/block}
+{block name='content'}
+
+
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+     <span class="l">
+    <a class="btn btn-secondary radius open_form"  data-url="{:url('big_user_form',['type'=>'add'])}" href="javascript:;">
+        <i class="Hui-iconfont">&#xe6e2;</i> 添加奖项 </a>
+    </span>
+    <div class="text-c"> 充值抽奖开关：
+        <select class="form-control" name="recharge_award_switch" style="height:31px;width:200px ">
+            <option {if condition="input('get.recharge_award_switch','') eq '1'"} selected='selected'{/if} value="1">开</option>
+            <option {if condition="input('get.recharge_award_switch','') eq '-1'"} selected='selected'{/if} value="-1">关</option>
+        </select>
+    </div>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>奖品名称</th>
+            <th>奖品描述</th>
+            <th>奖品时间</th>
+            <th>套餐类型</th>
+            <th>中奖概率</th>
+            <th>奖品状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="10">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c" >
+
+            <td>{$vo.name|default=''}</td>
+            <td>{$vo.desc|default='--'}</td>
+            <td>{$vo.value|default='--'}</td>
+            <td>
+                {switch name="vo.type"}
+                {case value="1"}<span class="label label-success radius">普通套餐</span>{/case}
+                {case value="2"}<span class="label label-warning radius">高级套餐</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>{$vo.percent|de}</td>
+            <td>
+                {switch name="vo.pay_status"}
+                {case value="1"}<span class="label label-default radius">未付款</span>{/case}
+                {case value="2"}<span class="label label-success radius">已支付</span>{/case}
+                {case value="3"}<span class="label label-success radius">已开通</span>{/case}
+                {case value="-1"}<span class="label label-default radius">未付款</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {switch name="vo.pay_plat"}
+                {case value="alipay"}支付宝{/case}
+                {case value="wechat"}微信支付{/case}
+                {case value="tickets"}优惠券支付{/case}
+                {case value="offline"}线下付款{/case}
+                {case value="balance"}余额支付{/case}
+                {case value="agent"}代理商{/case}
+                {case value="card"}卡密{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {eq name="vo.pay_time" value=""}
+
+                {else/}
+                {$vo.pay_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+            <td>
+                {eq name="vo.create_time" value=""}
+
+                {else/}
+                {$vo.create_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+            {if condition="$user_name eq 'dapeng'"}
+            <td>
+                <input class="btn btn-danger radius del_by_id" data-url="{:url('del_order')}" data-id="{$vo.id|default=0}" type="button" value="删除">
+            </td>
+            {/if}
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+

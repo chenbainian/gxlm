@@ -1,0 +1,131 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}会员列表{/block}
+{block name='content'}
+<style>
+    .table th, .table td{
+        padding: 2px;
+    }
+</style>
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入用户ID/用户昵称" id=""
+                   name="search_word" value="{:input('param.search_word','')}">
+
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')" name=""><i
+                    class="fa fa-times"></i> 清空搜索
+            </button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>用户类型</th>
+            <th>头像</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>手机</th>
+            <th>终端数</th>
+            <th>状态</th>
+            <th>标准套餐</th>
+            <th>高级套餐</th>
+            <th>注册时间</th>
+            <th>最后登录时间</th>
+            <th>最后登录IP</th>
+            <th>注册来源</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='info'}
+        <tr>
+            <td class="text-c" colspan="13">暂无数据..</td>
+        </tr>
+        {else /}
+        <tr class="text-c">
+            <td>
+                {if condition="$info['s_vip_time'] gt time()"}
+                <span class="label label-warning radius">高级VIP</span>
+                {else /}
+                <span class="label label-default radius">标准VIP</span>
+                {/if}
+            </td>
+            <td>
+                {eq name="info.avatar" value=""}
+
+                {else/}
+                <img style="width: 32px; height: 32px;" src="{$info.avatar|default=''}" alt="用户头像">
+                {/eq}
+            </td>
+            <td>
+                {eq name='info.is_pay' value='true'}<span title="有过付费的用户" class="label label-success radius">{$info.username|default='--'}</span>{else/}{$info.username|default='--'}{/eq}
+            </td>
+            <td>
+                {notempty name='info.password'}{:rt_user_pass($info['password'], $info['username'])}{else /}{/notempty}
+            </td>
+            <td>{$info.phone|default="--"}</td>
+            <td style="padding: 0;font-size: 10px;">
+                总:{$info.num|default="0"}&nbsp;&nbsp;PC:{$info.pc_num|default="0"}&nbsp;&nbsp;APP:{$info.app_num|default="0"}&nbsp;&nbsp;插件:{$info.plugin_num|default="0"}&nbsp;&nbsp;路由:{$info.route_num|default="0"}
+            </td>
+            <td>
+                {switch name="info.status"}
+                {case value="1"}<span class="label label-success radius">正常</span>{/case}
+                {case value="2"}<span class="label label-warning radius">未验证</span>{/case}
+                {case value="-2"}<span class="label label-danger radius">禁用</span>{/case}
+                {case value="0"}<span class="label label-default radius">禁用</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+
+            <td>
+                {notempty name='info.vip_time'}
+                {if condition='(intval($info["vip_time"]) - time() lt 86400) and (intval($info["vip_time"]) - time() gt 0)'}
+                <span class="label label-danger">{$info.vip_time|date='Y-m-d H:i:s',###}</span>
+                {elseif condition='(intval($info["vip_time"]) - time() lt 604800) and (intval($info["vip_time"]) - time() gt 86400)'/}
+                <span class="label label-warning">{$info.vip_time|date='Y-m-d H:i:s',###}</span>
+                {elseif  condition='(intval($info["vip_time"]) - time() gt 604800) '/}
+                <span class="label label-success">{$info.vip_time|date='Y-m-d H:i:s',###}</span>
+                {else /}
+                <span class="label label-info">{$info.vip_time|date='Y-m-d H:i:s',###}</span>
+                {/if}
+                {else /}--
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='info.s_vip_time'}
+                <img src="__static__/admin/img/crown.png" alt="">
+                {if condition='(intval($info["s_vip_time"]) - time() lt 86400) and (intval($info["s_vip_time"]) - time() gt 0)'}
+                <span class="label label-danger">{$info.s_vip_time|date='Y-m-d H:i:s',###}</span>
+                {elseif condition='(intval($info["s_vip_time"]) - time() lt 604800) and (intval($info["s_vip_time"]) - time() gt 86400)'/}
+                <span class="label label-warning">{$info.s_vip_time|date='Y-m-d H:i:s',###}</span>
+                {elseif  condition='(intval($info["s_vip_time"]) - time() gt 604800) '/}
+                <span class="label label-success">{$info.s_vip_time|date='Y-m-d H:i:s',###}</span>
+                {else /}
+                <span class="label label-info">{$info.s_vip_time|date='Y-m-d H:i:s',###}</span>
+                {/if}
+                {else /}--
+                {/notempty}
+            </td>
+            <td>{empty name='info.create_time'}--{else /}{$info.create_time|date='Y-m-d H:i:s',###}{/empty}</td>
+            <td>{empty name='info.last_login_time'}--{else /}{$info.last_login_time|date='Y-m-d H:i:s',###}{/empty}</td>
+            <td>{$info.last_login_ip|default='--'}</td>
+            <td>{$info.origin|default='--'}</td>
+
+        </tr>
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}
+

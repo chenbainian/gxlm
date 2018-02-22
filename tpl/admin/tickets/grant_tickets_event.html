@@ -1,0 +1,43 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}注册推广{/block}
+{block name="site_nav_2"}
+注册推广配置
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐到期提前三天发放优惠券：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+				<select name="swicth" class="select">
+                    <option value="1"  {if condition="isset($swicth) AND $swicth eq '1'"}selected="selected"{/if} >开启</option>
+                    <option value="0" {if condition="isset($swicth) AND $swicth eq '0'"}selected="selected"{/if} >禁用</option>
+                </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>发放优惠券：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+				<select name="grant_coupon" class="select">
+                    {volist name='all_coupon' id="vo"}
+                    <option value="{$vo.id}"  {if condition="isset($grant_coupon) AND $grant_coupon eq $vo.id"}selected="selected"{/if} >{$vo.title|default=''}</option>
+                    {/volist}
+                </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update_conf')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+</form>
+{/block}

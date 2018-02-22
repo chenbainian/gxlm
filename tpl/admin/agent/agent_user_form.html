@@ -1,0 +1,128 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}
+修改代理商
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>账户名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text" name="user_login" value="{$info.user_login|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="password" value="">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>联系方式：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="phone" value="{$info.phone|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="addr" value="{$info.addr|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>来源：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius" style="width: 200px">
+                <select class="select" name="origin" >
+                    <option value="1" {notempty name="info.origin"}{eq name="info.origin" value="1"}selected{/eq}{/notempty} >*微信</option>
+                    <option value="2" {notempty name="info.origin"}{eq name="info.origin" value="2"}selected{/eq}{/notempty}>*网页</option>
+                    <option value="3" {notempty name="info.origin"}{eq name="info.origin" value="3"}selected{/eq}{/notempty} >*推广</option>
+                    <option value="4" {notempty name="info.origin"}{eq name="info.origin" value="4"}selected{/eq}{/notempty}>*用户</option>
+                    <option value="5" {notempty name="info.origin"}{eq name="info.origin" value="5"}selected{/eq}{/notempty}>*其他</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius" style="width: 200px">
+                <select class="select" name="status" >
+                    <option value="1" {notempty name="info.status"}{eq name="info.status" value="1"}selected{/eq}{/notempty} >*正常</option>
+                    <option value="-1" {notempty name="info.status"}{eq name="info.status" value="-1"}selected{/eq}{/notempty}>*删除</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>邮件：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text" name="mail" value="{$info.mail|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>账户余额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text"  disabled value="{$info.money|default='0'}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>联系人：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text" name="saler_name" value="{$info.saler_name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl" style="display:none">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户首次充值普通套餐推广比例：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="standards_per" value="{$info.standards_per|default='0.00'}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户首次充值高级套餐提成比例(1为100%)：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="senior_per" value="{$info.senior_per|default='0.00'}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡密数量：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text" disabled value="{$card_num|default='0'}">
+            {notempty name="info.id"}
+            <input class="btn btn-secondary radius open_form" type="button" value="修改卡密" data-url="{:url('edit_card',['agent_id'=>$info.id])}">
+            {/notempty}
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备注：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 200px" class="input-text " name="remark" value="{$info.remark|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('agent_user_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+
+{/block}

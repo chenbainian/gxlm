@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处方打印</title>
+
+    {js href="__plugin__/jquery/jquery-1.7.2.min.js" /}
+    {js href="__plugin__/layer/layer.js" /}
+    {js href="__plugin__/jquery.jqprint-0.3.js" /}
+    {js href="__static__/public/js/common.js"/}
+</head>
+<body>
+<input type="button" value="打印处方" onclick="$('.print_area').eq(0).jqprint()" id="print_btn">
+<section class="mc-main print_area">
+    <style>
+        /*reset*/
+        html {
+            height: 100%
+        }
+        body {
+            font: 14px "宋体","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1",tahoma,arial,simsun,"\5B8B\4F53";
+            background-color: #fff;
+            min-height: 100%;
+            position: relative
+        }
+
+        blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul {
+            margin: 0;
+            padding: 0
+        }
+
+        fieldset,img {
+            border: 0
+        }
+
+        address,caption,cite,code,dfn,em,strong,th,var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,ul {
+            list-style: none
+        }
+        li{
+            outline: none;
+        }
+        caption,th {
+            text-align: left
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-size: 100%;
+            font-weight: 400
+        }
+
+        q:after,q:before {
+            content: ''
+        }
+
+        abbr,acronym {
+            border: 0
+        }
+
+
+        input::-ms-clear,input::-ms-reveal {
+            display: none
+        }
+        .title_show{
+            float: left;
+            margin-bottom: 15px;
+        }
+
+
+        /*main*/
+        .mc-main{width:95%;margin:auto;box-sizing: border-box;padding:20px;position: relative;text-align: center;}
+        .mc-class-t{position: absolute;left:90px;top:30px;color:#333;font-weight:bold;font-size:16px;}
+        .mc-main>h2{line-height:50px;font-size:26px;color:#333；font-weight:600;font-family: "宋体";}
+        .mc-main>h6{line-height:20px;font-size:16px;color:#666;letter-spacing: 1px;}
+        .mc-elm{position: absolute;width:260px;height:80px;right:50px;top:20px;text-align: left;}
+        .mc-elm>img{width:100%;}
+        .mc-elm>lable{text-align:left;line-height: 20px;color:#666;font-size:16px;letter-spacing: 2px;}
+        .mc-info{width:100%;margin: auto;margin-top:25px;}
+        .mc-info>dl:after{clear: both;height:0;visibility: hidden;content:'.';display: block;}
+        .mc-info>dl>*{float:left;line-height: 32px;text-align: left;letter-spacing: 1px;height: 32px;}
+        .mc-info>dl em{font-weight:600;font-family:"黑体";font-size: 18px;}
+        .mc-info>dl>dd{}
+        .mc-con-t{line-height: 42px;width:100%;border-bottom:3px solid #333;text-align: left;margin:auto;}
+        .mc-con-t>h4{font-size:18px;line-height: 42px;font-family: "Microsoft YaHei"}
+        .mc-con-t>h4>span{padding-left:15px;line-height: 30px;font-size: 14px;font-weight:bold;}
+        .mc-form{height: 360px;line-height: 30px;font-size:14px;}
+        .mc-form>dl{width:100%;margin:auto;text-align: left;}
+        .mc-form>dl:after{content:".";visibility: hidden;height:0;display: block;clear: both;}
+        .mc-form>dl>*{float:left;}
+        .mf-name{width:25%;}
+        .mf-yl{width:10%;}
+        .mf-pc{width:10%;}
+        .mf-yf{width:10%;}
+        .mf-price{width:10%;}
+        .mf-num{width:10%;}
+        .mf-fee{width:10%;}
+        .mf-fb{width:25%;}
+        .mc-total{width:100%;border-bottom:3px solid #333;text-align: left;position: relative;}
+        .mc-total>h4{line-height: 32px;font-size:16px;}
+        .mc-total>h4>span{padding-left:40px;}
+        .mc-total>p{position: relative;line-height: 30px;top:-30px;font-weight: bold;float: right}
+        .mc-desc{position: relative;text-align:left;line-height: 30px;}
+        .mc-sg{width:400px;position: absolute;line-height: 30px;right:0px;top:0px;}
+        .mc-sg>*{float:left;;height: 30px;}
+        .mc-sg>dt{width:90px;}
+        .mc-sg>dd{width:100px;}
+        .tb_content{margin-right: 20px;}
+    </style>
+    <h2>徐州工业职业技术学院处方笺</h2>
+    <h6>[医务室专用处方]</h6>
+    <div class="mc-elm">
+        <!--<img src='' alt='' style="height: 70px;background: #999;">-->
+        <lable></lable>
+    </div>
+    <div class="mc-info">
+
+        <div class="title_show" style="clear:both">
+            <span class="tb_title">就诊编号:</span>
+            <span class="tb_content">{$rec_info.sn_rec|default=''}</span>
+            <span class="tb_title">就诊科室:</span>
+            <span class="tb_content">{$rec_info.section|default=''}</span>
+            <span class="tb_title">姓名:</span>
+            <span class="tb_content">{$pat_info.name|default=''}</span>
+            <span class="tb_title">性别:</span>
+            <span class="tb_content">
+                {switch name='pat_info.sex'}
+                    {case value='1'}男{/case}
+                    {case value='2'}女{/case}
+                    {default /}--
+                {/switch}
+            </span>
+        </div>
+        <br>
+        <div class="title_show" style="clear:both">
+            <span class="tb_title">年龄:</span>
+            <span class="tb_content">{$pat_info.age|default=''}岁</span>
+            <span class="tb_title">就诊类别:</span>
+            <span class="tb_content">{$rec_info.medical_category|default='--'}</span>
+            <span class="tb_title">发病时间:</span>
+            <span class="tb_content">{$rec_info.onset_time|default='--'}</span>
+        </div>
+    </div>
+    <div class="mc-con-t" style="clear:both">
+        <h4>临床诊断:<span>{$rec_info.diagnose|default=''}</span></h4>
+    </div>
+    <div class="mc-form">
+        <dl class="mcf-t">
+            <dt class="mf-name">药品名称/规格<dt>
+            <dt class="mf-price">单价<dt>
+            <dt class="mf-num">数量<dt>
+            <dt class="mf-fee">金额<dt>
+            <dt class="mf-yf">用法<dt>
+            <dt class="mf-pc">频次<dt>
+            <dt class="mf-fb">备注<dt>
+        </dl>
+        {volist name='list' id='vo'}
+        <dl class="mcf-c">
+            <dt class="mf-name">{$vo.name|default='--'}<dt>
+            <dt class="mf-yl">{$vo.price|default='--'}<dt>
+            <dt class="mf-pc">{$vo.num|default='--'}<dt>
+            <dt class="mf-yf">{$vo.sum_price|default='--'}<dt>
+            <dt class="mf-price">{$vo.dose_regimen|default='--'}<dt>
+            <dt class="mf-num">{$vo.frequency|default='--'}<dt>
+            <dt class="mf-fee">{$vo.remark|default='--'}<dt>
+        </dl>
+        {/volist}
+    </div>
+    <div class="mc-total">
+        <h4>药品合计：<span>{$sum_list.sum_price|default='--'} 元</span></h4>
+        <p>医师：<span>{$rec_info.nick_name|default='--'}</span></p>
+    </div>
+    <div class="mc-desc">
+        <p>
+            1.请遵医嘱服药&nbsp;&nbsp;2.窗口点清药品&nbsp;&nbsp;3.处方的当日有效&nbsp;&nbsp;4.发出药品不予退换<br>
+            打印日期：&nbsp;<span>{:date('Y-m-d H:i:s')}</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <span>发药人：</span>
+        </p>
+    </div>
+</section>
+</body>
+</html>

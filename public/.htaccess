@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+
+	#admin
+    RewriteRule ^pay_result(?:\/)?$ index.php?s=ip/pay/pay_result [QSA]
+    RewriteRule ^line(?:\/)?$ index.php?s=ip/index/line [QSA]
+    RewriteRule ^index(?:\/)?$ index.php?s=ip/index/index [QSA]
+    RewriteRule ^help(?:\/)?$ index.php?s=ip/index/help [QSA]
+    RewriteRule ^download(?:\/)?$ index.php?s=ip/index/download [QSA]
+    RewriteRule ^update_record(?:\/)?$ index.php?s=ip/index/update_record [QSA]
+    RewriteRule ^pay(?:\/)?$ index.php?s=ip/pay/index [QSA]
+    RewriteRule ^login(?:\/)?$ index.php?s=ip/account/login [QSA]
+    RewriteRule ^reg(?:\/)?$ index.php?s=ip/account/register [QSA]
+    RewriteRule ^ucenter(?:\/)?$ index.php?s=ip/ucenter/index [QSA]
+    RewriteRule ^forget(?:\/)?$ index.php?s=ip/account/forget [QSA]
+    RewriteRule ^pak_(\w+)(?:\/)?$ index.php?s=ip/pay/package/code/$1 [QSA]
+    RewriteRule ^coupon_buy(?:\/)?$ index.php?s=ip/pay/coupon_buy [QSA]
+    RewriteRule ^coupon_buy_simple(?:\/)?$ index.php?s=ip/pay/coupon_buy_simple [QSA]
+    RewriteRule ^p\/(.*)(?:\.html)?$ index.php?s=/ip/account/register/promoter/$1.html [QSA]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
+</IfModule>

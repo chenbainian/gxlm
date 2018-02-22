@@ -1,0 +1,32 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}
+修改代理商卡密
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    {volist name='all_card_cate' id="vo"}
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>{$vo.title|default=''}：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" style="width: 300px" class="input-text"  value="{$vo.title|default=''}-{$vo.money|default=''}元">
+            原有个数:<input type="text" style="width: 100px" class="input-text" disabled value="{$vo.card_num|default='0'}">
+            添加个数:<input type="text" style="width: 100px" class="input-text" name="{$vo.id}" value="0">
+        </div>
+    </div>
+    {/volist}
+
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('edit_card_do',['agent_id'=>$agent_id])}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+</form>
+
+{/block}

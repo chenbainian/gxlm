@@ -1,0 +1,24 @@
+{extend name="base:base" /}
+{block name="site_nav_0"}控制台{/block}
+{block name="site_nav_1"}数据统计{/block}
+{block name="site_nav_2"}广告来源统计{/block}
+{block name='content'}
+<h1>广告来源统计</h1>
+<div class="chart_div">
+    <input type="text" name="table_start" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+    <input type="text" name="table_end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+    <button class="btn btn-success table_search" data-type="user"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+
+</div>
+<div style="clear: both"></div>
+
+<div class="mt-20 " id="ad_origin_table">
+
+</div>
+
+<input type="hidden" id="get_chart_table_func" value="{:url('get_ad_origin')}">
+
+{/block}
+{block name='js'}
+{js href="__static__/admin/js/cache/ad_origin.js"/}
+{/block}

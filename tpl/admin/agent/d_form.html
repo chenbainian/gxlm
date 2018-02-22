@@ -1,0 +1,90 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}SEO管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加代理商信息{/case}
+{case value='edit'}编辑代理商信息{/case}
+{default /}查看代理商信息
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>域名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入域名" name="domain" value="{$info.domain|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>公司名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入公司名称" name="company" value="{$info.company|default=''}">
+        </div>
+    </div>
+
+    <!--<div class="row cl">-->
+        <!--<label class="form-label col-xs-4 col-sm-2">对应图片地址：</label>-->
+        <!--<div class="formControls col-xs-8 col-sm-9">-->
+            <!--<input type="text" class="input-text"  placeholder="请输入对应图片地址" name="pic" value="{$info.pic|default=''}">-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">公司地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入公司地址" name="address" value="{$info.address|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">联系电话：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="联系电话" name="phone" value="{$info.phone|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">邮件：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="邮件" name="email" value="{$info.email|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">qq客服代码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="qq客服代码" name="qq_custom_service" value="{$info.qq_custom_service|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('d_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button  class="btn btn-warning radius ok_submit" type="button" data-url="{:url('d_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>保存
+            </button>
+            {/case}
+            {default /}
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}
+
+{block name='js'}
+{js href='__plugin__/ueditor/1.4.3/ueditor.config.js' /}
+{js href='__plugin__/ueditor/1.4.3/ueditor.all.min.js' /}
+{js href="__static__/admin/js/article/form.js" /}
+{/block}

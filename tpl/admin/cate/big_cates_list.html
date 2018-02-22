@@ -1,0 +1,4 @@
+<option value="">商品大分类</option>
+{volist name="cates" id="vo"}
+<option  value="{$vo.id}" id="_{$vo.id}">{$vo.name|default=''}</option>
+{/volist}

@@ -1,0 +1,114 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}通知管理{/block}
+{block name="site_nav_2"}发布通知{/block}
+<!--block闭合成对出现-->
+{block name='content'}
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <button type="button"  data-url="{:url('add_inform')}" class="btn btn-success radius open_form" ><i class="Hui-iconfont">&#xe600;</i> 添加通知</button>
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c">
+            名称搜索:
+            <input type="text" name="search_word" placeholder="请输入通知类型|通知标题" class="input-text gift_giver" value="{:input('param.search_word')}" style="width:200px;">&nbsp;&nbsp;
+            时间搜索:
+            <input type="text" name="start_time" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" value="{:input('param.start_time')}">&nbsp;-&nbsp;
+            <input type="text" name="end_time" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" value="{:input('param.end_time')}">
+            <button type="submit" class="btn btn-success radius" name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default radius" onclick="$('input[name=\'search_word\']').val('')"  name="" id="search_empty"><i class="fa fa-times"></i> 清空搜索</button>
+
+        </div>
+    </form>
+</div>
+
+<div class="mt-20 list_div dataTables_wrapper no-footer">
+    <table class="table table-border table-bordered table-hover table-bg table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>序号</th>
+            <th>通知类型</th>
+            <th>通知标题</th>
+            <th>通知内容</th>
+            <th>通知时间</th>
+            <th>通知状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="search_manage">
+        {volist name="list" id="vo"}
+        <tr class="text-c" data-id="">
+            <td>{$vo.id}</td>
+            <th>{$vo.inform_type}</th>
+            <td>{$vo.title}</td>
+            <td>{$vo.content}</td>
+            <td>{$vo.create_time|date="Y-m-d H:i:s",###}</td>
+
+
+            <td>
+                {switch name="vo.status"}
+                {case value="0"}      <span class="label label-warning radius">待发布通知</span>{/case}
+                {case value="1"}     <span class="label label-success radius">已发布通知</span>{/case}
+
+                {/switch}
+            </td>
+            <td class="td-manage">
+
+                {eq name="vo.status" value="0"}
+                <a title="发布" href="javascript:;" data-url="{:url('verify_inform')}" data-id="{$vo.id|default=''}" class="btn btn-secondary ml-5 radius verify_btn" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e0;&nbsp;&nbsp;发布通知&nbsp;&nbsp;</i></a>
+                {else/}
+                <a title="已发布" href="javascript:;" class="btn btn-default ml-5 radius" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e0;&nbsp;已发布通知</i></a>
+                {/eq}
+
+                <a style="text-decoration:none" class="ml-5 open_form" href="javascript:" data-url="{:url('edit_inform',['type'=>'edit','id'=>$vo['id']])}" title="编辑">
+                    <i class="Hui-iconfont">&#xe6df;</i>
+                </a>
+                <a data-url="{:url('del_inform')}" data-id="{$vo.id|default=0}" style="text-decoration:none" class="ml-5 del_by_id" href="javascript:;" title="删除">
+                    <i class="Hui-iconfont">&#xe6e2;</i>
+                </a>&nbsp;
+
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+
+    </table>
+</div>
+
+
+<nav class="page_admin">
+    {$page|default=''}
+    <span class="r">共有数据：<strong>{$total}</strong> 条</span>
+</nav>
+{/block}
+{block name="js"}
+{js href="__static__/admin/js/gift/gift.js"/}
+<script>
+    $("#search_empty").click(function(){
+        $("input[name='start_time']").val("");
+        $("input[name='end_time']").val("");
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).on("click",".verify_btn",function(){
+        var obj = $(this);
+        var url = obj.data('url');
+        var id = obj.data('id');
+        layer.confirm('是否发布?', {
+                    btn: ['发布', '不发布'] //可以无限个按钮
+
+                },
+                function(index, layero){
+                    common.ajax_post(url,{id:id,status:"发布"},true,function(rt){
+                        common.post_tips(rt);
+                        var obj = common.str2json(rt);
+                        if(obj.code == 1){
+                            location.replace(location);
+                        }
+                    });
+                });
+    });
+</script>
+<!--block闭合成对出现-->
+{/block}
+

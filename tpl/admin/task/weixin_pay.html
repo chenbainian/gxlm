@@ -1,0 +1,15 @@
+
+<h4>微信扫码支付</h4>
+<div class="wx-pay">
+    <h4>应付金额:<span>{$total_fee|default=''}元</span></h4>
+    <div class="wp-main">
+        <div class="wp-qr">
+            <label>微信支付</label>
+            <img src="{:url('core/api/qr_base64',['text'=>base64_encode($code_url)])}">
+            <h4><i class="iconfont">&#xe671;</i>请使用微信扫一扫<br>扫描二维码支付</h4>
+        </div>
+        <div class="wp-help">
+
+        </div>
+    </div>
+</div>

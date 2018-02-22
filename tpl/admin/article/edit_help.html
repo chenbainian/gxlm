@@ -1,0 +1,54 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}帮助管理{/block}
+{block name="site_nav_2"}编辑帮助{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>新闻标题：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入公告名称" name="title" value="{$list.title|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择发布状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+				<select name="status" class="select">
+                    <option value="1"  {if condition="!empty($list['status']) AND $list['status'] eq '1'"}{/if} >显示</option>
+                    <option value="0" {if condition="!empty($list['status']) AND $list['status'] eq '0'"}{/if} >隐藏</option>
+                </select>
+				</span>
+        </div>
+    </div>
+    <div class="row cl">
+
+
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">新闻内容：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <script id="container" name="content" type="text/plain">{$list.content|default=''}</script>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('save_help')}">
+                <i class="Hui-iconfont">&#xe632;</i>保存
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$list.id|default=''}">
+</form>
+{/block}
+
+{block name='js'}
+{js href='__plugin__/ueditor/1.4.3/ueditor.config.js' /}
+{js href='__plugin__/ueditor/1.4.3/ueditor.all.min.js' /}
+{js href="__static__/admin/js/article/form.js" /}
+{/block}

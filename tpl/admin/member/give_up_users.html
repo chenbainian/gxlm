@@ -1,0 +1,92 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}流失用户{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入名称/手机号" id="" name="words" value="{:input('param.words','')}">
+
+            <input type="text" name="start" value="{:input('param.start','')}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        </div>
+
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>用户ID</th>
+            <th>用户昵称</th>
+            <th>手机号</th>
+            <th>邮箱</th>
+            <th>状态</th>
+            <th>注册时间</th>
+            <th>过期时间</th>
+            <th>最后登录时间</th>
+            <th>最后发送时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="10">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c" >
+            <td>{$vo.id|default=''}</td>
+            <td>{$vo.username|default='--'}</td>
+            <td>{$vo.phone|default='--'}</td>
+            <td>{$vo.email|default='--'}</td>
+            <td>
+                {switch name='vo.status'}
+                {case value='1'}正常{/case}
+                {case value='-1'}异常{/case}
+                {/switch}
+            </td>
+            <td>
+                {notempty name='vo.create_time'}
+                {$vo.create_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='vo.vip_time'}
+                {$vo.vip_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='vo.last_login_time'}
+                {$vo.last_login_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+            <td>
+                {notempty name='vo.msg_time'}
+                {$vo.msg_time|date="Y-m-d H:i:s",###}
+                {/notempty}
+            </td>
+
+            <td>
+                <input class="btn btn-secondary radius open_form"  data-url="{:url('query_user_orders',['id'=>$vo.id])}" type="button" value="查看该用户购买记录">
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+<input type="hidden" id="del_all_url" value="{:url('del_all')}">
+<input type="hidden" id="send_url" value="{:url('send_expire_mail')}">
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+{block name="js"}
+
+{/block}
+

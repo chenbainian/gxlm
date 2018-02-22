@@ -1,0 +1,84 @@
+{extend name="base:base" /}
+{block name="site_nav_0"}控制台{/block}
+{block name="site_nav_1"}系统{/block}
+{block name="site_nav_2"}桌面{/block}
+{block name='content'}
+<h1>数据统计(彤版)</h1>
+<div>
+    <!--<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+        <form id="form_condition" class="form-search" method="get">
+            <div class="text-c"> 名称搜索：
+
+                <input type="text" class="input-text" style="width:250px" placeholder="" id="" name="origin" value="">
+                <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+                <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+            </div>
+        </form>
+    </div>-->
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover table-sort">
+            <thead>
+            <tr class="text-c">
+                <th width="80">时间</th>
+                <th width="80">注册量</th>
+                <th width="80">充值金额</th>
+                <th width="100">订单数</th>
+                <th width="60">续费客户</th>
+                <th width="60">流失客户</th>
+                <th width="60">新增VIP</th>
+            </tr>
+            </thead>
+            <tbody>
+            {empty name='data'}
+            <tr>
+                <td class="text-c" colspan="7">暂无数据..</td>
+            </tr>
+            {else /}
+            {volist name="data" id="vo"}
+            <tr class="text-c">
+                <td>{$vo.title|default=''}</td>
+                <td>{$vo.reg|default='0'}</td>
+                <td>{$vo.recharge_money|default='0'}</td>
+                <td>{$vo.order_num|default='0'}</td>
+                <td>{$vo.continue_vip|default='0'}</td>
+                <td>{$vo.give_up_vip|default='0'}</td>
+                <td>{$vo.new_vip|default='0'}</td>
+            </tr>
+            {/volist}
+            {/empty}
+            </tbody>
+        </table>
+    </div>
+    <nav class="page_admin">
+        {$pages|default=''}
+    </nav>
+</div>
+
+<!--图表-->
+<div class="chart_div">
+    <select class="form-control table_type" multiple="true" size="6" >
+        <option value="reg">注册量</option>
+        <option value="recharge_money">充值金额</option>
+        <option value="order_num">订单数</option>
+        <option value="continue_vip">续费用户</option>
+        <option value="give_up_vip">流失用户</option>
+        <option value="new_vip">新增VIP</option>
+    </select>
+    <select class="form-control time_type" style="height:31px;width:200px" >
+        <option value="now">今日</option>
+        <option value="yesterday">昨日</option>
+        <option value="day_before">最近48小时</option>
+        <option value="recent_week">最近一周</option>
+        <option value="recent_month">最近一月</option>
+    </select>
+    <button class="btn btn-success search"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+</div>
+
+<input type="hidden" id="get_chart_data" value="{:url('admin/cache/get_chart_data_new')}">
+<input type="hidden" id="data_type" value="order">
+{/block}
+{block name='js'}
+{js href="__plugin__/echarts/echarts.min.js"/}
+{js href="__static__/admin/js/cache/new_index.js"/}
+{/block}

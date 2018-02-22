@@ -1,0 +1,71 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}会员管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加IP黑名单{/case}
+{case value='edit'}编辑IP黑白名单{/case}
+{default /}查看详情
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>黑名单用户ID：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写黑名单用户ID" name="uid" value="{$info.uid|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>黑名单用户IP：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写黑名单用户IP" name="ip" value="{$info.ip|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>原因：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <textarea class="textarea radius" name="reason" placeholder="请填写原因">{$info.reason|default=""}</textarea>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>锁定时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            {switch name="type"}
+               {case value="add"}
+               <input type="text" class="input-text" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" placeholder="请选择锁定时间,不填写默认为当前时间" name="expire_time">
+                {/case}
+                {case value="edit"}
+                <input type="text" class="input-text" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" placeholder="请选择锁定时间,不填写默认为当前时间" name="expire_time" value="{$info.expire_time|date='Y-m-d H:i:s',###}">
+                {/case}
+                {default /}--
+            {/switch}
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button class="btn btn-primary radius ok_submit" type="button" data-url="{:url('bw_update')}">
+                <i class="Hui-iconfont">&#xe600;</i>&nbsp;确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('bw_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;保存内容
+            </button>
+            {/case}
+            {default /}查看配置
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">关闭页面</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}
+{block name="js"}
+{/block}

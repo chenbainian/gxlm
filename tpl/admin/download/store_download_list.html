@@ -1,0 +1,50 @@
+{extend name="base:base" /}
+{block name="site_nav_0"}控制台{/block}
+{block name="site_nav_1"}下载管理{/block}
+{block name="site_nav_2"}下载量详情{/block}
+{block name='content'}
+<h1>{$info.cate_name|default=''}</h1>
+<!--用户注册-->
+<div class="chart_div">
+    <input type="text" name="start" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+    <input type="text" name="end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+    <select class="form-control chart_type" name="type" style="height:31px;width:100px ">
+        <option value="">请选择类型</option>
+        <option value="month">按月生成</option>
+        <option value="day">按日生成</option>
+    </select>
+    <button class="btn btn-success search" data-type="user"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+    <div id="bus_data" style="width:70%;height:400px;"></div>
+</div>
+<div style="clear: both"></div>
+
+<div class="row cl" style="margin-left: 30px">
+
+    <div class="formControls col-xs-8 col-sm-9">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>下载量：</label>
+        <input type="text" style="width: 200px" class="input-text click_num" value="">
+    </div>
+</div>
+<div class="row cl" style="margin-left: 30px">
+    <div class="formControls col-xs-8 col-sm-9">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>日期：</label>
+        <input type="text" name="date" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="input-text" style="width:200px;" placeholder="" >
+    </div>
+</div>
+<div class="row cl">
+    <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+        <button  class="btn btn-primary radius update_bus" >
+            <i class="Hui-iconfont">&#xe632;</i>确定
+        </button>
+    </div>
+</div>
+<input type="hidden" id="cate_id" value="{$info.id|default='0'}">
+<input type="hidden" id="get_chart_data" value="{:url('admin/cache/get_chart_data')}">
+<input type="hidden" id="update_bus" value="{:url('admin/download/update_down_data')}">
+<input type="hidden" id="data_type" value="down_data">
+<input type="hidden" id="func_name" value="get_store_data">
+{/block}
+{block name='js'}
+{js href="__plugin__/echarts/echarts.min.js"/}
+{js href="__static__/admin/js/download/down_data_list.js"/}
+{/block}

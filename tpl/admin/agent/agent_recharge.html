@@ -1,0 +1,79 @@
+{extend name="base/base"/}
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}代理商自己充值订单{/block}
+{block name='content'}
+
+
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+
+            <input type="text" class="input-text" style="width:250px" placeholder="请输入代理商名称/订单号"  name="search_word" value="{:input('get.search_word','')}">
+            <button type="submit" class="btn btn-success " ><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="80">ID</th>
+            <th width="60">订单号码</th>
+            <th width="60">代理商</th>
+            <th width="60">充值金额</th>
+            <th width="60">充值状态</th>
+            <th width="60">支付方式</th>
+            <th width="60">充值时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="9">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.id|default=''}</td>
+            <td>{$vo.order_id|default=''}</td>
+            <td>{$vo.username|default=''}</td>
+            <td>{$vo.money|default='0.00'}</td>
+            <td>
+                {switch name='vo.status'}
+                {case value='1'}未付款{/case}
+                {case value='2'}付款未充值{/case}
+                {case value='3'}充值成功{/case}
+                {/switch}
+            </td>
+            <td>
+                {switch name='vo.pay_plat'}
+                {case value='alipay'}支付宝{/case}
+                {case value='wechat'}微信{/case}
+                {case value='card'}卡密{/case}
+                {case value='cash'}现金{/case}
+                {case value='offline'}线下{/case}
+                {/switch}
+            </td>
+            <td>
+                {notempty name='vo.saler_name'}
+                {$vo.pay_time|date='Y-m-d H:i:s',###}
+                {/notempty}
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+
+{/block}

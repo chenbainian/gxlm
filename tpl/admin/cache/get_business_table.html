@@ -1,0 +1,34 @@
+<table class="table table-border table-bordered table-bg table-hover table-sort">
+    <thead>
+    <tr class="text-c">
+        <th>日期</th>
+        <th>花费金额</th>
+        <th>点击次数</th>
+        <th>来源</th>
+    </tr>
+    </thead>
+    <tbody>
+    {empty name='list'}
+    <tr>
+        <td class="text-c" colspan="10">暂无数据..</td>
+    </tr>
+    {else /}
+    {volist name="list" id="vo"}
+        {volist name='vo' id="vo2"}
+            <tr class="text-c">
+                <td>{$vo2.date|default='--'}</td>
+                <td>{$vo2.business_spend|default='0'}</td>
+                <td>{$vo2.click|default='0'}</td>
+                <td>{$vo2.origin|default=''}</td>
+            </tr>
+        {/volist}
+    {/volist}
+    <tr class="text-c">
+        <td>该时间段</td>
+        <td>总金额:{$sum_business_spend|default='0'}</td>
+        <td>总点击:{$sum_click|default='0'}</td>
+        <td>--</td>
+    </tr>
+    {/empty}
+    </tbody>
+</table>

@@ -1,0 +1,259 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}测试{/block}
+{block name="site_nav_2"}软件测试{/block}
+{block name='content'}
+
+<div class="page-container">
+    <form class="form form-horizontal form_base" id="form-article-add" autocomplete="off">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>服务器id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" placeholder="请输入.." value="1" class="input-text" id="srv_id" name="srv_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>服务器地址：</label>
+            <div class="formControls col-xs-4 col-sm-5">
+                <input type="text" placeholder="请输入.." class="input-text" name="srv_ip">
+            </div>
+            <div class="formControls col-xs-4 ">
+                <input type="button" value="获取当前服务器IP" class="btn btn-success-outline get_ip">
+                <input type="button" value="设置IP" class="btn btn-warning set_ip">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户session：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" placeholder="请输入.." value="ce31475c8048bfd5159a522222b5a3a1"
+                       class="input-text" name="session_id">
+            </div>
+        </div>
+    </form>
+    <style>
+        .tabCon label {
+            text-align: right;
+        }
+    </style>
+    <br>
+    <div id="tab-system" class="HuiTab">
+        <div class="tabBar cl">
+            <span>1.请求vpn连接地址</span>
+            <span>2.断开释放handle</span>
+            <span>3.发策略地址做局域网路由</span>
+            <span>4.释放策略路由</span>
+            <span>5.发handle,返回子handle</span>
+            <span>6.释放handle</span>
+            <span>7.自定义</span>
+        </div>
+        <br>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_1')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="100" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>公网IP：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="public_ip">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_2')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="101" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>handle：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="handle">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_3')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="102" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>LAN IP：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="lan_ip">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>handle：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="handle">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_4')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="103" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>handle：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="handle">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_5')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>lan_ip：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="lan_ip">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="104" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>handle：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="handle">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tabCon">
+            <form data-url="{:url('api/client/step_6')}">
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>code：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="105" class="input-text" name="code">
+                    </div>
+                </div>
+                <div class="row cl">
+                    <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>handle：</label>
+                    <div class="formControls col-xs-8 col-sm-9">
+                        <input type="text" placeholder="请输入.." value="" class="input-text" name="handle">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button class="btn btn-primary send" type="button"><i
+                        class="Hui-iconfont">&#xe632;</i> 发送
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <textarea autocomplete="off" id="return_val" class="textarea" style="height: 300px;"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <input type="hidden" id="get_srv_info" value="{:url('get_srv_info')}">
+    <input type="hidden" id="set_srv_info" value="{:url('set_srv_info')}">
+    <script>
+        $(function () {
+            $.Huitab("#tab-system .tabBar span", "#tab-system .tabCon", "current", "click", "0");
+
+            var func = {
+                init: function () {
+
+                },
+                //根据id获取信息
+                get_srv_info: function () {
+                    var id = $("input[name='srv_id']").val();
+                    if (!id) {
+                        layer.msg('服务器id不能为空');
+                        return;
+                    }
+                    var url = $("#get_srv_info").val();
+                    var param = {"id": $("#srv_id").val()};
+                    common.ajax_post(url, param, true, function (rt) {
+                        common.post_tips(rt, function (obj) {
+                            if (obj.code == 1) {
+                                $("input[name='srv_ip']").val(obj.ip);
+                            }
+                            else {
+                                layer.msg(obj.msg);
+                            }
+                        })
+                    });
+                },
+                //设置ip信息
+                set_srv_info: function () {
+                    var id = $("input[name='srv_id']").val();
+                    if (!id) {
+                        layer.msg('服务器id不能为空');
+                        return;
+                    }
+                    var ip = $("input[name='srv_ip']").val();
+                    if (!ip) {
+                        layer.msg('服务器ip不能为空');
+                        return;
+                    }
+                    var url = $("#set_srv_info").val();
+                    var param = {
+                        "id": id,
+                        "ip": ip
+                    };
+                    common.ajax_post(url, param, true, function (rt) {
+                        common.post_tips(rt)
+                    });
+                },
+                //发送参数
+                send: function () {
+                    $("#return_val").val('');
+                    var obj = $('div.tabCon:visible').find('form');
+                    var url = obj.data('url');
+                    var param_1 = $(".form_base").serialize();
+                    var param_2 = obj.serialize();
+                    var param = param_1 + '&' + param_2;
+                    common.ajax_post(url, param, true, function (rt) {
+                        $("#return_val").val(rt);
+                    })
+                }
+            };
+
+
+            $(document).on('click', '.get_ip', function () {
+                func.get_srv_info();
+            });
+
+            $(document).on('click', '.set_ip', function () {
+                func.set_srv_info();
+            });
+
+            //发送
+            $(document).on('click', '.send', function () {
+                func.send();
+            });
+        });
+    </script>
+    {/block}
+

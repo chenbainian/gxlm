@@ -1,0 +1,162 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}操作大客户{/block}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="status" disabled>
+                    <option value="1" {if condition="!empty($info['status']) AND $info['status'] eq '1'"}selected="selected"{/if}>正常</option>
+                    <option value="2" {if condition="!empty($info['status']) AND $info['status'] eq '2'"}selected="selected"{/if}>过期</option>
+                    <option value="-1" {if condition="!empty($info['status']) AND $info['status'] eq '-1'"}selected="selected"{/if}>删除</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="用户名"  name="username" value="{$info.username|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>手机：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="手机号"  name="phone" value="{$info.phone|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>邮箱：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="邮箱"  name="mail" value="{$info.mail|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>QQ：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="QQ"  name="qq" value="{$info.qq|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>微信：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="微信号"  name="wechat" value="{$info.wechat|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>普通套餐时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" readonly="readonly" name="vip_time" value="{notempty name='info.vip_time'}{$info.vip_time|date='Y-m-d H:i:s',###}{/notempty}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>高级套餐时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" readonly="readonly" name="s_vip_time" value="{notempty name='info.s_vip_time'}{$info.s_vip_time|date='Y-m-d H:i:s',###}{/notempty}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>PC终端数：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="无填0"  name="pc_num" value="{$info.nums.pc|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>APP终端数：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="无填0"  name="app_num" value="{$info.nums.app|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>插件终端数：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="无填0"  name="plugin_num" value="{$info.nums.plugin|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>路由终端数：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="无填0"  name="route_num" value="{$info.nums.route|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>总金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder=""  name="money" value="{$info.money|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>销售人：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="销售人"  name="saler_name" value="{$info.saler_name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>销售人手机：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="销售人手机"  name="saler_phone" value="{$info.saler_phone|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>销售人邮箱：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="销售人邮箱"  name="saler_mail" value="{$info.saler_mail|default=''}">
+        </div>
+    </div>
+
+    {if condition="$type neq 'add'"}
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>创建时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="创建时间" readonly name="create_time" value="{notempty name='info.create_time'}{$info.create_time|date='Y-m-d H:i:s',###}{/notempty}">
+        </div>
+    </div>
+    {/if}
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update_big_user')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('update_big_user')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;保存
+            </button>
+            {/case}
+            {default /}
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+<input type="hidden" id="swf_path" value="__static__/plugin/webuploader/0.1.5/uploader.swf"><!--swf-->
+<input type="hidden" id="server_path" value="{:Url('core/upload/upload_img')}"><!--上传-->
+{/block}
+{block name="js"}
+{js href="__plugin__/webuploader/0.1.5/webuploader.min.js"/}
+{js href="__static__/admin/js/member/member.js"/}
+{/block}

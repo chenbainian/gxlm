@@ -1,0 +1,30 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}系统配置{/block}
+{block name="site_nav_2"}
+刷新obcache缓存
+{/block}
+{block name='css'}
+{/block}
+
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+    <a class="btn btn-primary radius fresh_op"  href="javascript:;">
+        <i class="fa"></i>更新OB缓存</a>
+    </span>
+</div>
+
+<input type="hidden" id="fresh_op" value="{:url('admin/system/fresh_op')}">
+{/block}
+
+{block name='js'}
+<script>
+    $(document).on("click",".fresh_op",function(){
+        $.common_ajax($("#fresh_op").val(),{},function(rt){
+            layer.msg(rt.msg);
+        })
+    })
+</script>
+{/block}

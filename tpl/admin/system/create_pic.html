@@ -1,0 +1,42 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}系统配置{/block}
+{block name="site_nav_2"}
+刷新obcache缓存
+{/block}
+{block name='css'}
+{/block}
+
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+    <span class="l">
+    <a class="btn btn-primary radius create_pic"  href="javascript:;">
+        <i class="fa"></i>获取图片</a>
+    </span>
+</div>
+<img id="imgcontainer" src="" alt="" >
+<input type="hidden" id="create_pic" value="{:url('admin/system/create_pic_do')}">
+{/block}
+
+{block name='js'}
+<script>
+    $(document).on("click",".create_pic",function(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", $("#create_pic").val(), true);
+        xhr.responseType = "blob";
+        xhr.onload = function() {
+            if (this.status == 200) {
+                var blob = this.response;
+                var downloadUrl = window.URL.createObjectURL(blob);
+                var anchor = document.createElement("a");
+                anchor.href = downloadUrl;
+                anchor.download = "bg.gif";
+                anchor.click();
+                window.URL.revokeObjectURL(data);
+
+            } };
+        xhr.send();
+    })
+</script>
+{/block}

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>搜索页面</title>
+
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/admin.css" /}
+		{css href="/public/static/api/basic/css/demo.css" /}
+		{css href="/public/static/api/css/seastyle.css" /}
+		{css href="/public/static/api/basic/js/jquery-1.7.min.js" /}
+		{css href="/public/static/api/js/script.js" /}
+		{css href="/public/static/api/basic/js/quick_links.js" /}
+	</head>
+
+	<body>
+
+		<!--顶部导航条 -->
+		{include file='base/base1'}
+
+
+		<!--悬浮搜索框-->
+
+		{include file='base/base2'}
+
+			<div class="clear"></div>
+			<b class="line"></b>
+           <div class="search">
+			<div class="search-list">
+				<div class="nav-table">
+				{include file='base/base3'}
+				</div>
+			
+				
+					<div class="am-g am-g-fixed">
+						<div class="am-u-sm-12 am-u-md-12">
+	                  	<div class="theme-popover">														
+
+							<ul class="select">
+								{notempty name='goods_name'}
+								<p class="title font-normal">
+									<span class="fl">{$goods_name|default=''}</span>
+									<span class="total fl">搜索到<strong class="num">0</strong>件相关商品</span>
+								</p>
+								{/notempty}
+								<div class="clear"></div>
+								<li class="select-result">
+									<dl>
+										<dt>已选</dt>
+										<dd class="select-no"></dd>
+										<p class="eliminateCriteria">清除</p>
+									</dl>
+								</li>
+								<div class="clear"></div>
+								<li class="select-list">
+									<dl id="select1">
+										<dt class="am-badge am-round">分类</dt>
+									
+										 <div class="dd-conent">
+											<dd class="select-all selected"><a href="#">全部</a></dd>
+											 {volist name='big_cate_list' id='vo'}
+												<dd><a href="#" class="big_cate">{$vo.name|default=''}</a></dd>
+											 {/volist}
+										 </div>
+						
+									</dl>
+								</li>
+								<li class="select-list">
+									<dl id="select2">
+										<dt class="am-badge am-round">子分类</dt>
+										<div class="dd-conent">
+											<dd class="select-all selected"><a href="#">全部</a></dd>
+											{volist name='small_cate_list' id='vo'}
+											<dd><a href="#" class="small_cate">{$vo.name|default=''}</a></dd>
+											{/volist}
+										</div>
+									</dl>
+								</li>
+							</ul>
+							<div class="clear"></div>
+                        </div>
+							<div class="search-content" style="width: 100%">
+								<div class="sort">
+									<li class="first"><a title="综合">综合排序</a></li>
+									<li><a title="销量">销量排序</a></li>
+									<li><a title="价格">价格优先</a></li>
+									<li class="big"><a title="评价" href="#">评价为主</a></li>
+								</div>
+								<div class="clear"></div>
+								{empty name='goods_list'}
+								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes" style="text-align:center;">
+									很抱歉，没有找到您搜索的商品
+								</ul>
+								{else /}
+								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
+									{volist name='goods_list' id='vo'}
+									<li>
+										<div class="i-pic limit">
+											<img src="{$vo.img_src|default=''}" />
+											<p class="title fl">【{$vo.title|default=''}】{$vo.desc|default=''}</p>
+											<p class="price fl">
+												<b>¥</b>
+												<strong>{$vo.true_price|default='0.00'}</strong>
+											</p>
+											<p class="number fl">
+												销量<span>{$vo.show_sales_num|default='0'}</span>
+											</p>
+										</div>
+									</li>
+									{/volist}
+								</ul>
+								{/empty}
+							</div>
+							<div class="clear"></div>
+							<!--分页 -->
+							<ul class="am-pagination am-pagination-right">
+								<li class="am-disabled"><a href="#">&laquo;</a></li>
+								<li class="am-active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">&raquo;</a></li>
+							</ul>
+
+						</div>
+					</div>
+				{include file='base/base4'}
+				</div>
+
+			</div>
+
+		
+
+<div class="theme-popover-mask"></div>
+
+	</body>
+
+</html>

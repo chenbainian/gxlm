@@ -1,0 +1,35 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}注册推广{/block}
+{block name="site_nav_2"}
+注册推广配置
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl" style="margin-left: 30px">
+
+        <div class="formControls col-xs-8 col-sm-9">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>渠道名称：</label>
+            <input type="text" style="width: 200px" class="input-text" name="name" value="{$info.name|default=''}">
+        </div>
+    </div>
+    <div class="row cl" style="margin-left: 30px">
+
+        <div class="formControls col-xs-8 col-sm-9">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>渠道唯一标识符：</label>
+            <input type="text" style="width: 200px" class="input-text " name="code" value="{$info.code|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update_origin')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+
+{/block}

@@ -1,0 +1,175 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}新增订单{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}新增订单{/case}
+{case value='edit'}编辑订单{/case}
+{default /}查看订单
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>用户名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="username" value="{$info.username|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>订单名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="name" value="{$info.name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>订单金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="money" value="{$info.money|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>订单状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+                    <select name="status" class="select">
+                        <option value="1"  >正常</option>
+                        <!--<option value="-2"  >禁用</option>-->
+                    </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐类型：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+                    <select name="pak_type" class="select">
+                        <option value="senior" {if condition="!empty($info['pak_type']) AND $info['pak_type'] eq 'senior' "}selected="selected"{/if}>超级VIP套餐</option>
+                        <option value="standard" {if condition="!empty($info['pak_type']) AND $info['pak_type'] eq 'standard' "}selected="selected"{/if}>普通VIP套餐</option>
+                    </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>支付状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+                    <select  name="pay_status" class="select">
+                        <!--<option  value="1">未支付</option>
+                        <option  value="2">已支付(未开通)</option>-->
+                        <option  value="3">已开通</option>
+                    </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>支付方式：</label>
+        <div class="formControls col-xs-8 col-sm-9" >
+				<span class="select-box">
+                    <select  name="pay_plat" class="select">
+                        <option  value="alipay" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'alipay' "}selected="selected"{/if}>支付宝</option>
+                        <option  value="wechat" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'wechat' "}selected="selected"{/if}>大鹏微信</option>
+                        <option  value="card" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'card' "}selected="selected"{/if}>卡密</option>
+                        <option  value="cash" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'cash' "}selected="selected"{/if}>现金</option>
+                        <option  value="offline" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'offline' "}selected="selected"{/if}>线下</option>
+                        <option  value="yituan" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'yituan' "}selected="selected"{/if}>一团</option>
+                        <option  value="dp_card" {if condition="!empty($info['pay_plat']) AND $info['pay_plat'] eq 'dp_card' "}selected="selected"{/if}>大鹏银行卡</option>
+                    </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>付款时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" name="pay_time" value="{$info.pay_time|default=''}" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="付款时间" >
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>开通时长：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" style="width:100px;" name="expire_year" value="{$info['expire_time']['year']|default='0'}"> &nbsp年&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="expire_month" value="{$info['expire_time']['month']|default='0'}"> &nbsp月&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="expire_day" value="{$info['expire_time']['day']|default='0'}"> &nbsp日&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="expire_hour" value="{$info['expire_time']['hour']|default='0'}"> &nbsp时&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="expire_sec" value="{$info['expire_time']['sec']|default='0'}"> &nbsp分&nbsp
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>同时在线终端数量：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="all_online_num" value="{$info.terminal.num|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>pc同时在线数量：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="pc_online_num" value="{$info.terminal.pc_num|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>APP同时在线数量：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="app_online_num" value="{$info.terminal.app_num|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>创建人：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="deal_user" value="{$info.deal_user|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>备注：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="remark" value="{$info.remark|default=''}">
+        </div>
+    </div>
+
+    {notempty name='bonuses'}
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>奖金：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" readonly  value="{$bonuses|default=''}">
+        </div>
+    </div>
+    {/notempty}
+
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button  class="btn btn-primary radius add_order" type="button" data-url="{:url('add_order_do')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            {/case}
+            {/switch}
+            {/notempty}
+            <button onClick="window.close();;" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input id="res" name="res" type="reset" style="display:none;" />
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+
+{/block}
+{block name='js'}
+
+{/block}
+

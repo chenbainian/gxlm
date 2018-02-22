@@ -1,0 +1,70 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}
+卡密管理
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡密标题：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="卡密标题" name="title" value="{$info.title|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡密时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" style="width:100px;" name="card_year" value="{$card['year']|default='0'}"> &nbsp年&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="card_month" value="{$card['month']|default='0'}"> &nbsp月&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="card_day" value="{$card['day']|default='0'}"> &nbsp日&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="card_hour" value="{$card['hour']|default='0'}"> &nbsp时&nbsp
+            <input type="text" class="input-text" style="width:100px;" name="card_sec" value="{$card['sec']|default='0'}"> &nbsp分&nbsp
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡密类型：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="card_type" >
+                    <option value="1"  {notempty name="info.card_type"}{eq name="info.card_type" value="1"}selected{/eq}{/notempty} >*普通套餐</option>
+                    <option value="2"  {notempty name="info.card_type"}{eq name="info.card_type" value="2"}selected{/eq}{/notempty}>*高级套餐</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>卡密状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="status" >
+                    <option value="1" {notempty name="info.status"}{eq name="info.status" value="1"}selected{/eq}{/notempty} >*正常</option>
+                    <option value="-1" {notempty name="info.status"}{eq name="info.status" value="-1"}selected{/eq}{/notempty}>*删除</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">卡密金额：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" name="money" value="{$info.money|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">卡密终端数：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" readonly name="terminal_num" value="1">
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('card_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;保存
+            </button>
+
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}

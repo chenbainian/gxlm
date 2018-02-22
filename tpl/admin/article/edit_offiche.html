@@ -1,0 +1,143 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}公告管理{/block}
+{block name="site_nav_2"}编辑公告{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>公告名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  placeholder="请输入公告名称" name="title" value="{$list.title|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+                <select name="is_show" class="select">
+                    <option value="1"  {if condition="!empty($list['is_show']) AND $list['is_show'] eq '1'"}selected="selected"{/if} >显示</option>
+                    <option value="0" {if condition="!empty($list['is_show']) AND $list['is_show'] eq '0'"}selected="selected"{/if} >隐藏</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl" >
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择类型：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+                <select name="type" class="select type">
+                    <option value="1"  {if condition="!empty($list['type']) AND $list['type'] eq '1'"}selected="selected"{/if} >系统消息</option>
+                    <option value="2" {if condition="!empty($list['type']) AND $list['type'] eq '2'"}selected="selected"{/if} >跳转消息</option>
+                    <option value="3"  {if condition="!empty($list['type']) AND $list['type'] eq '3'"}selected="selected"{/if} >打开应用</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl" id="activity">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择应用动作：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+                <select name="activity" class="select ">
+                    <option value="1"  {if condition="!empty($list['activity']) AND $list['activity'] eq '1'"}selected="selected"{/if} >关注微信弹窗</option>
+                    <option value="2"  {if condition="!empty($list['activity']) AND $list['activity'] eq '2'"}selected="selected"{/if} >绑定手机页</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>请选择平台：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+                <select name="plat" class="select plat_select">
+                    <option value="1"  {if condition="!empty($list['plat']) AND $list['plat'] eq '1'"}selected="selected"{/if} >全部</option>
+                    <option value="2"  {if condition="!empty($list['plat']) AND $list['plat'] eq '2'"}selected="selected"{/if} >安卓</option>
+                    <option value="3" {if condition="!empty($list['plat']) AND $list['plat'] eq '3'"}selected="selected"{/if} >ios</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">公告内容：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder=公告内容 name="content" value="{$list.content|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl" id="android_url">
+        <label class="form-label col-xs-4 col-sm-2">安卓跳转链接：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="如果是提示,请略过" name="android_url" value="{$list.android_url|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl" id="ios_url">
+        <label class="form-label col-xs-4 col-sm-2">IOS跳转链接：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="如果是提示,请略过" name="ios_url" value="{$list.ios_url|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('edit_offiche_do')}">
+                <i class="Hui-iconfont">&#xe632;</i>保存
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$list.id|default=''}">
+</form>
+{/block}
+
+{block name='js'}
+
+<script>
+    $(function(){
+
+        $(".plat_select").on("change",function(){
+            change_dom();
+        });
+        $(".type").on("change",function(){
+            change_dom();
+        });
+
+        function change_dom(){
+            var type = $(".type").val();//消息类型 1提示 2跳转  3 动作
+            var activity = $("#activity");//动作类型
+            var android_url = $("#android_url");//安卓地址
+            var ios_url = $("#ios_url");//ios地址
+            var plat = $(".plat_select").val();//平台
+
+            if(type == 1){
+                activity.hide();
+                android_url.hide();
+                ios_url.hide();
+            }else if(type == 2){
+                activity.hide();
+                if(plat == 1){
+                    android_url.show();
+                    ios_url.show();
+                }else if(plat == 2){
+                    android_url.show();
+                    ios_url.hide();
+                }else{
+                    android_url.hide();
+                    ios_url.show();
+                }
+            }else{
+                activity.show();
+                android_url.hide();
+                ios_url.hide();
+            }
+        }
+        change_dom();
+    })
+
+</script>
+{/block}

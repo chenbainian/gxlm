@@ -1,0 +1,74 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}APP管理{/block}
+{block name="site_nav_2"}
+APP引导页管理
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>平台：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+				<span class="select-box">
+                    <select name="plat" class="select">
+                        <option value="ios" {if condition="!empty($info['plat']) AND $info['plat'] eq 'ios' "}selected="selected"{/if}>IOS</option>
+                        <option value="android" {if condition="!empty($info['plat']) AND $info['plat'] eq 'android' "}selected="selected"{/if}>安卓</option>
+                    </select>
+				</span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类型：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <span class="select-box">
+                <select name="type" class="select">
+                    <option value="2" {if condition="!empty($info['type']) AND $info['type'] eq '2' "}selected="selected"{/if}>引导图</option>
+                    <option value="1" {if condition="!empty($info['type']) AND $info['type'] eq '1' "}selected="selected"{/if}>启动图</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <img class="radius" src="{$info.img_path|default=''}" style="width: 70px;height: 70px;">
+            <input type="file" class="file_upload" value="选择图片" accept="image/*">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>排序：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="order" value="{$info.order|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>跳转地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  name="url" value="{$info.url|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('guide_update')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input id="res" name="res" type="reset" style="display:none;" />
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+    <input type="hidden" name="img_path" value="{$info.img_path|default=''}">
+</form>
+<input type="hidden" id="upload_url" value="{:url('upload/base64_up_img')}">
+
+{/block}
+{block name='js'}
+{js href="__plugin__/resize_img/lrz.mobile.min.js" /}
+{js href='__admin__/js/app/guide_img.js'}
+{/block}
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>首页</title>
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/css/admin.css" /}
+		{css href="/public/static/api/basic/css/demo.css" /}
+		{css href="/public/static/api/css/hmstyle.css" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/js/jquery.min.js" /}
+		{css href="/public/static/api/AmazeUI-2.4.2/assets/js/amazeui.min.js" /}
+
+	</head>
+
+	<body>
+		<div class="hmtop">
+			<!--顶部导航条 -->
+			{include file='base/base1'}
+
+				<!--悬浮搜索框-->
+
+			{include file='base/base2'}
+
+				<div class="clear"></div>
+			</div>
+
+			<div class="banner">
+                      <!--轮播 -->
+						<div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
+							<ul class="am-slides">
+								{volist name='broad_list' id='vo'}
+								<li style="background: {$vo.bg_color|default=''};"><img style="width: 1100px;height: 430px" src="{$vo.img_src|default=''}" /></li>
+								{/volist}
+							</ul>
+						</div>
+						<div class="clear"></div>
+			</div>
+
+			<div class="shopNav">
+				<div class="slideall">
+
+					{include file='base/base3'}
+
+						<!--侧边导航 -->
+						<div id="nav" class="navfull">
+							<div class="area clearfix">
+								<div class="category-content" id="guide_2">
+
+									<div class="category">
+										<ul class="category-list" id="js_climit_li">
+											{volist name='big_cates' id='vo'}
+											<li class="appliance js_toggle relative first">
+												<div class="category-info">
+													<h3 class="category-name b-category-name"><i><img src="/public/static/api/images/cake.png"></i><a class="ml-22" title="{$vo.name|default=''}">{$vo.name|default=''}</a></h3>
+													<em>&gt;</em></div>
+												<div class="menu-item menu-in top">
+													<div class="area-in">
+														<div class="area-bg">
+															<div class="menu-srot">
+																<div class="sort-side">
+																	<dl class="dl-sort">
+																		{volist name='small_cates' id='vo2'}
+																		{if condition="$vo.id eq $vo2.parent_id"}
+																			<dt><span title="{$vo2.name|default=''}">{$vo2.name|default=''}</span></dt>
+																		{/if}
+																		{/volist}
+																		{volist name='goods' id='vo3'}
+																		{if condition="$vo3.big_cate_id eq $vo.id"}
+																		<dd><a title="{$vo3.title|default=''}" href="#"><span>{$vo3.title|default=''}</span></a></dd>
+																		{/if}
+																		{/volist}
+																	</dl>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											<b class="arrow"></b>
+											</li>
+											{/volist}
+											{for start="0" end="10-count($big_cates)"}
+												<li class="appliance js_toggle relative">
+
+												</li>
+											{/for}
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!--轮播 -->
+						<script type="text/javascript">
+							(function() {
+								$('.am-slider').flexslider();
+							});
+							$(document).ready(function() {
+								$("li").hover(function() {
+									$(".category-content .category-list li.first .menu-in").css("display", "none");
+									$(".category-content .category-list li.first").removeClass("hover");
+									$(this).addClass("hover");
+									$(this).children("div.menu-in").css("display", "block")
+								}, function() {
+									$(this).removeClass("hover")
+									$(this).children("div.menu-in").css("display", "none")
+								});
+							})
+						</script>
+
+
+					<!--小导航 -->
+
+					<!--走马灯 -->
+
+					<div class="clear"></div>
+				</div>
+				<script type="text/javascript">
+					if ($(window).width() < 640) {
+						function autoScroll(obj) {
+							$(obj).find("ul").animate({
+								marginTop: "-39px"
+							}, 500, function() {
+								$(this).css({
+									marginTop: "0px"
+								}).find("li:first").appendTo(this);
+							})
+						}
+						$(function() {
+							setInterval('autoScroll(".demo")', 3000);
+						})
+					}
+				</script>
+			</div>
+			<div class="shopMainbg">
+				<div class="shopMain" id="shopmain">
+
+					<!--今日推荐 -->
+
+
+					<div class="clear "></div>
+
+				{volist name='big_cates' id='vo'}
+				<div class="big_cate">
+					<div class="am-container ">
+						<div class="shopTitle ">
+							<h4>{$vo.name|default='其他'}</h4>
+							<div class="today-brands ">
+								{volist name='small_cates' id='vo2'}
+									{if condition="$vo.id eq $vo2.parent_id"}
+										<a href="#">{$vo2.name|default=''}</a>
+									{/if}
+								{/volist}
+							</div>
+							<span class="more ">
+                    <a class="more-link " href="# ">更多美味</a>
+                        </span>
+						</div>
+					</div>
+					<div class="am-g am-g-fixed flood method3 ">
+						<ul class="am-thumbnails ">
+							{volist name='goods' id='vo3'}
+								{if condition="$vo3.big_cate_id eq $vo.id"}
+									<li>
+										<div class="list ">
+											<a href="{:url('goods/goods_detail',['goods_id'=>$vo3.id])}">
+												<img src="{$vo3.img_src|default=''}" />
+												<div class="pro-title ">{$vo3.title|default=''}</div>
+												<span class="e-price ">{$vo3.true_price|default=''}</span>
+											</a>
+										</div>
+									</li>
+								{/if}
+							{/volist}
+						</ul>
+
+					</div>
+
+				</div>
+				{/volist}
+
+				{include file='base/base4'}
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--引导 -->
+
+		<div class="navCir">
+			<li class="active"><a href="home3.html"><i class="am-icon-home "></i>首页</a></li>
+			<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
+			<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+			<li><a href="/public/static/api/person/index.html"><i class="am-icon-user"></i>我的</a></li>
+		</div>
+		<!--菜单 -->
+
+
+		{css href="/public/static/api/basic/js/jquery.min.js" /}
+		{css href="/public/static/api/basic/js/quick_links.js" /}
+	</body>
+
+</html>

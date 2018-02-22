@@ -1,0 +1,102 @@
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}订单管理{/block}
+{block name="site_nav_2"}订单列表{/block}
+{block name='content'}
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th>订单ID</th>
+            <th>订单号</th>
+            <th>用户ID</th>
+            <th>订单类型</th>
+            <th>用户昵称</th>
+            <th>订单名称</th>
+            <th>订单金额</th>
+            <th>订单状态</th>
+            <th>支付状态</th>
+            <th>支付方式</th>
+            <th>支付时间</th>
+            <th>创建时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="11">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr  class="text-c" >
+            <td>{$vo.id|default='--'}</td>
+            <td>{$vo.order_id|default='--'}</td>
+            <td>{$vo.uid|default=''}</td>
+            <td>
+                {switch name="vo.type"}
+                {case value="open"}<span class="label label-success radius">开通业务</span>{/case}
+                {case value="convert"}<span class="label label-warning radius">兑换卡密</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>{$vo.username|default='--'}</td>
+            <td>{$vo.name|default='--'}</td>
+            <td >{$vo.money|default="--"}</td>
+            <td>
+                {switch name="vo.status"}
+                {case value="1"}<span class="label label-success radius">正常</span>{/case}
+                {case value="-1"}<span class="label label-warning radius">异常</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {switch name="vo.pay_status"}
+                {case value="1"}<span class="label label-default radius">未付款</span>{/case}
+                {case value="2"}<span class="label label-success radius">已支付</span>{/case}
+                {case value="3"}<span class="label label-success radius">已开通</span>{/case}
+                {case value="-1"}<span class="label label-default radius">未付款</span>{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {switch name="vo.pay_plat"}
+                {case value="alipay"}支付宝{/case}
+                {case value="wechat"}微信支付{/case}
+                {case value="tickets"}优惠券支付{/case}
+                {case value="under_line"}线下付款{/case}
+                {case value="balance"}余额支付{/case}
+                {case value="card"}卡密兑换{/case}
+                {default /}--
+                {/switch}
+            </td>
+            <td>
+                {eq name="vo.pay_time" value=""}
+
+                {else/}
+                {$vo.pay_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+            <td>
+                {eq name="vo.create_time" value=""}
+
+                {else/}
+                {$vo.create_time|date="Y-m-d H:i:s",###}
+                {/eq}
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$pages|default=''}
+</nav>
+{/block}
+

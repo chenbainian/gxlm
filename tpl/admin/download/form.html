@@ -1,0 +1,126 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}下载管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加版本{/case}
+{case value='edit'}编辑版本{/case}
+{default /}查看版本
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类别：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select name="edition" class="col-sm-4" style="height: 31px">
+                {volist name='editions' id="vo"}
+                <option value="{$vo.id|default='0'}" {if condition="isset($info['edition']) AND ($info['edition'] eq $vo.id) "}selected="selected"{/if}>{$vo.name|default=''}</option>
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>平台：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select name="platform" class="col-sm-4" style="height: 31px">
+                <option value="pc" {if condition="isset($info.platform) && $info.platform eq 'pc' "}selected="selected"{/if}>电脑端</option>
+                <option value="android" {if condition="isset($info.platform) && $info.platform eq 'android' "}selected="selected"{/if}>Android</option>
+                <option value="ios" {if condition="isset($info.platform) && $info.platform eq 'ios' "}selected="selected"{/if}>IOS</option>
+                <option value="plugin" {if condition="isset($info.platform) && $info.platform eq 'plugin' "}selected="selected"{/if}>插件</option>
+            </select>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>包大小：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="size" value="{$info.size|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否强制更新：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select name="force_flag" class="col-sm-4" style="height: 31px">
+                <option value="true" {if condition="isset($info.force_flag) && $info.force_flag eq 'true' "}selected="selected"{/if}>是</option>
+                <option value="false" {if condition="isset($info.force_flag) && $info.force_flag eq 'flase' "}selected="selected"{/if}>否</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="name" value="{$info.name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>更新内容：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="desc" value="{$info.desc|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>二维码地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="qrcode" value="{$info.qrcode|default=''}">
+        </div>
+    </div>
+
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>显示版本号：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="show_version" value="{$info.show_version|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>内部版本号：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="version" value="{$info.version|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>下载地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="down_url" value="{$info.down_url|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>更新地址：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="url" value="{$info.url|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button  class="btn btn-warning radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>保存
+            </button>
+            {/case}
+            {default /}
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}

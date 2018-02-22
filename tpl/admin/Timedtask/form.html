@@ -1,0 +1,300 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}管理员管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加管理员{/case}
+{case value='edit'}编辑管理员{/case}
+{default /}查看管理员
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>触发任务：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select id="Trigger_task" name="type" lay-verify="">
+                <option value="">触发任务分类</option>
+                <option value="url">url</option>
+                <option value="sh">shell</option>
+                <option value="action">内部方法</option>
+            </select>
+            <input name="path" value="">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>时间：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select id="whole" name="task" lay-verify="">
+                <option value="">请选择时间段</option>
+                <option id="day" value="day">每天</option>
+                <option id="week" value="week">每周</option>
+                <option id="month" value="month">每月</option>
+                <option id="task" value="data">定点任务触发</option>
+            </select>
+            <!------------每个几天------------------>
+            <div id="every_day" style="display:none;" >
+            <span>每隔：</span>
+                <input name="all_day" value="" id="all_day" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();">
+            <span>天执行</span>
+            </div>
+            <!------------每个几周------------------->
+            <div id="every_week" style="display:none;">
+                <div>
+                    <span>每隔：</span>
+                    <input name="all_week" value="" id="all_week" type="text" onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'');}).call(this)" onblur="this.v();">
+                    <span>周执行</span>
+                </div>
+                <div class="skin-minimal">
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-1" name="check_week[]" value="1" >
+                        <label for="checkbox-1">周一</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-2" name="check_week[]" value="2" >
+                        <label for="checkbox-2">周二</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-3" name="check_week[]" value="3" >
+                        <label for="checkbox-2">周三</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-4" name="check_week[]" value="4" >
+                        <label for="checkbox-2">周四</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-5" name="check_week[]" value="5" >
+                        <label for="checkbox-2">周五</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-6" name="check_week[]" value="6" >
+                        <label for="checkbox-2">周六</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkbox-7" name="check_week[]" value="7" >
+                        <label for="checkbox-2">周七</label>
+                    </div>
+                </div>
+            </div>
+            <!--------------------每个几月------------------->
+            <div id="every_month" style="display:none;" >
+                <span>在每：</span>
+                <!--第几个月执行-->
+                <div class="skin-minimal">
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-1" name="all_month[]" value="1" >
+                        <label for="checkbox-1">一月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-2" name="all_month[]" value="2" >
+                        <label for="checkbox-2">二月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-3" name="all_month[]" value="3" >
+                        <label for="checkbox-2">三月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-4" name="all_month[]" value="4" >
+                        <label for="checkbox-2">四月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-5" name="all_month[]" value="5" >
+                        <label for="checkbox-2">五月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-6" name="all_month[]" value="6" >
+                        <label for="checkbox-2">六月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-7" name="all_month[]" value="7" >
+                        <label for="checkbox-2">七月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-8" name="all_month[]" value="7" >
+                        <label for="checkbox-2">八月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-9" name="all_month[]" value="7" >
+                        <label for="checkbox-2">九月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-10" name="all_month[]" value="7" >
+                        <label for="checkbox-2">十月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-11" name="all_month[]" value="7" >
+                        <label for="checkbox-2">十一月</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkmonth-12" name="all_month[]" value="7" >
+                        <label for="checkbox-2">十二月</label>
+                    </div>
+                </div>
+                <span>执行</span>
+                <!--第几天执行-->
+                <div class="skin-minimal">
+                    <span>第几天执行</span><br/>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-1" name="all_checkday[]" value="1" >
+                        <label for="checkbox-1">1</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-2" name="all_checkday[]" value="2" >
+                        <label for="checkbox-2">2</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-3" name="all_checkday[]" value="3" >
+                        <label for="checkbox-2">3</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-4" name="all_checkday[]" value="4" >
+                        <label for="checkbox-2">4</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-5" name="all_checkday[]" value="5" >
+                        <label for="checkbox-2">5</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-6" name="all_checkday[]" value="6" >
+                        <label for="checkbox-2">6</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-7" name="all_checkday[]" value="7" >
+                        <label for="checkbox-2">7</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-8" name="all_checkday[]" value="8" >
+                        <label for="checkbox-2">8</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-9" name="all_checkday[]" value="9" >
+                        <label for="checkbox-2">9</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-10" name="all_checkday[]" value="10" >
+                        <label for="checkbox-2">10</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-11" name="all_checkday[]" value="11" >
+                        <label for="checkbox-2">11</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-12" name="all_checkday[]" value="12" >
+                        <label for="checkbox-2">12</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-13" name="all_checkday[]" value="13" >
+                        <label for="checkbox-2">13</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-14" name="all_checkday[]" value="14" >
+                        <label for="checkbox-2">14</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-15" name="all_checkday[]" value="15" >
+                        <label for="checkbox-2">15</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-16" name="all_checkday[]" value="16" >
+                        <label for="checkbox-2">16</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-17" name="all_checkday[]" value="17" >
+                        <label for="checkbox-2">17</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-18" name="all_checkday[]" value="18" >
+                        <label for="checkbox-2">18</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-19" name="all_checkday[]" value="19" >
+                        <label for="checkbox-2">19</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-20" name="all_checkday[]" value="20" >
+                        <label for="checkbox-2">20</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-21" name="all_checkday[]" value="21" >
+                        <label for="checkbox-2">21</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-22" name="all_checkday[]" value="22" >
+                        <label for="checkbox-2">22</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-23" name="all_checkday[]" value="23" >
+                        <label for="checkbox-2">23</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-24" name="all_checkday[]" value="24" >
+                        <label for="checkbox-2">24</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-25" name="all_checkday[]" value="25" >
+                        <label for="checkbox-2">25</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-26" name="all_checkday[]" value="26" >
+                        <label for="checkbox-2">26</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-27" name="all_checkday[]" value="27" >
+                        <label for="checkbox-2">27</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-28" name="all_checkday[]" value="28" >
+                        <label for="checkbox-2">28</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-29" name="all_checkday[]" value="29" >
+                        <label for="checkbox-2">29</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-30" name="all_checkday[]" value="30" >
+                        <label for="checkbox-2">30</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="checkday-31" name="all_checkday[]" value="31" >
+                        <label for="checkbox-2">31</label>
+                    </div>
+                </div>
+            </div>
+            <!-------------------类型区别---------------------------->
+            <div class="mt-20 skin-minimal">
+                <div class="radio-box">
+                    <input type="radio" id="radio-1" value="1" name="exec_type">
+                    <label for="radio-1">条件类型</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="radio-2" value="2" name="exec_type" checked>
+                    <label for="radio-2">循环类型</label>
+                </div>
+            </div>
+            <div>
+            <span>开始时间:</span>
+            <input value="" name="start_time"  onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+            </div>
+            <div>
+                <span>结束时间：</span>
+                <input value="" name="end_time" id="end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+            </div>
+
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            <button  class="btn btn-primary radius" id="determine"  type="button">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+</form>
+<input type="hidden" id="timedtask" value="{:url('admin/Timedtask/task_update')}">
+{/block}
+{block name="js"}
+    {js href="__static__/admin/js/timedtask/task.js"/}
+{/block}

@@ -1,0 +1,60 @@
+{extend name="base/base"/}
+{extend name="base/base"/}
+{block name="css"}{/block}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}代理商管理{/block}
+{block name="site_nav_2"}卡密使用记录{/block}
+{block name='content'}
+
+
+
+<div class="cl pd-5 bg-1 bk-gray mt-20">
+
+    <form id="form_condition" class="form-search" method="get">
+        <div class="text-c"> 名称搜索：
+            <input type="text" class="input-text" style="width:180px" placeholder="代理商名称/手机号" id="" name="search_word" value="{:input('param.search_word','')}">
+            <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+            <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
+        </div>
+    </form>
+</div>
+<div class="mt-20">
+    <table class="table table-border table-bordered table-bg table-hover table-sort">
+        <thead>
+        <tr class="text-c">
+            <th width="80">代理商</th>
+            <th width="100">手机号</th>
+            <th width="60">卡密数量</th>
+            <th width="100">已使用</th>
+            <th width="100">未使用</th>
+            <th width="100">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {empty name='list'}
+        <tr>
+            <td class="text-c" colspan="6">暂无数据..</td>
+        </tr>
+        {else /}
+        {volist name="list" id="vo"}
+        <tr class="text-c">
+            <td>{$vo.user_login|default=''}</td>
+            <td>{$vo.phone|default=''}</td>
+            <td>{$vo.all_num|default='0'}</td>
+            <td>{$vo.already_use|default='0'}</td>
+            <td>{$vo.unuse|default='0'}</td>
+            <td class="td-manage">
+                <input class="btn btn-primary radius open_form" data-url="{:url('son_card_use_record',['type'=>'-2','agent_id'=>$vo.id])}"  type="button" value="查看已使用">
+                <input class="btn btn-danger radius open_form" data-url="{:url('son_card_use_record',['type'=>'1','agent_id'=>$vo.id])}" type="button" value="查看未使用">
+            </td>
+        </tr>
+        {/volist}
+        {/empty}
+        </tbody>
+    </table>
+</div>
+
+<nav class="page_admin">
+    {$page|default=''}
+</nav>
+{/block}

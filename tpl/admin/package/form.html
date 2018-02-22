@@ -1,0 +1,73 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}下载管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加套餐{/case}
+{case value='edit'}编辑套餐{/case}
+{default /}查看套餐
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="name" value="{$info.name|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐类型：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <select name="type" class="col-sm-4" style="height: 31px">
+                <option value="">请选择套餐类型</option>
+                <option value="year" {if condition="isset($info.type) && $info.type eq 'year' "}selected="selected"{/if}>年</option>
+                <option value="month" {if condition="isset($info.type) && $info.type eq 'month' "}selected="selected"{/if}>月</option>
+                <option value="week" {if condition="isset($info.type) && $info.type eq 'week' "}selected="selected"{/if}>周</option>
+                <option value="day" {if condition="isset($info.type) && $info.type eq 'day' "}selected="selected"{/if}>天</option>
+                <option value="hour" {if condition="isset($info.type) && $info.type eq 'hour' "}selected="selected"{/if}>时</option>
+                <option value="min" {if condition="isset($info.type) && $info.type eq 'min' "}selected="selected"{/if}>分</option>
+                <option value="sec" {if condition="isset($info.type) && $info.type eq 'sec' "}selected="selected"{/if}>秒</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐条件：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="value" value="{$info.value|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>套餐价格：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text"  placeholder="请输入" name="price" value="{$info.price|default=''}">
+        </div>
+    </div>
+
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button  class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button  class="btn btn-warning radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>保存
+            </button>
+            {/case}
+            {default /}
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}

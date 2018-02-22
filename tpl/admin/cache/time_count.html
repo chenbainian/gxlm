@@ -1,0 +1,50 @@
+{extend name="base:base" /}
+{block name="site_nav_0"}控制台{/block}
+{block name="site_nav_1"}系统{/block}
+{block name="site_nav_2"}桌面{/block}
+{block name='content'}
+<h1>数据统计</h1>
+<!--用户注册-->
+<div class="chart_div">
+    <input type="text" name="start" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="开始时间" >&nbsp;-&nbsp;
+    <input type="text" name="end" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="input-text" style="width:200px;" placeholder="结束时间" >
+    <select class="form-control time_type" name="type" style="height:31px;width:100px ">
+        <option value="day">按日生成</option>
+        <option value="week">按周生成</option>
+        <option value="month">按月生成</option>
+    </select>
+    <select class="form-control chart_type"  style="height:31px;width:100px ">
+        <option value="time_reg_num">用户注册量</option>
+        <option value="time_recharge_money">充值金额</option>
+        <option value="time_recharge_num">充值单数</option>
+        <option value="time_login_num">活跃人数</option>
+    </select>
+    <button class="btn btn-success search"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+    <div id="time_reg_num" style="width:70%;height:400px;"></div>
+    <input type="hidden" class="func" value="get_user_data">
+</div>
+
+<!--充值额度-->
+<div class="chart_div">
+    <div id="time_recharge_money" style="width:70%;height:400px;"></div>
+    <input type="hidden" class="func" value="get_user_data">
+</div>
+
+<!--充值笔数-->
+<div class="chart_div">
+    <div id="time_recharge_num" style="width:70%;height:400px;"></div>
+    <input type="hidden" class="func" value="get_user_data">
+</div>
+
+<!--活跃人数-->
+<div class="chart_div">
+    <div id="time_login_num" style="width:70%;height:400px;"></div>
+    <input type="hidden" class="func" value="get_user_data">
+</div>
+
+<input type="hidden" id="get_chart_data" value="{:url('admin/cache/get_chart_data')}">
+{/block}
+{block name='js'}
+{js href="__plugin__/echarts/echarts.min.js"/}
+{js href="__static__/admin/js/cache/time_count.js"/}
+{/block}

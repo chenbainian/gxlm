@@ -1,0 +1,84 @@
+{extend name='base:base' /}
+{block name="site_nav_0"}后台{/block}
+{block name="site_nav_1"}服务器管理{/block}
+{block name="site_nav_2"}
+{notempty name='type'}
+{switch name='type'}
+{case value='add'}添加服务器{/case}
+{case value='edit'}编辑服务器{/case}
+{default /}查看服务器
+{/switch}
+{/notempty}
+{/block}
+{block name='content'}
+<form class="form form-horizontal" id="form-article-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>服务器名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写服务器名称" name="name" value="{$info.name|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>服务器ip：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写服务器ip" name="ip" value="{$info.ip|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>状态：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="status" >
+                    <option value="1"  {eq name="info.status" value="1"}selected{/eq} >*正常</option>
+                    <option value="-1"  {eq name="info" value="-1"}selected{/eq} >*删除</option>
+                    <option value="-2"  {eq name="info" value="-2"}selected{/eq} >*禁用</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>是否在线：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+             <span class="select-box radius">
+                <select class="select" name="online" >
+                    <option value="true" {eq name="info.online" value="true"}selected{/eq} >*在线</option>
+                    <option value="false" {eq name="info.online" value="false"}selected{/eq}>*离线</option>
+                </select>
+            </span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">登录名：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写服务器登录名" name="login" value="{$info.login|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-2">密码：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" placeholder="请填写服务器密码" name="passwd" value="{$info.passwd|default=''}">
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+            {notempty name='type'}
+            {switch name='type'}
+            {case value='add'}
+            <button class="btn btn-primary radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;确定
+            </button>
+            {/case}
+            {case value='edit'}
+            <button class="btn btn-warning radius ok_submit" type="button" data-url="{:url('update')}">
+                <i class="Hui-iconfont">&#xe632;</i>&nbsp;保存
+            </button>
+            {/case}
+            {default /}查看配置
+            {/switch}
+            {/notempty}
+            <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="{$info.id|default=''}">
+</form>
+{/block}
