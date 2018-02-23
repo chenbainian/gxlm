@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1518343553;s:25:"./tpl/api/base\base1.html";i:1513416791;s:25:"./tpl/api/base\base2.html";i:1513422050;s:25:"./tpl/api/base\base4.html";i:1513417054;s:29:"./tpl/api/base\common_js.html";i:1488437847;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1519378131;s:25:"./tpl/api/base\base1.html";i:1513416791;s:25:"./tpl/api/base\base2.html";i:1513422050;s:25:"./tpl/api/base\base4.html";i:1513417054;s:29:"./tpl/api/base\common_js.html";i:1488437847;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -89,12 +89,7 @@
 							<div class="clear"></div>
 							<div class="bundle-main">
 								<ul class="item-content clearfix">
-									<li class="td td-chk">
-										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170769542747" name="items[]" value="170769542747" type="checkbox">
-											<label for="J_CheckBox_170769542747"></label>
-										</div>
-									</li>
+
 									<li class="td td-item">
 										<div class="item-pic">
 											<a href="#" target="_blank" data-title="<?php echo (isset($vo['goods_name']) && ($vo['goods_name'] !== '')?$vo['goods_name']:''); ?>" class="J_MakePoint" data-point="tbcart.8.12">
@@ -155,25 +150,9 @@
 				<div class="clear"></div>
 
 				<div class="float-bar-wrapper">
-					<div id="J_SelectAll2" class="select-all J_SelectAll">
-						<div class="cart-checkbox">
-							<input class="check-all check" id="J_SelectAllCbx2" name="select-all" value="true" type="checkbox">
-							<label for="J_SelectAllCbx2"></label>
-						</div>
-						<span>全选</span>
-					</div>
-					<div class="operations">
-						<a href="#" hidefocus="true" class="deleteAll">删除</a>
-					</div>
+
 					<div class="float-bar-right">
-						<div class="amount-sum">
-							<span class="txt">已选商品</span>
-							<em id="J_SelectedItemsCount">0</em><span class="txt">件</span>
-							<div class="arrow-box">
-								<span class="selected-items-arrow"></span>
-								<span class="arrow"></span>
-							</div>
-						</div>
+						
 						<div class="price-sum">
 							<span class="txt">合计:</span>
 							<strong class="price">¥<em class="J_Total">0.00</em></strong>
@@ -241,13 +220,14 @@
 		init_all_price();
 
 		function init_price(tr_obj){
-			var num = tr_obj.children('.text_box').val();
-			var price = tr_obj.children('.J_Price').html();
+			var num = tr_obj.find('.text_box').val();
+			var price = tr_obj.find('.J_Price').html();
 			var total_price =pub.accMul(num,price);
 			tr_obj.children(".J_ItemSum").html(total_price);
 		}
 
 		$(document).on("click",'.am-btn',function(){
+			var that = $(this);
 			var url = $("#update_car_num").val();
 			var buy_num = $(this).siblings('.text_box').val();
 			var car_id = $(this).parents('.bundle').data('car_id');
@@ -256,20 +236,35 @@
 				num : buy_num,
 				car_id : car_id
 			};
+
+
 			$.common_ajax(url,data,function(res){
 				layer.msg(res.msg);
-				$(this).siblings('.text_box').val(res.ret_data.num);
-				$(this).parent('.bundle').children('.J_Price').html(res.ret_data.price);
-				init_price($(this).parent('.bundle'));
+				that.siblings('.text_box').val(res.ret_data.num);
+				that.parent('.bundle').find('.J_Price').html(res.ret_data.price);
+				init_price(that.parents('.bundle'));
 				init_all_price();
 			});
 
 		});
 
 		$(document).on("change",'.text_box',function(){
+			var that = $(this);
 			var url = $("#update_car_num").val();
 			var buy_num = $(".text_box").val();
-			var car_id = $(this).parent('.bundle').data('car_id');
+			var car_id = $(this).parents('.bundle').data('car_id');
+
+			var data = {
+				num : buy_num,
+				car_id : car_id
+			};
+			$.common_ajax(url,data,function(res){
+				layer.msg(res.msg);
+				that.val(res.ret_data.num);
+				that.parents('.bundle').find('.J_Price').html(res.ret_data.price);
+				init_price(that.parents('.bundle'));
+				init_all_price();
+			});
 		});
 	</script>
 </html>
