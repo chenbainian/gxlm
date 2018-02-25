@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1519563178;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1519568689;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -105,7 +105,11 @@
 										<div class="item-props item-props-can">
 											<span class="sku-line">商品描述：</span>
 											<span class="sku-line"><?php echo (isset($vo['desc']) && ($vo['desc'] !== '')?$vo['desc']:''); ?></span>
+											<br/>
+											<span class="sku-line">商品单位：</span>
+											<span class="sku-line"><?php echo (isset($vo['unit']) && ($vo['unit'] !== '')?$vo['unit']:''); ?></span>
 										</div>
+
 									</li>
 									<li class="td td-price">
 										<div class="item-price price-promo-promo">

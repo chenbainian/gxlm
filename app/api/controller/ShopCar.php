@@ -13,7 +13,7 @@ Class ShopCar extends Common
 
 	public function car_list(){
 		$car_list =  db_func("shop_car s")
-						->field("s.*,g.true_price,g.show_price,g.img_src,g.desc,g.num  stock_num,g.title goods_name")
+						->field("s.*,g.true_price,g.show_price,g.img_src,g.desc,g.num  stock_num,g.title goods_name,g.unit")
 						->join("goods g","g.id = s.goods_id",'left')
 						->where(['user_id'=>get_user_id(),"g.status"=>1])
 						->order('s.create_time desc')
