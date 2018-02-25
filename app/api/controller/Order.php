@@ -29,7 +29,18 @@ Class Order extends Common
 	}
 
 	public function pay(){
-		//获取购物车信息  展示给用户确定
+        //获取购物车
+        $car_list =  db_func("shop_car s")
+            ->field("s.*,g.true_price,g.show_price,g.img_src,g.desc,g.num  stock_num,g.title goods_name")
+            ->join("goods g","g.id = s.goods_id",'left')
+            ->where(['user_id'=>get_user_id(),"g.status"=>1])
+            ->order('s.create_time desc')
+            ->select();
+        //获取地址信息
+        $user_info = get_user_info();
+        $this->assign('user_info',$user_info);
+        $this->assign("list",$car_list);
+        return $this->fetch('pay');
 
 	}
 	

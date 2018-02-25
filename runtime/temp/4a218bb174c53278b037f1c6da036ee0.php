@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1519378131;s:25:"./tpl/api/base\base1.html";i:1513416791;s:25:"./tpl/api/base\base2.html";i:1513422050;s:25:"./tpl/api/base\base4.html";i:1513417054;s:29:"./tpl/api/base\common_js.html";i:1488437847;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:32:"./tpl/api/shop_car\shop_car.html";i:1519563178;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -132,7 +132,7 @@
 									</li>
 									<li class="td td-sum">
 										<div class="td-inner">
-											<em tabindex="0" class="J_ItemSum number">117.00</em>
+											<em tabindex="0" class="J_ItemSum number">0</em>
 										</div>
 									</li>
 									<li class="td td-op">
@@ -152,7 +152,7 @@
 				<div class="float-bar-wrapper">
 
 					<div class="float-bar-right">
-						
+
 						<div class="price-sum">
 							<span class="txt">合计:</span>
 							<strong class="price">¥<em class="J_Total">0.00</em></strong>
@@ -208,23 +208,33 @@
 
 	<script>
 		function init_all_price(){
-			var url = $("#init_all_price").val();
-			$.common_ajax(url,{},function(res){
-				if(res.code != 1){
-					layer.msg(res.msg);
-				}else{
-					$(".J_Total").html(res.ret_data.total_price);
-				}
-			});
+			init_price();
+			init_total_price();
 		}
+
 		init_all_price();
 
-		function init_price(tr_obj){
-			var num = tr_obj.find('.text_box').val();
-			var price = tr_obj.find('.J_Price').html();
-			var total_price =pub.accMul(num,price);
-			tr_obj.children(".J_ItemSum").html(total_price);
+		function init_price(){
+			$(".bundle").each(function(){
+				var num = $(this).find('.text_box').val();
+				var price = $(this).find('.J_Price').html();
+				var total_price =pub.accMul(num,price);
+				total_price = total_price.toFixed(2);
+				$(this).find(".J_ItemSum").html(total_price);
+			});
 		}
+
+		function init_total_price(){
+		    var all_goods_price = 0;
+			$(".J_ItemSum").each(function () {
+                all_goods_price += parseFloat($(this).html());
+            });
+			all_goods_price = all_goods_price.toFixed(2);
+            $(".J_Total").html(all_goods_price);
+		}
+
+
+
 
 		$(document).on("click",'.am-btn',function(){
 			var that = $(this);
@@ -237,12 +247,15 @@
 				car_id : car_id
 			};
 
-
 			$.common_ajax(url,data,function(res){
 				layer.msg(res.msg);
-				that.siblings('.text_box').val(res.ret_data.num);
-				that.parent('.bundle').find('.J_Price').html(res.ret_data.price);
-				init_price(that.parents('.bundle'));
+                if(buy_num <= 0){
+                    that.parents('.bundle').remove();
+                }else{
+                    that.siblings('.text_box').val(res.ret_data.num);
+                    that.parent('.bundle').find('.J_Price').html(res.ret_data.price);
+
+                }
 				init_all_price();
 			});
 
@@ -260,11 +273,33 @@
 			};
 			$.common_ajax(url,data,function(res){
 				layer.msg(res.msg);
-				that.val(res.ret_data.num);
-				that.parents('.bundle').find('.J_Price').html(res.ret_data.price);
-				init_price(that.parents('.bundle'));
+                if(buy_num <= 0){
+                    that.parents('.bundle').remove();
+                }else{
+                    that.val(res.ret_data.num);
+                    that.parents('.bundle').find('.J_Price').html(res.ret_data.price);
+				}
 				init_all_price();
 			});
 		});
+
+		$(document).on("click",'.delete',function () {
+            var that = $(this);
+            var url = $("#update_car_num").val();
+            var car_id = $(this).parents('.bundle').data('car_id');
+            var buy_num = 0;
+            var data = {
+                num : buy_num,
+                car_id : car_id
+			};
+
+            $.common_ajax(url,data,function(res){
+                layer.msg(res.msg);
+                if(res.code == 1){
+                    that.parents('.bundle').remove();
+				}
+                init_all_price();
+            });
+        })
 	</script>
 </html>

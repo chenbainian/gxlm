@@ -106,7 +106,7 @@
 									</li>
 									<li class="td td-sum">
 										<div class="td-inner">
-											<em tabindex="0" class="J_ItemSum number">117.00</em>
+											<em tabindex="0" class="J_ItemSum number">0</em>
 										</div>
 									</li>
 									<li class="td td-op">
@@ -159,21 +159,18 @@
 				var num = $(this).find('.text_box').val();
 				var price = $(this).find('.J_Price').html();
 				var total_price =pub.accMul(num,price);
-				$(this).children(".J_ItemSum").html(total_price);
+				total_price = total_price.toFixed(2);
+				$(this).find(".J_ItemSum").html(total_price);
 			});
-
 		}
 
 		function init_total_price(){
-			$(".J_ItemSum").each
-			var url = $("#init_all_price").val();
-			$.common_ajax(url,{},function(res){
-				if(res.code != 1){
-					layer.msg(res.msg);
-				}else{
-					$(".J_Total").html(res.ret_data.total_price);
-				}
-			});
+		    var all_goods_price = 0;
+			$(".J_ItemSum").each(function () {
+                all_goods_price += parseFloat($(this).html());
+            });
+			all_goods_price = all_goods_price.toFixed(2);
+            $(".J_Total").html(all_goods_price);
 		}
 
 
@@ -192,8 +189,13 @@
 
 			$.common_ajax(url,data,function(res){
 				layer.msg(res.msg);
-				that.siblings('.text_box').val(res.ret_data.num);
-				that.parent('.bundle').find('.J_Price').html(res.ret_data.price);
+                if(buy_num <= 0){
+                    that.parents('.bundle').remove();
+                }else{
+                    that.siblings('.text_box').val(res.ret_data.num);
+                    that.parent('.bundle').find('.J_Price').html(res.ret_data.price);
+
+                }
 				init_all_price();
 			});
 
@@ -211,10 +213,33 @@
 			};
 			$.common_ajax(url,data,function(res){
 				layer.msg(res.msg);
-				that.val(res.ret_data.num);
-				that.parents('.bundle').find('.J_Price').html(res.ret_data.price);
+                if(buy_num <= 0){
+                    that.parents('.bundle').remove();
+                }else{
+                    that.val(res.ret_data.num);
+                    that.parents('.bundle').find('.J_Price').html(res.ret_data.price);
+				}
 				init_all_price();
 			});
 		});
+
+		$(document).on("click",'.delete',function () {
+            var that = $(this);
+            var url = $("#update_car_num").val();
+            var car_id = $(this).parents('.bundle').data('car_id');
+            var buy_num = 0;
+            var data = {
+                num : buy_num,
+                car_id : car_id
+			};
+
+            $.common_ajax(url,data,function(res){
+                layer.msg(res.msg);
+                if(res.code == 1){
+                    that.parents('.bundle').remove();
+				}
+                init_all_price();
+            });
+        })
 	</script>
 </html>

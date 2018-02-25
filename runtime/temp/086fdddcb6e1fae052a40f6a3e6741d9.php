@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1518338725;s:25:"./tpl/api/base\base1.html";i:1513416791;s:25:"./tpl/api/base\base2.html";i:1513422050;s:25:"./tpl/api/base\base3.html";i:1513417508;s:25:"./tpl/api/base\base4.html";i:1513417054;s:29:"./tpl/api/base\common_js.html";i:1488437847;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1519484428;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 

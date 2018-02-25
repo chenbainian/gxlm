@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:28:"./tpl/api/account\index.html";i:1513417189;s:29:"./tpl/api/base\common_js.html";i:1488437847;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:28:"./tpl/api/account\index.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html>
 <html>
 

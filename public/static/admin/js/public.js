@@ -33,7 +33,7 @@ var pub = {
             m+=s1.split(".")[1].length}catch(e){}
         try{
             m+=s2.split(".")[1].length}catch(e){}
-        return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m)
+        return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
     },
 //根据id删除
     del_by_id: function (obj, success, fail) {

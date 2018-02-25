@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:28:"./tpl/api/ucenter\index.html";i:1513316564;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:28:"./tpl/api/ucenter\index.html";i:1519484428;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:25:"./tpl/api/base\base5.html";i:1519484428;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -24,34 +24,35 @@
 				<div class="mt-logo">
 					<!--顶部导航条 -->
 					<div class="am-container header">
-						<ul class="message-r">
-							<div class="topMessage home">
-								<div class="menu-hd"><a href="<?php echo url('index/index'); ?>" target="_top" class="h">商城首页</a></div>
-							</div>
-							<div class="topMessage my-shangcheng">
-								<div class="menu-hd MyShangcheng"><a href="<?php echo url('ucenter/index'); ?>" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
-							</div>
-							<div class="topMessage mini-cart">
-								<div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('shop_car/car_list'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
-							</div>
-						</ul>
-					</div>
+    <ul class="message-r">
+        <div class="topMessage home">
+            <div class="menu-hd"><a href="<?php echo url('index/index'); ?>" target="_top" class="h">商城首页</a></div>
+        </div>
+        <div class="topMessage my-shangcheng">
+            <div class="menu-hd MyShangcheng"><a href="<?php echo url('ucenter/index'); ?>" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+        </div>
+        <div class="topMessage mini-cart">
+            <div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('shop_car/car_list'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
+        </div>
+    </ul>
+</div>
 
 						<!--悬浮搜索框-->
 
-						<div class="nav white">
-							<div class="logoBig">
-								<li><img src="/public/static/api/images/logobig.png" /></li>
-							</div>
+					<div class="nav white">
+    <div class="logo"><img src="/public/static/api/images/logo.png" /></div>
+    <div class="logoBig">
+        <li><img src="/public/static/api/images/logobig.png" /></li>
+    </div>
 
-							<div class="search-bar pr">
-								<a name="index_none_header_sysc" href="#"></a>
-								<form>
-									<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-									<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-								</form>
-							</div>
-						</div>
+    <div class="search-bar pr">
+        <a name="index_none_header_sysc" href="#"></a>
+        <form>
+            <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="<?php echo (isset($goods_name) && ($goods_name !== '')?$goods_name:''); ?>" autocomplete="on">
+            <input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
+        </form>
+    </div>
+</div>
 
 						<div class="clear"></div>
 					</div>
@@ -59,19 +60,21 @@
 			</article>
 		</header>
             <div class="nav-table">
-					   <div class="long-title"><span class="all-goods">全部分类</span></div>
-					   <div class="nav-cont">
-						   <ul>
-							   <li class="index"><a href="<?php echo url('index/index'); ?>">首页</a></li>
-							   <li class="qc"><a href="<?php echo url('goods/search'); ?>">分类查找</a></li>
-							   <li class="qc"><a href="<?php echo url('shop_car/car_list'); ?>">购物车</a></li>
-							   <li class="qc"><a href="<?php echo url('ucenter/order_list'); ?>">我的订单</a></li>
-						   </ul>
-						    <div class="nav-extra">
-								<a href="<?php echo url('ucenter/index'); ?>"><i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>个人中心
-									<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
-						    </div>
-						</div>
+				
+<div class="long-title"><span class="all-goods">全部分类</span></div>
+<div class="nav-cont">
+    <ul>
+        <li class="index"><a href="<?php echo url('index/index'); ?>">首页</a></li>
+        <li class="qc"><a href="<?php echo url('goods/search'); ?>">分类查找</a></li>
+        <li class="qc"><a href="<?php echo url('shop_car/car_list'); ?>">购物车</a></li>
+        <li class="qc"><a href="<?php echo url('ucenter/order_list'); ?>">我的订单</a></li>
+    </ul>
+    <div class="nav-extra">
+        <a href="<?php echo url('ucenter/index'); ?>"><i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>个人中心
+            <i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+    </div>
+</div>
+
 			</div>
 			<b class="line"></b>
 		<div class="center">
@@ -181,38 +184,38 @@
 				</div>
 				<!--底部-->
 				<div class="footer " style="margin-top: 5%">
-					<div class="footer-bd " style="margin-left: 40%">
-						<p>
-							<a href="# ">关于高校联盟</a>
-							<a href="# ">联系我们</a>
-							<em>© 2017-2025 gxlm.site 版权所有 </em>
-						</p>
-					</div>
-				</div>
+    <div class="footer-bd " style="margin-left: 40%">
+        <p>
+            <a href="# ">关于高校联盟</a>
+            <a href="# ">联系我们</a>
+            <em>© 2017-2025 gxlm.site 版权所有 </em>
+        </p>
+    </div>
+</div>
 			</div>
 
 			<aside class="menu">
-				<ul>
-					<li class="person">
-						<a href="index.html">个人中心</a>
-					</li>
-					<li class="person">
-						<a href="#" style="font-weight:bold">个人资料</a>
-						<ul>
-							<li class="active"> <a href="information.html">个人信息</a></li>
-							<li> <a href="address.html">收货地址</a></li>
-						</ul>
-					</li>
-					<li class="person" style="font-weight:bold">
-						<a href="#">我的交易</a>
-						<ul>
-							<li><a href="order.html">订单管理</a></li>
-							<li> <a href="change.html">售后</a></li>
-						</ul>
-					</li>
-				</ul>
+    <ul>
+        <li class="person">
+            <a href="index.html">个人中心</a>
+        </li>
+        <li class="person">
+            <a href="#" style="font-weight:bold">个人资料</a>
+            <ul>
+                <li> <a href="information.html">个人信息</a></li>
+                <li> <a href="address.html">收货地址</a></li>
+            </ul>
+        </li>
+        <li class="person" style="font-weight:bold">
+            <a href="#">我的交易</a>
+            <ul>
+                <li  class="active"><a href="order.html">订单管理</a></li>
+                <li> <a href="change.html">售后</a></li>
+            </ul>
+        </li>
+    </ul>
 
-			</aside>
+</aside>
 		</div>
 
 	</body>
