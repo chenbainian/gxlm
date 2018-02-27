@@ -80,7 +80,10 @@
 											<span class="sku-line">商品描述：</span>
 											<span class="sku-line">{$vo.desc|default=''}</span>
 											<br/>
-
+											<span class="sku-line">商品库存：</span>
+											<span class="sku-line">{$vo.stock_num|default=''}</span>
+											<br/>
+											<span class="sku-line">商品单位：</span>
 											<span class="sku-line">{$vo.unit|default=''}</span>
 										</div>
 
@@ -135,10 +138,13 @@
 							<span class="txt">合计:</span>
 							<strong class="price">¥<em class="J_Total">0.00</em></strong>
 						</div>
+						{notempty name='list'}
 						<div class="btn-area">
-							<a href="pay.html" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+
+							<a href="{:url('api/order/pay')}" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
 								<span>结&nbsp;算</span></a>
 						</div>
+						{/notempty}
 					</div>
 
 				</div>

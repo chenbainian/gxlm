@@ -1,0 +1,107 @@
+<div class="order-top">
+    <div class="th th-item">
+        <td class="td-inner">商品</td>
+    </div>
+    <div class="th th-price">
+        <td class="td-inner">单价</td>
+    </div>
+    <div class="th th-number">
+        <td class="td-inner">数量</td>
+    </div>
+    <div class="th th-operation">
+        <td class="td-inner">商品操作</td>
+    </div>
+    <div class="th th-amount">
+        <td class="td-inner">合计</td>
+    </div>
+    <div class="th th-status">
+        <td class="td-inner">交易状态</td>
+    </div>
+    <div class="th th-change">
+        <td class="td-inner">交易操作</td>
+    </div>
+</div>
+{notempty name='order_list'}
+{volist name='order_list' id='vo'}
+<div class="order-main">
+    <div class="order-list">
+
+        <!--待发货-->
+        <div class="order-status2">
+            <div class="order-title">
+                <div class="dd-num">订单编号：<a href="javascript:;">{$vo.order_id|default=''}</a></div>
+                <span>成交时间：{$vo.create_time|date='Y-m-d H:i:s',###}</span>
+
+            </div>
+            <div class="order-content">
+                <div class="order-left">
+                    {volist name='vo.sub_orders' id='vo2'}
+                    <ul class="item-list">
+                        <li class="td td-item">
+                            <div class="item-pic">
+                                <a href="#" class="J_MakePoint">
+                                    <img src="{$vo2.img_src|default=''}" class="itempic J_ItemImg" style="height: 78px;width: 78px;">
+                                </a>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-basic-info">
+                                    <a href="#">
+                                        <p>{$vo2.goods_name|default=''}</p>
+                                        <p class="info-little">{$vo2.desc|default=''}
+                                        <br/>包装：裸装 </p>
+                                        <p class="info-little">
+                                        <br/>单位：{$vo2.unit|default=''} </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="td td-price">
+                            <div class="item-price">
+                                {$vo2.goods_price|default=0.00}
+                            </div>
+                        </li>
+                        <li class="td td-number">
+                            <div class="item-number">
+                                <span>×</span>{$vo2.num|default=''}
+                            </div>
+                        </li>
+                        <li class="td td-operation">
+                            <div class="item-operation">
+                                <a href=""></a>
+                            </div>
+                        </li>
+                    </ul>
+                    {/volist}
+                </div>
+                <div class="order-right">
+                    <li class="td td-amount">
+                        <div class="item-amount">
+                            合计：{$vo2.true_price|default=''}
+                        </div>
+                    </li>
+                    <div class="move-right">
+                        <li class="td td-status">
+                            <div class="item-status">
+                                {switch name='vo.status'}
+                                {case value='1'}<p class="Mystatus">待接单</p>{/case}
+                                {case value='2'}<p class="Mystatus">待收货</p>{/case}
+                                {case value='1'}<p class="Mystatus">已收货</p>{/case}
+                                {case value='1'}<p class="Mystatus">订单异常</p>{/case}
+                                {/switch}
+                            </div>
+                        </li>
+                        <li class="td td-change">
+                            {switch name='vo.status'}
+                            {case value='1'}<p class="Mystatus"><div class="am-btn am-btn-danger anniu">提醒发货</div></p>{/case}
+                            {/switch}
+
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/volist}
+{/notempty}
+{$pages|default=''}

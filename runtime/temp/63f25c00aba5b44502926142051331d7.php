@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:27:"./tpl/admin/goods\form.html";i:1519484428;s:26:"./tpl/admin/base\base.html";i:1519484428;s:32:"./tpl/admin/base\common_css.html";i:1519484428;s:31:"./tpl/admin/base\common_js.html";i:1519484428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:31:"./tpl/admin/goods\add_form.html";i:1519484428;s:26:"./tpl/admin/base\base.html";i:1519484428;s:32:"./tpl/admin/base\common_css.html";i:1519484428;s:31:"./tpl/admin/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -31,7 +31,7 @@
 <nav class="breadcrumb">
     <i class="Hui-iconfont">&#xe67f;</i> 后台
     <span class="c-gray en">&gt;</span>  商品管理
-    <span class="c-gray en">&gt;</span>  编辑商品
+    <span class="c-gray en">&gt;</span>  新增商品
 
     <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
        href="javascript:location.replace(location.href);" title="刷新">
@@ -89,28 +89,28 @@
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品名称：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="商品名称" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
+            <input type="text" class="input-text" placeholder="商品名称" name="title">
         </div>
     </div>
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品描述：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="商品描述" name="desc" value="<?php echo (isset($info['desc']) && ($info['desc'] !== '')?$info['desc']:''); ?>">
+            <input type="text" class="input-text" placeholder="商品描述" name="desc">
         </div>
     </div>
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>单位：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="单位" name="unit" value="<?php echo (isset($info['unit']) && ($info['unit'] !== '')?$info['unit']:''); ?>">
+            <input type="text" class="input-text" placeholder="单位" name="unit">
         </div>
     </div>
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品库存（数字）：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="商品库存（数字）" name="num" value="<?php echo (isset($info['num']) && ($info['num'] !== '')?$info['num']:0); ?>">
+            <input type="text" class="input-text" placeholder="商品库存（数字）" name="num">
         </div>
     </div>
 
@@ -121,7 +121,7 @@
             <!--dom结构部分-->
             <div>
                 <!--用来存放item-->
-                <div id="imgList" class="img-list"><img src="<?php echo (isset($info['img_src']) && ($info['img_src'] !== '')?$info['img_src']:''); ?>" style="width:200px;height: 200px"></div>
+                <div id="imgList" class="img-list"><img src="" style="width:200px;height: 200px"></div>
                 <div id="img">选择图片</div>
             </div>
 
@@ -134,7 +134,7 @@
             <!--dom结构部分-->
             <div>
                 <!--用来存放item-->
-                <div id="desc_img1List" class="desc_img1-list"><img src="<?php echo (isset($info['desc_img1_src']) && ($info['desc_img1_src'] !== '')?$info['desc_img1_src']:''); ?>" style="width:200px;height: 200px"></div>
+                <div id="desc_img1List" class="desc_img1-list"><img src="" style="width:200px;height: 200px"></div>
                 <div id="desc_img1">选择图片</div>
             </div>
 
@@ -148,7 +148,7 @@
             <!--dom结构部分-->
             <div>
                 <!--用来存放item-->
-                <div id="desc_img2List" class="desc_img2-list"><img src="<?php echo (isset($info['desc_img2_src']) && ($info['desc_img2_src'] !== '')?$info['desc_img2_src']:''); ?>" style="width:200px;height: 200px"></div>
+                <div id="desc_img2List" class="desc_img2-list"><img src="" style="width:200px;height: 200px"></div>
                 <div id="desc_img2">选择图片</div>
             </div>
 
@@ -162,7 +162,7 @@
             <!--dom结构部分-->
             <div>
                 <!--用来存放item-->
-                <div id="desc_img3List" class="desc_img3-list"><img src="<?php echo (isset($info['desc_img3_src']) && ($info['desc_img3_src'] !== '')?$info['desc_img3_src']:''); ?>" style="width:200px;height: 200px"></div>
+                <div id="desc_img3List" class="desc_img3-list"><img src="" style="width:200px;height: 200px"></div>
                 <div id="desc_img3">选择图片</div>
             </div>
 
@@ -176,7 +176,7 @@
             <!--dom结构部分-->
             <div id="uploader-demo">
                 <!--用来存放item-->
-                <div id="desc_img4List" class="desc_img4-list"><img src="<?php echo (isset($info['desc_img4_src']) && ($info['desc_img4_src'] !== '')?$info['desc_img4_src']:''); ?>" style="width:200px;height: 200px"></div>
+                <div id="desc_img4List" class="desc_img4-list"><img src="" style="width:200px;height: 200px"></div>
                 <div id="desc_img4">选择图片</div>
             </div>
 
@@ -186,50 +186,43 @@
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>显示价格：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="显示价格" name="show_price" value="<?php echo (isset($info['show_price']) && ($info['show_price'] !== '')?$info['show_price']:''); ?>">
+            <input type="text" class="input-text" placeholder="显示价格" name="show_price">
         </div>
     </div>
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>实际价格：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="实际价格" name="true_price" value="<?php echo (isset($info['true_price']) && ($info['true_price'] !== '')?$info['true_price']:''); ?>">
+            <input type="text" class="input-text" placeholder="实际价格" name="true_price">
         </div>
     </div>
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>显示销量：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="显示销量" name="show_sales_num" value="<?php echo (isset($info['show_sales_num']) && ($info['show_sales_num'] !== '')?$info['show_sales_num']:'0'); ?>">
+            <input type="text" class="input-text" placeholder="显示销量" name="show_sales_num" value="0">
         </div>
     </div>
 
-    <div class="row cl">
-        <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>实际销量：</label>
-        <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" disabled placeholder="实际销量" name="true_sales_num" value="<?php echo (isset($info['true_sales_num']) && ($info['true_sales_num'] !== '')?$info['true_sales_num']:'0'); ?>">
-        </div>
-    </div>
 
 
     <div class="row cl">
         <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>排序：</label>
         <div class="formControls col-xs-8 col-sm-5">
-            <input type="text" class="input-text" placeholder="排序" name="order" value="<?php echo (isset($info['order']) && ($info['order'] !== '')?$info['order']:''); ?>">
+            <input type="text" class="input-text" placeholder="排序" name="order">
         </div>
     </div>
 
 
     <div class="row cl">
         <div class="col-xs-8 col-sm-5 col-xs-offset-4 col-sm-offset-2">
-            <button  class="btn btn-warning radius ok_submit" type="button" data-url="<?php echo url('update_do'); ?>">
-                <i class="Hui-iconfont">&#xe632;</i>修改
+            <button  class="btn btn-warning radius ok_submit" type="button" data-url="<?php echo url('add_do'); ?>">
+                <i class="Hui-iconfont">&#xe632;</i>新增
             </button>
             <button onClick="layer_close();" class="btn btn-default radius" type="button">取消</button>
         </div>
     </div>
-    <input type="hidden" id="img_src" value="<?php echo (isset($info['img_src']) && ($info['img_src'] !== '')?$info['img_src']:''); ?>" name="img_src">
-	<input type="hidden" id="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>" name="id">
+    <input type="hidden" id="img_src" value="" name="img_src">
     <input type="hidden" id="desc_img1_src" name="desc_img1_src" value="<?php echo (isset($info['desc_img1_src']) && ($info['desc_img1_src'] !== '')?$info['desc_img1_src']:''); ?>">
     <input type="hidden" id="desc_img2_src" name='desc_img2_src' value="<?php echo (isset($info['desc_img1_src']) && ($info['desc_img1_src'] !== '')?$info['desc_img1_src']:''); ?>">
     <input type="hidden" id="desc_img3_src" name='desc_img3_src' value="<?php echo (isset($info['desc_img1_src']) && ($info['desc_img1_src'] !== '')?$info['desc_img1_src']:''); ?>">
@@ -237,14 +230,12 @@
 </form>
 <input type="hidden" id="big_cates_list" value="<?php echo url('admin/cate/big_cates_list'); ?>">
 <input type="hidden" id="small_cates_list" value="<?php echo url('admin/cate/small_cates_list'); ?>">
-<input type="hidden" id="big_cate_id" value="<?php echo (isset($big_cate_id) && ($big_cate_id !== '')?$big_cate_id:''); ?>">
-<input type="hidden" id="small_cate_id" value="<?php echo (isset($info['cate_id']) && ($info['cate_id'] !== '')?$info['cate_id']:''); ?>">
-
-
 
 
 <input type="hidden" id="swf_path" value="__static__/plugin/webuploader/0.1.5/uploader.swf"><!--swf-->
 <input type="hidden" id="server_path" value="<?php echo url('admin/goods/up_goods_img'); ?>"><!--上传-->
+
+
 
 </div>
 
@@ -256,42 +247,24 @@
 <script>
 
 
-    var big_cate_id = $("#big_cate_id").val();
-    var small_cate_id = $("#small_cate_id").val();
-
-
     var big_cate_url = $("#big_cates_list").val();
     $.common_ajax(big_cate_url,{},function(rt){
         if(rt.code == 200){
             $("#big_cates").html(rt.html);
-            if(big_cate_id){
-                $("#_"+big_cate_id).attr("selected",true);
-            }
         }
     });
-	
-	 //如果有小分类  绑定小分类选项
-    var small_cate_url = $("#small_cates_list").val();
-    if(small_cate_id){
-        $.common_ajax(small_cate_url,{big_id:big_cate_id},function(rt){
-            if(rt.code == 200){
-                $("#small_cates").html(rt.html);
-                $("#_"+small_cate_id).attr("selected",true);
-            }
-        });
-    }
-	
-	//加载小分类
+
+
+    //加载小分类
     $(document).on("change","#big_cates",function(){
         var url = $("#small_cates_list").val();
         var param = {big_id:$(this).val()};
         $.common_ajax(url,param,function(rt){
-           if(rt.code == 200){
-               $("#small_cates").html(rt.html);
-           }
+            if(rt.code == 200){
+                $("#small_cates").html(rt.html);
+            }
         });
     });
-
 
 </script>
 

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:24:"./tpl/api/order\pay.html";i:1519656424;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -6,11 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 ,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<title>结算页面</title>
-	{css href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" /}
-	{css href="/public/static/api/basic/css/demo.css" /}
-	{css href="/public/static/api/css/cartstyle.css" /}
-	{css href="/public/static/api/css/jsstyle.css" /}
-	{css href="/public/static/api/js/address.js" /}
+	<link rel="stylesheet" type="text/css" href="/public/static/api/AmazeUI-2.4.2/assets/css/amazeui.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/api/basic/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/api/css/cartstyle.css" />
+	<link rel="stylesheet" type="text/css" href="/public/static/api/css/jsstyle.css" />
+	<script type="text/javascript" src="/public/static/api/js/address.js"></script>
 
 
 </head>
@@ -18,16 +19,41 @@
 <body>
 
 <!--顶部导航条 -->
-{include file='base/base1'}
+<div class="am-container header">
+    <ul class="message-r">
+        <div class="topMessage home">
+            <div class="menu-hd"><a href="<?php echo url('index/index'); ?>" target="_top" class="h">商城首页</a></div>
+        </div>
+        <div class="topMessage my-shangcheng">
+            <div class="menu-hd MyShangcheng"><a href="<?php echo url('ucenter/index'); ?>" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+        </div>
+        <div class="topMessage mini-cart">
+            <div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('shop_car/car_list'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
+        </div>
+    </ul>
+</div>
 
 <!--悬浮搜索框-->
 
-{include file='base/base2'}
+<div class="nav white">
+    <div class="logo"><img src="/public/static/api/images/logo.png" /></div>
+    <div class="logoBig">
+        <li><img src="/public/static/api/images/logobig.png" /></li>
+    </div>
+
+    <div class="search-bar pr">
+        <a name="index_none_header_sysc" href="#"></a>
+        <form>
+            <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="<?php echo (isset($goods_name) && ($goods_name !== '')?$goods_name:''); ?>" autocomplete="on">
+            <input id="ai-topsearch" class="submit am-btn"  value="搜索" index="1" type="submit">
+        </form>
+    </div>
+</div>
 
 <div class="clear"></div>
 <div class="concent">
 	<!--地址 -->
-	{notempty name='list'}
+	<?php if(!(empty($list) || ($list instanceof \think\Collection && $list->isEmpty()))): ?>
 	<div class="paycont">
 		<!--支付方式-->
 		<div class="clear"></div>
@@ -60,7 +86,7 @@
 				<div class="clear"></div>
 
 				<tr class="item-list">
-					{volist name='list' id='vo'}
+					<?php if(is_array($list) || $list instanceof \think\Collection): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
 					<div class="bundle  bundle-last">
 
 						<div class="bundle-main">
@@ -69,31 +95,31 @@
 									<li class="td td-item">
 										<div class="item-pic">
 											<a href="#" class="J_MakePoint">
-												<img src="{$vo.img_src|default=''}" style="width: 85px" class="itempic J_ItemImg"></a>
+												<img src="<?php echo (isset($vo['img_src']) && ($vo['img_src'] !== '')?$vo['img_src']:''); ?>" style="width: 85px" class="itempic J_ItemImg"></a>
 										</div>
 										<div class="item-info">
 											<div class="item-basic-info">
-												<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">{$vo.goods_name|default=''}</a>
+												<a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11"><?php echo (isset($vo['goods_name']) && ($vo['goods_name'] !== '')?$vo['goods_name']:''); ?></a>
 											</div>
 										</div>
 									</li>
 									<li class="td td-info">
 										<div class="item-props">
 											<span class="sku-line">商品描述：</span>
-											<span class="sku-line">{$vo.desc|default=''}</span>
+											<span class="sku-line"><?php echo (isset($vo['desc']) && ($vo['desc'] !== '')?$vo['desc']:''); ?></span>
 											<br/>
 											<span class="sku-line">商品库存：</span>
-											<span class="sku-line">{$vo.stock_num|default=''}</span>
+											<span class="sku-line"><?php echo (isset($vo['stock_num']) && ($vo['stock_num'] !== '')?$vo['stock_num']:''); ?></span>
 											<br/>
 											<span class="sku-line">商品单位：</span>
-											<span class="sku-line">{$vo.unit|default=''}</span>
+											<span class="sku-line"><?php echo (isset($vo['unit']) && ($vo['unit'] !== '')?$vo['unit']:''); ?></span>
 										</div>
 									</li>
 
 									<li class="td td-price">
 										<div class="item-price price-promo-promo">
 											<div class="price-content">
-												<em class="J_Price price-now">{$vo.true_price|default='0.00'}</em>
+												<em class="J_Price price-now"><?php echo (isset($vo['true_price']) && ($vo['true_price'] !== '')?$vo['true_price']:'0.00'); ?></em>
 											</div>
 										</div>
 									</li>
@@ -127,7 +153,7 @@
 
 						</div>
 				</tr>
-				{/volist}
+				<?php endforeach; endif; else: echo "" ;endif; ?>
 				<div class="clear"></div>
 			</div>
 
@@ -186,46 +212,80 @@
 						<p class="buy-footer-address">
 							<span class="buy-line-title buy-line-title-type">配送至：</span>
 							<span class="buy--address-detail">
-							<span class="province">{$user_info.province|default=''}</span>省
-							<span class="city">{$user_info.city|default=''}</span>市
-							<span class="dist">{$user_info.area|default=''}</span>
-							<span class="street">{$user_info.addr|default=''}</span>
+							<span class="province"><?php echo (isset($user_info['province']) && ($user_info['province'] !== '')?$user_info['province']:''); ?></span>省
+							<span class="city"><?php echo (isset($user_info['city']) && ($user_info['city'] !== '')?$user_info['city']:''); ?></span>市
+							<span class="dist"><?php echo (isset($user_info['area']) && ($user_info['area'] !== '')?$user_info['area']:''); ?></span>
+							<span class="street"><?php echo (isset($user_info['addr']) && ($user_info['addr'] !== '')?$user_info['addr']:''); ?></span>
 							</span>
 							</span>
 						</p>
 						<p class="buy-footer-address">
 							<span class="buy-line-title">收货人：</span>
 							<span class="buy-address-detail">
-                                         		<span class="buy-user">{$user_info.nick_name|default=''} </span>
-												<span class="buy-phone">{$user_info.phone|default=''}</span>
+                                         		<span class="buy-user"><?php echo (isset($user_info['nick_name']) && ($user_info['nick_name'] !== '')?$user_info['nick_name']:''); ?> </span>
+												<span class="buy-phone"><?php echo (isset($user_info['phone']) && ($user_info['phone'] !== '')?$user_info['phone']:''); ?></span>
 												</span>
 						</p>
 					</div>
 				</div>
 
 				<div id="holyshit269" class="submitOrder">
-					{notempty name='list'}
+					<?php if(!(empty($list) || ($list instanceof \think\Collection && $list->isEmpty()))): ?>
 					<div class="go-btn-wrap">
 						<a id="J_Go" href="javascript:void(0);" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
 					</div>
-					{/notempty}
+					<?php endif; ?>
 				</div>
 				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-	{/notempty}
+	<?php endif; ?>
 	<div class="clear"></div>
 </div>
 </div>
-{include file='base/base4'}
+<div class="footer " style="margin-top: 5%">
+    <div class="footer-bd " style="margin-left: 40%">
+        <p>
+            <a href="# ">关于高校联盟</a>
+            <a href="# ">联系我们</a>
+            <em>© 2017-2025 gxlm.site 版权所有 </em>
+        </p>
+    </div>
+</div>
 </div>
 
 <div class="clear"></div>
 </body>
-<input type="hidden" id="submit_url" value="{:url('api/order/submit')}">
-<input type="hidden" id="pay_success" value="{:url('api/order/pay_success')}">
-{include file="base/common_js"/}
+<input type="hidden" id="submit_url" value="<?php echo url('api/order/submit'); ?>">
+<input type="hidden" id="pay_success" value="<?php echo url('api/order/pay_success'); ?>">
+<!--插件-->
+<script type="text/javascript" src="__plugin__/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="__plugin__/layer/layer.js"></script>
+<script type="text/javascript" src="__plugin__/laydate/laydate.js"></script>
+<script type="text/javascript" src="__plugin__/zTree/js/jquery.ztree.core-3.5.min.js"></script>
+<script type="text/javascript" src="__plugin__/zTree/js/jquery.ztree.excheck-3.5.min.js"></script>
+
+
+
+
+
+
+<!--基础-->
+<script type="text/javascript" src="__hui__/js/H-ui.js"></script>
+<script type="text/javascript" src="__hui_admin__/js/H-ui.admin.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="__plugin__/html5.min.js"></script>
+<script type="text/javascript" src="__plugin__/respond.min.js"></script>
+<script type="text/javascript" src="__plugin__/PIE_IE678.js"></script>
+<![endif]-->
+
+<!--通用-->
+<script type="text/javascript" src="__static__/public/js/common.js"></script>
+<script type="text/javascript" src="__static__/admin/js/public.js"></script>
+
+
 <script>
 $(document).on("click",'#J_Go',function () {
 	var url = $("#submit_url").val();
@@ -233,7 +293,7 @@ $(document).on("click",'#J_Go',function () {
     location.href = success_url;
 	$.common_ajax(url,{},function (res) {
 	    if(res.code == 1){
-            location.href = success_url+'?order_id='+res.ret_data.order_id;
+            location.href = success_url;
 		}else{
 	        layer.msg(res.msg);
 	        setInterval(function () {

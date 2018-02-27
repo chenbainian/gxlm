@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1519484428;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1519652110;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -124,12 +124,12 @@
 							</script>
 
 							<div class="tb-booth tb-pic tb-s310">
-								<a href="/public/static/api/images/01.jpg"><img src="/public/static/api/images/01_mid.jpg" alt="细节展示放大镜特效" rel="/public/static/api/images/01.jpg" class="jqzoom" /></a>
+								<a href="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>"><img src="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>" alt="细节展示放大镜特效" rel="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>" style="width: 350px;height: 350px" class="jqzoom" /></a>
 							</div>
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>" mid="/public/static/api/images/01_mid.jpg" big="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>"></a>
+										<a href="#"><img src="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>" mid="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>" big="<?php echo (isset($goods_info['img_src']) && ($goods_info['img_src'] !== '')?$goods_info['img_src']:''); ?>"></a>
 									</div>
 								</li>
 							</ul>
@@ -269,13 +269,10 @@
 											<h4>商品细节</h4>
 										</div>
 										<div class="twlistNews">
-											<img src="/public/static/api/images/tw1.jpg" />
-											<img src="/public/static/api/images/tw2.jpg" />
-											<img src="/public/static/api/images/tw3.jpg" />
-											<img src="/public/static/api/images/tw4.jpg" />
-											<img src="/public/static/api/images/tw5.jpg" />
-											<img src="/public/static/api/images/tw6.jpg" />
-											<img src="/public/static/api/images/tw7.jpg" />
+											<img src="<?php echo (isset($goods_info['desc_img1_src']) && ($goods_info['desc_img1_src'] !== '')?$goods_info['desc_img1_src']:''); ?>" />
+											<img src="<?php echo (isset($goods_info['desc_img2_src']) && ($goods_info['desc_img2_src'] !== '')?$goods_info['desc_img2_src']:''); ?>" />
+											<img src="<?php echo (isset($goods_info['desc_img3_src']) && ($goods_info['desc_img3_src'] !== '')?$goods_info['desc_img3_src']:''); ?>" />
+											<img src="<?php echo (isset($goods_info['desc_img4_src']) && ($goods_info['desc_img4_src'] !== '')?$goods_info['desc_img4_src']:''); ?>" />
 										</div>
 									</div>
 									<div class="clear"></div>

@@ -84,12 +84,12 @@
 							</script>
 
 							<div class="tb-booth tb-pic tb-s310">
-								<a href="/public/static/api/images/01.jpg"><img src="/public/static/api/images/01_mid.jpg" alt="细节展示放大镜特效" rel="/public/static/api/images/01.jpg" class="jqzoom" /></a>
+								<a href="{$goods_info.img_src|default=''}"><img src="{$goods_info.img_src|default=''}" alt="细节展示放大镜特效" rel="{$goods_info.img_src|default=''}" style="width: 350px;height: 350px" class="jqzoom" /></a>
 							</div>
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="{$goods_info.img_src|default=''}" mid="/public/static/api/images/01_mid.jpg" big="{$goods_info.img_src|default=''}"></a>
+										<a href="#"><img src="{$goods_info.img_src|default=''}" mid="{$goods_info.img_src|default=''}" big="{$goods_info.img_src|default=''}"></a>
 									</div>
 								</li>
 							</ul>
@@ -229,13 +229,10 @@
 											<h4>商品细节</h4>
 										</div>
 										<div class="twlistNews">
-											<img src="/public/static/api/images/tw1.jpg" />
-											<img src="/public/static/api/images/tw2.jpg" />
-											<img src="/public/static/api/images/tw3.jpg" />
-											<img src="/public/static/api/images/tw4.jpg" />
-											<img src="/public/static/api/images/tw5.jpg" />
-											<img src="/public/static/api/images/tw6.jpg" />
-											<img src="/public/static/api/images/tw7.jpg" />
+											<img src="{$goods_info.desc_img1_src|default=''}" />
+											<img src="{$goods_info.desc_img2_src|default=''}" />
+											<img src="{$goods_info.desc_img3_src|default=''}" />
+											<img src="{$goods_info.desc_img4_src|default=''}" />
 										</div>
 									</div>
 									<div class="clear"></div>

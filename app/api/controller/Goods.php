@@ -20,7 +20,7 @@ Class Goods extends Common
 			'status'=>1,
             'id'=>$goods_id
 		];
-		$goods_info = db_func("goods")->field('id,title,show_price,true_price,desc,img_src,num,unit,cate_id,big_cate_id')->where($condition)->find();
+		$goods_info = db_func("goods")->where($condition)->find();
 		if(!$goods_info){
 			wrong_return("没有该商品");
 		}
