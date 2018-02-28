@@ -19,11 +19,10 @@
             <input type="text" class="input-text" style="width:100px" placeholder="请输入订单ID"  name="order_id" value="{:input('param.order_id','')}">
             <select class="form-control " name="status" style="height:31px;width:100px ">
                 <option value="">状态</option>
-                <option {if condition="input('param.status','') eq '1'"} selected='selected'{/if} value="1">待确认</option>
-                <option {if condition="input('param.status','') eq '2'"} selected='selected'{/if} value="2">已确认待发货</option>
-                <option {if condition="input('param.status','') eq '3'"} selected='selected'{/if} value="1">已发货 待收货 </option>
-                <option {if condition="input('param.status','') eq '4'"} selected='selected'{/if} value="2">已确认收货</option>
-                <option {if condition="input('param.status','') eq '5'"} selected='selected'{/if} value="1">异常</option>
+                <option {if condition="input('param.status','') eq '1'"} selected='selected'{/if} value="1">待接单</option>
+                <option {if condition="input('param.status','') eq '2'"} selected='selected'{/if} value="2">待发货</option>
+                <option {if condition="input('param.status','') eq '3'"} selected='selected'{/if} value="3">已收货 </option>
+                <option {if condition="input('param.status','') eq '4'"} selected='selected'{/if} value="4">异常</option>
             </select>
             <button type="submit" class="btn btn-success " name=""><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
             <button type="submit" class="btn btn-default" onclick="$('input[name=\'search_word\']').val('')"  name=""><i class="fa fa-times"></i> 清空搜索</button>
@@ -65,11 +64,10 @@
             <td>
                 {notempty name='vo.status'}
                 {switch name='vo.status'}
-                {case value='1'}<span class="label label-success radius">待确认</span>{/case}
-                {case value='2'}<span class="label label-info radius">已确认待发货</span>{/case}
-                {case value='3'}<span class="label label-success radius">已发货 待收货</span>{/case}
-                {case value='4'}<span class="label label-info radius">已确认收货</span>{/case}
-                {case value='5'}<span class="label label-success radius">异常</span>{/case}
+                {case value='1'}<span class="label label-success radius">待接单</span>{/case}
+                {case value='2'}<span class="label label-info radius">待收货</span>{/case}
+                {case value='3'}<span class="label label-success radius">已收货</span>{/case}
+                {case value='4'}<span class="label label-info radius">异常</span>{/case}
                 {default /}--
                 {/switch}
                 {/notempty}
@@ -82,13 +80,13 @@
                 <input class="btn btn-secondary radius open_form"  data-url="{:url('sub_order_list',['id'=>$vo.id])}" type="button" value="查看子订单">
                 {switch name='vo.status'}
                     {case value='1'}
-                    <input class="btn btn-danger radius update_status"  data-id="{$vo.id|default=''}" type="button" value="确认订单">
+                    <input class="btn btn-danger radius update_status" data-status="{$vo.status}"  data-id="{$vo.id|default=''}" type="button" value="接单">
                     {/case}
                     {case value='2'}
-                    <input class="btn btn-danger radius update_status"  data-id="{$vo.id|default=''}" type="button" value="确认发货">
+                    <input class="btn btn-danger radius update_status" data-status="{$vo.status}" data-id="{$vo.id|default=''}" type="button" value="确认发货">
                     {/case}
                     {case value='3'}
-                    <input class="btn btn-danger radius update_status"  data-id="{$vo.id|default=''}" type="button" value="确认收货">
+                    <!--<input class="btn btn-danger radius update_status" data-status="{$vo.status}" data-id="{$vo.id|default=''}" type="button" value="确认收货">-->
                     {/case}
                 {/switch}
                 <input class="btn btn-danger radius del_order" data-id="{$vo.id|default=0}" type="button" value="删除">
@@ -105,6 +103,7 @@
     {$page|default=''}
 </nav>
 <input type="hidden" id="del_order" value="{:url('admin/order/del_order')}">
+<input type="hidden" id="update_order_status" value="{:url('admin/order/update_order_status')}">
 {/block}
 
 {block name='js'}
@@ -123,6 +122,18 @@
             })
         });
     });
+
+    $(document).on("click",".update_status",function () {
+        var id = $(this).data("id");
+        var status = $(this).data("status")+1;
+        var url = $("#update_order_status").val();
+        $.common_ajax(url,{id:id,status:status},function (res) {
+            layer.msg(res.msg);
+            if(res.code == 1){
+                location.reload();
+            }
+        })
+    })
 
 </script>
 {/block}

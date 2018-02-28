@@ -181,7 +181,7 @@
 
 								</div>
 								<li>
-									<div class="clearfix tb-btn tb-btn-buy theme-login">
+									<div class="clearfix tb-btn  theme-login">
 										<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
 									</div>
 								</li>
@@ -254,6 +254,7 @@
 
 	<input type="hidden" id="add_shop_car_url" value="{:url('api/shop_car/add_car')}">
 	<input type="hidden" id="goods_id" value="{$goods_info.id|default=''}">
+	<input type="hidden" id="shop_car_url" value="{:url('api/shop_car/car_list')}">
 	{include file="base/common_js"/}
 
 	<script>
@@ -292,6 +293,25 @@
 			layer.msg(res.msg);
 		})
 	});
+
+	$(document).on("click","#LikBuy",function () {
+        var buy_num = parseInt($("#text_box").val());
+        var goods_id = $("#goods_id").val();
+        var url = $("#add_shop_car_url").val();
+        var shop_car_url = $("#shop_car_url").val();
+        var data = {
+            goods_id:goods_id,
+            num : buy_num
+        };
+        $.common_ajax(url,data,function(res){
+            if(res.code != 1){
+                layer.msg(res.msg);
+			}else{
+                location.href = shop_car_url;
+			}
+
+        })
+    })
 
 
 </script>

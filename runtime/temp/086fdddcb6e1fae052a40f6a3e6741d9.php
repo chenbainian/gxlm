@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1519652110;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:27:"./tpl/api/goods\detail.html";i:1519823500;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base3.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -221,7 +221,7 @@
 
 								</div>
 								<li>
-									<div class="clearfix tb-btn tb-btn-buy theme-login">
+									<div class="clearfix tb-btn  theme-login">
 										<a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
 									</div>
 								</li>
@@ -302,6 +302,7 @@
 
 	<input type="hidden" id="add_shop_car_url" value="<?php echo url('api/shop_car/add_car'); ?>">
 	<input type="hidden" id="goods_id" value="<?php echo (isset($goods_info['id']) && ($goods_info['id'] !== '')?$goods_info['id']:''); ?>">
+	<input type="hidden" id="shop_car_url" value="<?php echo url('api/shop_car/car_list'); ?>">
 	<!--插件-->
 <script type="text/javascript" src="__plugin__/jquery/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="__plugin__/layer/layer.js"></script>
@@ -366,6 +367,25 @@
 			layer.msg(res.msg);
 		})
 	});
+
+	$(document).on("click","#LikBuy",function () {
+        var buy_num = parseInt($("#text_box").val());
+        var goods_id = $("#goods_id").val();
+        var url = $("#add_shop_car_url").val();
+        var shop_car_url = $("#shop_car_url").val();
+        var data = {
+            goods_id:goods_id,
+            num : buy_num
+        };
+        $.common_ajax(url,data,function(res){
+            if(res.code != 1){
+                layer.msg(res.msg);
+			}else{
+                location.href = shop_car_url;
+			}
+
+        })
+    })
 
 
 </script>

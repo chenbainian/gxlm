@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:24:"./tpl/api/order\pay.html";i:1519656424;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:24:"./tpl/api/order\pay.html";i:1519822991;s:25:"./tpl/api/base\base1.html";i:1519484428;s:25:"./tpl/api/base\base2.html";i:1519484428;s:25:"./tpl/api/base\base4.html";i:1519484428;s:29:"./tpl/api/base\common_js.html";i:1519484428;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -290,10 +290,9 @@
 $(document).on("click",'#J_Go',function () {
 	var url = $("#submit_url").val();
 	var success_url = $("#pay_success").val();
-    location.href = success_url;
 	$.common_ajax(url,{},function (res) {
 	    if(res.code == 1){
-            location.href = success_url;
+            location.href = success_url+'?order_id='+res.ret_data.order_id;
 		}else{
 	        layer.msg(res.msg);
 	        setInterval(function () {

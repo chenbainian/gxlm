@@ -76,18 +76,16 @@ Class Order extends Common
             $order_id = input('order_id','');
             if(empty($order_id)) throw new \Exception();
             $order_info = db_func('order')->where(['order_id'=>$order_id])->find();
-            if(!$order_info) throw new \Exception();
+            if(!$order_info) throw new \Exception('sss');
 
             //获取用户收货信息
             $user_info = get_user_info();
-
             $this->assign('order_info',$order_info);
             $this->assign('user_info',$user_info);
             return $this->fetch('pay_success');
         }catch (\Exception $e){
             $this->redirect('api/index/index');
         }
-
     }
 
 
@@ -169,7 +167,7 @@ Class Order extends Common
                 throw new \Exception("订单更新失败");
             }
             Db::commit();
-            ok_return("创建成功",['order_id'=>$order_data['order_id']]);
+            ok_return("创建成功",1,['order_id'=>$order_data['order_id']]);
 		}catch(\Exception $e){
 			Db::rollback();
 			wrong_return($e->getMessage());

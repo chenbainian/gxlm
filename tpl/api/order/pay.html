@@ -230,7 +230,6 @@
 $(document).on("click",'#J_Go',function () {
 	var url = $("#submit_url").val();
 	var success_url = $("#pay_success").val();
-    location.href = success_url;
 	$.common_ajax(url,{},function (res) {
 	    if(res.code == 1){
             location.href = success_url+'?order_id='+res.ret_data.order_id;

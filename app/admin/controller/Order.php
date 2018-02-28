@@ -48,10 +48,17 @@ Class Order extends Common
         if(empty($status) || empty($id)){
             wrong_return("参数不正确");
         }
+        //如果状态为完成  则修改订单状态
+        $updata_data = [
+            'status'=>$status
+        ];
+        if($status  == 3){
+            $updata_data['stop_time'] = NOW_TIME;
+        }
+        $update_res  = db_func("order")->where(['id'=>$id])->update($updata_data);
+        if($update_res  === false) wrong_return("修改失败");
 
-        $update_res  = db_func("order")->where(['id'=>$id])->update(['status'=>$status]);
-        if($update_res  !== false) ok_return("修改成功");
-        wrong_return("修改失败");
+        ok_return("修改成功");
     }
 
 
@@ -61,6 +68,10 @@ Class Order extends Common
             wrong_return("订单ID不正确");
         }
         $del_res= db_func("order")->where(['id'=>$id])->delete();
+        $sub_orders = db_func("sub_order")->where(['parent_id'=>$id])->select();
+        foreach ($sub_orders as $key=>$value){
+            db_func("goods")->where(['id'=>$value['goods_id']])->setInc('num',$value['num']);
+        }
         db_func("sub_order")->where(['parent_id'=>$id])->delete();
         if($del_res  !== false){
             ok_return("删除成功");
@@ -84,6 +95,8 @@ Class Order extends Common
         db_func("order")->where(['id'=>$parent_id])->setDec('price',$money);
         db_func("order")->where(['id'=>$parent_id])->setDec('true_price',$true_money);
         db_func("order")->where(['id'=>$parent_id])->setDec('sub_order_num',1);
+
+        db_func("goods")->where(['id'=>$sub_order_money['goods_id']])->setInc('num',$sub_order_money['num']);
         if($del_res !== false){
             ok_return("删除成功");
         }else{
